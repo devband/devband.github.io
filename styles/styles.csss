@@ -1,0 +1,392 @@
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  color: white;
+  background: #289ad8;
+  z-index: 99;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+header.fixed {
+  position: fixed;
+}
+header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  min-width: 60rem;
+  heigth: auto;
+  opacity: 0.1;
+  color: white;
+  background-image: url(../src/code.png), url(src/code.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+}
+header .header_container {
+  position: relative;
+  max-width: 80rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+@media screen {
+}
+header .header_container.hidden {
+  display: none;
+}
+header .header_container .logo {
+  display: inline-block;
+  padding: 0.25rem;
+  vertical-align: middle;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background: #c0e1f4;
+}
+header .header_container .logo a {
+  display: block;
+}
+header .header_container .logo a img {
+  display: block;
+  padding: 0.25rem;
+  width: 6rem;
+  height: 3rem;
+}
+header .header_container h1 {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+header .header_container h1 span {
+  display: block;
+  font-weight: normal;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+header .header_container .button {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  margin-top: -1.5rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 3rem;
+  text-align: center;
+  background-color: #0288d1;
+}
+header .header_container .button:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  width: 1rem;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
+  background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
+}
+header .header_container .button img {
+  display: inline-block;
+  margin-bottom: -0.375rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+header nav {
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  overflow-x: auto;
+  z-index: 99;
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+}
+header nav ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+header nav ul li {
+  display: inline-block;
+  margin: 0 -0.1rem;
+  list-style-type: none;
+  background-clip: padding-box;
+}
+header nav ul li a {
+  display: block;
+  padding: 0.5rem 1.75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+header nav ul li a img {
+  margin: 0 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  opacity: 0.75;
+}
+header nav ul li a span {
+  vertical-align: middle;
+  color: #81c4e8;
+}
+@media screen and (max-width: 40rem) {
+  header nav ul li a span {
+    display: none;
+  }
+}
+header nav ul li.active {
+  background-color: #289ad8;
+}
+header nav ul li.active a img {
+  opacity: 1;
+}
+header nav ul li.active a span {
+  color: #ffffff;
+}
+main {
+  z-index: 98;
+  margin: 0;
+}
+body.home main {
+  display: block;
+  overflow: hidden;
+  padding: 0 0.5rem;
+}
+body.home main .gallery {
+  display: none;
+  overflow-x: auto;
+  text-align: center;
+}
+body.home main .gallery > div {
+  white-space: nowrap;
+}
+body.home main .gallery > div a {
+  display: inline-block;
+  margin: 0;
+}
+body.home main .gallery > div a img {
+  display: block;
+  max-height: 15rem;
+}
+body.home main article {
+  display: block;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 40rem;
+  overflow: hidden;
+  -webkit-border-radius: 0.125rem;
+  -moz-border-radius: 0.125rem;
+  -ms-border-radius: 0.125rem;
+  -o-border-radius: 0.125rem;
+  border-radius: 0.125rem;
+  background: white;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+body.home main article h1 {
+  font-size: 1.5rem;
+}
+body.home main article p {
+  margin-left: 1rem;
+}
+body.developers article {
+  margin: auto;
+  max-width: 40rem;
+}
+@media (min-width: 40rem) {
+  body.developers article {
+    text-align: center;
+  }
+}
+body.developers article h1 {
+  display: none;
+  font-size: 1.5rem;
+}
+body.developers article section {
+  display: block;
+  position: relative;
+  z-index: 90;
+  margin: 0.5rem;
+  padding: 1rem;
+  min-height: 5rem;
+  border-radius: 0.125rem;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+body.developers article section .ava {
+  float: left;
+  margin: 0 1.25rem 0.75rem 0;
+}
+@media screen and (max-width: 20rem) {
+  body.developers article section .ava {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: 0 auto 0.075rem;
+  }
+}
+body.developers article section .ava a {
+  display: inline-block;
+}
+body.developers article section .ava a img {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 100%;
+}
+@media screen and (max-width: 20rem) {
+  body.developers article section .ava a img {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+}
+body.developers article section .inf {
+  text-align: left;
+}
+@media screen and (max-width: 20rem) {
+  body.developers article section .inf {
+    text-align: center;
+  }
+}
+body.developers article section .inf .name {
+  margin: 0.5rem 0;
+  font-size: 1.125rem;
+}
+body.developers article section .inf .scills {
+  margin: 0.5rem 0;
+  color: #8a8a8a;
+}
+body.developers article section .button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+body.developers article section .button img[src*="menu.svg"] {
+  display: block;
+  margin: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+body.developers article section .menu.contacts {
+  display: block;
+  position: fixed;
+  right: 50%;
+  top: 40%;
+  z-index: 999;
+  -webkit-border-radius: 0.125rem;
+  -moz-border-radius: 0.125rem;
+  -ms-border-radius: 0.125rem;
+  -o-border-radius: 0.125rem;
+  border-radius: 0.125rem;
+  padding: 0.25rem 0;
+  width: 10rem;
+  text-align: left;
+  background-color: white;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+body.developers article section .menu.contacts.close {
+  display: none;
+}
+@media screen and (max-width: 20rem) {
+  body.developers article section .menu.contacts {
+    text-align: center;
+    overflow-x: visible;
+  }
+}
+body.developers article section .menu.contacts li {
+  display: block;
+  position: relativve;
+  list-style-type: none;
+  border-radius: 1.5rem;
+}
+body.developers article section .menu.contacts li a {
+  margin-bottom: 0.0625rem;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: Black;
+}
+footer {
+  overflow: hidden;
+  padding: 2rem;
+  text-align: center;
+  color: grey;
+}
+footer p {
+  padding: 0;
+  margin: 0;
+}
+/*
+* Сообщение о работе на сайте
+*/
+.dev_message {
+  width: 35rem;
+  max-width: 90%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0.125rem;
+  background-color: white;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+.dev_message > h1 {
+  margin: 1.5rem;
+}
+.dev_message > div {
+  margin: 1.5rem;
+  color: grey;
+}
