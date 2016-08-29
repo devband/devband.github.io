@@ -62,25 +62,24 @@ header {
 	&.fixed {
 		position: fixed;
 	}
-			&:after {
-			content:'';
-			display: block;
-			position: absolute;
-			left: 0; top: 0; bottom: 0; right: 0;
-			width: 100%;
-			min-width: @width_tab_small;
-			heigth: auto;
-			max-height: 100%;
-			opacity: 0.1;
-			color: white;
-			.vendors(pointer-events, none);
-			background-image: url(../src/code.png),
-			                  url(src/code.png);
-			background-repeat: no-repeat;
-			background-position: left;
-			background-size: cover;
-		}
-
+	&:after {
+		content:'';
+		display: block;
+		position: absolute;
+		left: 0; top: 0; bottom: 0; right: 0;
+		width: auto;
+		min-width: @width_tab_small;
+		heigth: auto;
+		max-height: 100%;
+		opacity: 0.1;
+		color: white;
+		.vendors(pointer-events, none);
+		background-image: url(../src/code.png),
+		                  url(src/code.png);
+		background-repeat: no-repeat;
+		background-position: left;
+		background-size: cover;
+	}
 	.header_container {
 		position: relative;
 		max-width: @width_tab_large;
@@ -143,10 +142,7 @@ header {
 				left: -1rem;
 				width: 1rem;
 				height: 100%;
-				background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, @tmColor 100%);
-				background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, @tmColor 100%);
-				background: -o-linear-gradient(left, rgba(0,0,0,0) 0%, @tmColor 100%);
-				background: linear-gradient(left, rgba(0,0,0,0) 0%, @tmColor 100%);
+				.vendors(background,linear-gradient(left, rgba(0,0,0,0) 0%, @tmColor 100%));
 			}
 			img {
 				display: inline-block;
