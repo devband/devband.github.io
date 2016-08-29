@@ -46,6 +46,11 @@ header:after {
   max-height: 100%;
   opacity: 0.1;
   color: white;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
   background-image: url(../src/code.png), url(src/code.png);
   background-repeat: no-repeat;
   background-position: left;
