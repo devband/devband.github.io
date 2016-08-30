@@ -132,7 +132,6 @@ header {
 			line-height: 3rem;
 			width: 3rem;
 			text-align: center;
-			background-color: @tmColor;
 			&:before {
 				content:'';
 				display: block;

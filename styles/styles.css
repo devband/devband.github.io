@@ -105,7 +105,6 @@ header .header_container .button {
   line-height: 3rem;
   width: 3rem;
   text-align: center;
-  background-color: #0288d1;
 }
 header .header_container .button:before {
   content: '';
