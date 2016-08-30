@@ -14,7 +14,7 @@ function bodyPaddingTop() {
 }
 bodyPaddingTop();
 
-window.addEventListener("scroll", headerHidden());
+window.addEventListener("scroll", headerHidden);
 function headerHidden() {
 	if (nav.getBoundingClientRect().top <= 20) {
 		header_container.classList.add("hidden");
