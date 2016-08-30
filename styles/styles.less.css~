@@ -1,3 +1,5 @@
+@tx: black;
+@bg: white;
 @rem: 0.0625rem;
 @tmColor: #0288d1;
 @width_tab_large: 80rem;
@@ -45,7 +47,7 @@ body {
 	padding: 0;
 	font-family: Arial, sans-serif;
 	font-size: 1rem;
-	background-color: mix(black,white,5%);
+	background-color: mix(@tx,@bg,5%);
 }
 
 /*
@@ -62,7 +64,7 @@ header {
 	overflow: hidden;
 	margin: 0;
 	color: white;
-	background: mix(white, @tmColor,15%);
+	background: mix(@bg, @tmColor,15%);
 	z-index: 99;
 	box-sizing: border-box;
 	.BoxShadow(2);
@@ -101,7 +103,7 @@ header {
 			padding: 0.25rem;
 			vertical-align: middle;
 			.Radius(0.5rem);
-			background: mix(white, @tmColor,100%);
+			background: mix(@bg, @tmColor,100%);
 			a {
 				display: block;
 				img {
@@ -233,9 +235,9 @@ main {
 		article {
 			overflow: hidden;
 			max-width: @width_tab_large;
-			margin: auto;
+			margin: 0.5rem auto;
 			padding: 0 1rem;
-			background: white;
+			background: @bg;
 			> h1 {
 				font-size: 2rem;
 			}
@@ -297,28 +299,25 @@ main {
 
 .developers {
 	article {
-		margin: auto;
-		max-width: @width_mob_large;
-		@media (min-width: @width_mob_large) {
-			text-align: center;
-		}
-		h1 {
-			display: none;
-			font-size: 1.5rem;
-		}
+		margin: 0.5rem auto;
+		padding: 0;
+		max-width: @width_tab_large;
+		background-color: white;
+		> h1 { display: none; }
 		section {
 			display: block;
 			position: relative;
 			z-index: 90;
-			margin: 0.5rem;
+			overflow: hidden;
+			margin: 0 0.5rem;
 			padding: 1rem;
-			min-height: 5rem;
-			border-radius: 0.125rem;
-			background-color: white;
-			.BoxShadow;
+			border-bottom: 1px solid mix(@bg,@tx,7%);
+			&:last-child {
+				border: none;
+			}
 			.ava {
 				float: left;
-				margin: 0 1.25rem 0.75rem 0;
+				margin: 0 1.25rem 0 0;
 				@media screen and (max-width: @width_mob_small) {
 					display: block;
 					text-align: center;

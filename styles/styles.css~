@@ -207,7 +207,7 @@ main section {
 .home main article {
   overflow: hidden;
   max-width: 80rem;
-  margin: auto;
+  margin: 0.5rem auto;
   padding: 0 1rem;
   background: white;
 }
@@ -261,36 +261,29 @@ main section {
 }
 /* Developers Page */
 .developers article {
-  margin: auto;
-  max-width: 40rem;
+  margin: 0.5rem auto;
+  padding: 0;
+  max-width: 80rem;
+  background-color: white;
 }
-@media (min-width: 40rem) {
-  .developers article {
-    text-align: center;
-  }
-}
-.developers article h1 {
+.developers article > h1 {
   display: none;
-  font-size: 1.5rem;
 }
 .developers article section {
   display: block;
   position: relative;
   z-index: 90;
-  margin: 0.5rem;
+  overflow: hidden;
+  margin: 0 0.5rem;
   padding: 1rem;
-  min-height: 5rem;
-  border-radius: 0.125rem;
-  background-color: white;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ededed;
+}
+.developers article section:last-child {
+  border: none;
 }
 .developers article section .ava {
   float: left;
-  margin: 0 1.25rem 0.75rem 0;
+  margin: 0 1.25rem 0 0;
 }
 @media screen and (max-width: 20rem) {
   .developers article section .ava {
@@ -337,7 +330,7 @@ main section {
 .developers article section .button {
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
+  top: 0.25rem;
   padding: 0.25rem;
   cursor: pointer;
 }
@@ -350,7 +343,7 @@ main section {
 .developers article section .menu.contacts {
   display: block;
   position: absolute;
-  right: 0;
+  right: 0.25rem;
   top: 0;
   z-index: 999;
   -webkit-border-radius: 0.125rem;
