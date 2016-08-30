@@ -8,9 +8,14 @@ var header_container = document.querySelector(".header_container");
 var nav = document.querySelector("nav");
 var header_container_height = header_container.clientHeight;
 
+function bodyPaddingTop() {
+	body.style.paddingTop = header.clientHeight + "px";
+//	alert(header_container.clientHeight);
+}
+bodyPaddingTop();
 
-body.style.paddingTop = header.clientHeight + "px";
-window.addEventListener("scroll", function(e) {
+window.addEventListener("scroll", headerHidden());
+function headerHidden() {
 	if (nav.getBoundingClientRect().top <= 20) {
 		header_container.classList.add("hidden");
 		header.classList.add("fixed");
@@ -19,7 +24,7 @@ window.addEventListener("scroll", function(e) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
 	}
-});
+}
 
 /*
  *		Menu toggler

@@ -8,13 +8,18 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
 }
+/*
+ *
+ *    HEADER
+ *
+*/
 header {
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
+  right: 0;
+  left: 0;
   display: block;
   width: 100%;
   overflow: hidden;
@@ -38,12 +43,12 @@ header:before {
   bottom: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.1;
-  color: black;
-  padding: 0.25rem 0.5rem;
   pointer-events: none;
+  opacity: 0.1;
+  padding: 0.25rem 0.5rem;
   text-align: justify;
   box-sizing: border-box;
+  color: black;
 }
 header.fixed {
   position: fixed;
@@ -96,6 +101,18 @@ header .header_container h1 span {
   font-size: 1rem;
   opacity: 0.7;
 }
+header .header_container h1:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 5rem;
+  height: 100%;
+  opacity: 0.5;
+  background: -webkit-linear-gradient(left, transparent 0%, #289ad8 50%);
+}
 header .header_container .button {
   position: absolute;
   top: 50%;
@@ -105,20 +122,6 @@ header .header_container .button {
   line-height: 3rem;
   width: 3rem;
   text-align: center;
-}
-header .header_container .button:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -1rem;
-  width: 1rem;
-  height: 100%;
-  -webkit-background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
-  -moz-background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
-  -ms-background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
-  -o-background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
-  background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, #0288d1 100%);
 }
 header .header_container .button img {
   display: inline-block;
@@ -179,69 +182,98 @@ header nav ul li.active a img {
 header nav ul li.active a span {
   color: #ffffff;
 }
+/*
+ *
+ *    MAIN (Content)
+ *
+*/
 main {
+  display: block;
   z-index: 98;
   margin: 0;
 }
-body.home main {
+main article,
+main section {
+  display: block;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+/* Home Page */
+.home main {
   display: block;
   overflow: hidden;
-  padding: 0 0.5rem;
 }
-body.home main .gallery {
+.home main article {
+  overflow: hidden;
+  max-width: 80rem;
+  margin: auto;
+  padding: 0 1rem;
+  background: white;
+}
+.home main article > h1 {
+  font-size: 2rem;
+}
+.home main article > h2 {
+  font-size: 1.5rem;
+}
+.home main article section > h1 {
+  font-size: 1.5rem;
+}
+.home main article section > h2 {
+  font-size: 1.25rem;
+}
+.home main article section p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.home main article section .ava {
+  display: inline-block;
+  margin: 0 1rem;
+}
+.home main article section .ava a {
+  display: inline-block;
+}
+.home main article section .ava a img {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.home main .gallery {
   display: none;
   overflow-x: auto;
   text-align: center;
 }
-body.home main .gallery > div {
+.home main .gallery > div {
   white-space: nowrap;
 }
-body.home main .gallery > div a {
+.home main .gallery > div a {
   display: inline-block;
   margin: 0;
 }
-body.home main .gallery > div a img {
+.home main .gallery > div a img {
   display: block;
   max-height: 15rem;
 }
-body.home main article {
-  display: block;
-  padding: 1rem;
-  margin: 1rem auto;
-  max-width: 40rem;
-  overflow: hidden;
-  -webkit-border-radius: 0.125rem;
-  -moz-border-radius: 0.125rem;
-  -ms-border-radius: 0.125rem;
-  -o-border-radius: 0.125rem;
-  border-radius: 0.125rem;
-  background: white;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-body.home main article h1 {
-  font-size: 1.5rem;
-}
-body.home main article p {
-  margin-left: 1rem;
-}
-body.developers article {
+/* Developers Page */
+.developers article {
   margin: auto;
   max-width: 40rem;
 }
 @media (min-width: 40rem) {
-  body.developers article {
+  .developers article {
     text-align: center;
   }
 }
-body.developers article h1 {
+.developers article h1 {
   display: none;
   font-size: 1.5rem;
 }
-body.developers article section {
+.developers article section {
   display: block;
   position: relative;
   z-index: 90;
@@ -256,22 +288,22 @@ body.developers article section {
   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-body.developers article section .ava {
+.developers article section .ava {
   float: left;
   margin: 0 1.25rem 0.75rem 0;
 }
 @media screen and (max-width: 20rem) {
-  body.developers article section .ava {
+  .developers article section .ava {
     display: block;
     text-align: center;
     float: none;
     margin: 0 auto 0.075rem;
   }
 }
-body.developers article section .ava a {
+.developers article section .ava a {
   display: inline-block;
 }
-body.developers article section .ava a img {
+.developers article section .ava a img {
   display: block;
   height: 5rem;
   width: 5rem;
@@ -281,45 +313,45 @@ body.developers article section .ava a img {
   border-radius: 100%;
 }
 @media screen and (max-width: 20rem) {
-  body.developers article section .ava a img {
+  .developers article section .ava a img {
     height: 7.5rem;
     width: 7.5rem;
   }
 }
-body.developers article section .inf {
+.developers article section .inf {
   text-align: left;
 }
 @media screen and (max-width: 20rem) {
-  body.developers article section .inf {
+  .developers article section .inf {
     text-align: center;
   }
 }
-body.developers article section .inf .name {
+.developers article section .inf .name {
   margin: 0.5rem 0;
   font-size: 1.125rem;
 }
-body.developers article section .inf .scills {
+.developers article section .inf .scills {
   margin: 0.5rem 0;
   color: #8a8a8a;
 }
-body.developers article section .button {
+.developers article section .button {
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
+  top: 0.25rem;
   padding: 0.25rem;
   cursor: pointer;
 }
-body.developers article section .button img[src*="menu.svg"] {
+.developers article section .button img[src*="menu.svg"] {
   display: block;
   margin: auto;
   width: 1.5rem;
   height: 1.5rem;
 }
-body.developers article section .menu.contacts {
+.developers article section .menu.contacts {
   display: block;
-  position: fixed;
-  right: 50%;
-  top: 40%;
+  position: absolute;
+  right: 0.25rem;
+  top: 0;
   z-index: 999;
   -webkit-border-radius: 0.125rem;
   -moz-border-radius: 0.125rem;
@@ -327,7 +359,6 @@ body.developers article section .menu.contacts {
   -o-border-radius: 0.125rem;
   border-radius: 0.125rem;
   padding: 0.25rem 0;
-  width: 10rem;
   text-align: left;
   background-color: white;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
@@ -336,28 +367,33 @@ body.developers article section .menu.contacts {
   -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
 }
-body.developers article section .menu.contacts.close {
+.developers article section .menu.contacts.close {
   display: none;
 }
 @media screen and (max-width: 20rem) {
-  body.developers article section .menu.contacts {
+  .developers article section .menu.contacts {
     text-align: center;
     overflow-x: visible;
   }
 }
-body.developers article section .menu.contacts li {
-  display: block;
+.developers article section .menu.contacts li {
+  display: inline-block;
   position: relativve;
   list-style-type: none;
   border-radius: 1.5rem;
 }
-body.developers article section .menu.contacts li a {
+.developers article section .menu.contacts li a {
   margin-bottom: 0.0625rem;
   display: block;
   padding: 0.5rem 1.5rem;
   text-decoration: none;
   color: Black;
 }
+/*
+ *
+ *    FOOTER
+ *
+*/
 footer {
   overflow: hidden;
   padding: 2rem;
@@ -393,4 +429,3 @@ footer p {
   margin: 1.5rem;
   color: grey;
 }
-
