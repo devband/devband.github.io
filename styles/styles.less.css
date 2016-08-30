@@ -59,26 +59,26 @@ header {
 	z-index: 99;
 	box-sizing: border-box;
 	.BoxShadow(2);
-	&.fixed {
-		position: fixed;
-	}
-	&:after {
-		content:'';
+	&:before {
+		content:"/*  *header hidden  */  var body = document.body; var header = document.querySelector(\"header\"); var header_container = document.querySelector(\".header_container\"); var nav = document.querySelector(\"nav\"); var header_container_height = header_container.clientHeight;   body.style.paddingTop = header.clientHeight + \"px\"; window.addEventListener(\"scroll\", function(e) { if (nav.getBoundingClientRect().top <= 20) { header_container.classList.add(\"hidden\"); header.classList.add(\"fixed\"); } if (window.pageYOffset < header_container_height) { header_container.classList.remove(\"hidden\"); header.classList.remove(\"fixed\"); } });  /*  *Menu toggler  */  function hidden_menu(button) { //alert(); var button_menu = document.querySelectorAll('.menu.contacts'); var content = button.parentNode.querySelector('.menu.contacts'); for (var i = 0; i < button_menu.length; i++ ) { if (!button_menu[i].classList.contains(\"close\")) { button_menu[i].classList.add(\"close\"); } } content.classList.remove('close'); }  /*  *Gallery  */   var gallery = document.querySelector('.gallery > div');  var massPic = [ 'light.png', 'dark.png', 'black.png', 'material_light.png', 'material_dark.png', 'material_black.png', 'white_old.png' ];  for (var i = 0; i < massPic.length; i++) { var pic = massPic[i]; var a = document.createElement('a'); var img = document.createElement('img'); a.href = 'src/' + pic; img.src = 'src/mini-' + pic; img.alt = pic; a.appendChild(img); gallery.appendChild(a);  }  gallery.addEventListener('click', function() { //alert(event.target.parentNode.innerHTML);  }); ";
 		display: block;
 		position: absolute;
-		left: 0; top: 0; bottom: 0; right: 0;
-		width: auto;
-		min-width: @width_tab_small;
-		heigth: auto;
-		max-height: 100%;
+		top: 0; top: 0; right: 0; bottom: 0;
+		width: 100%;
+		height: 100%;
 		opacity: 0.1;
-		color: white;
-		.vendors(pointer-events, none);
-		background-image: url(../src/code.png),
-		                  url(src/code.png);
-		background-repeat: no-repeat;
-		background-position: left;
-		background-size: cover;
+		color: black;
+		padding: 0.25rem 0.5rem;
+		pointer-events: none;
+		text-align: justify;
+		box-sizing: border-box;
+//		background-image: url(../src/code.png), url(src/code.png);
+//		background-repeat: no-repeat;
+//		background-position: center;
+//		background-size: 80rem auto;		
+	}
+	&.fixed {
+		position: fixed;
 	}
 	.header_container {
 		position: relative;
@@ -86,12 +86,11 @@ header {
 		box-sizing: border-box;
 		margin: 0 auto;
 		padding: 2rem 1.5rem;
-//		.vendors(transition, position ease 0.5s);
+		white-space: nowrap;
 		@media screen {
-			@media (max-width: @width_tab_small) {
-//				max-width: @width_mob_large;
+			@media (max-width: @width_mob_large) {
+				padding: 1rem;
 			}
-//			@media (max-width: @width_tab_large) {}
 		}
 		&.hidden {
 			display: none;
@@ -158,9 +157,8 @@ header {
 		box-sizing: border-box;
 		text-align: center;
 		overflow-x: auto;
-		z-index: 99;
 		color: white;
-		background: rgba(0,0,0,0.15);
+		background: desaturate(@tmColor,15%);
 		ul {
 			display: block;
 			padding: 0;
@@ -168,7 +166,7 @@ header {
 			white-space: nowrap;
 			li {
 				display: inline-block;
-				margin: 0 -0.1rem;
+				margin: 0 -0.125rem;
 				list-style-type: none;
 				background-clip: padding-box;
 				@media screen {
@@ -184,22 +182,19 @@ header {
 					padding: 0.5rem 1.75rem;
 					text-decoration: none;
 					text-transform: uppercase;
-//					font-weight: bold;
 					img {
 						margin: 0 0.5rem;
 						width: 1.5rem;
 						height:1.5rem;
 						vertical-align: middle;
-						opacity: 0.75;
 					}
 					span {
 						vertical-align: middle;
-						color: mix(@tmColor, white, 50%);
+						color: mix(@tmColor, white, 25%);
 					}
 				}
 				&.active {
-//					border-bottom: 3*@rem solid rgba(255,255,255,0.75);
-					background-color: mix(white, @tmColor, 15%);
+					background: mix(white, @tmColor,15%);
 					a {
 						img { opacity: 1; }
 						span { color: rgba(255,255,255,1); }
@@ -380,7 +375,6 @@ footer {
 	padding: 2rem;
 	text-align: center;
 	color: grey;
-//	background-color: lightgrey;
 	p {
 		padding: 0;
 		margin: 0;

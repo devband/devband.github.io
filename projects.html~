@@ -1,20 +1,17 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="DevBand - cайт команды разаботчиков.">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
-	<title>DevBand | Главная</title>
+	<title>DevBand | Проекты</title>
 	<link href="styles/styles.css" rel="stylesheet">
-	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
+  <script type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>
-
 <body class="home">
-	<script type="text/javascript" src="../../less-dev.js"></script>
-	<script type="text/javascript" src="../../dev/toolbar.js"></script>
+  <script type="text/javascript" src="../../less-dev.js"></script>
+  <script type="text/javascript" src="../../dev/toolbar.js"></script>
 
 	<header>
 		<div class="header_container">
@@ -23,60 +20,38 @@
 					<img src="src/db_logo.png" title="Лого DevBand">
 				</a>
 			</div>
-			<h1>DevBand <span>Android & Web Developers</span></h1>
+			<h1>DevBand <span>Android \ Web Developers</span></h1>
 			<!--a class="button" href="https://github.com/slartus/4pdaClient-plus/raw/master/ForPDA_3.3.5.apk"><img src="src/get_app.svg"></a-->
 		</div>
-
+		
 		<nav>
 			<ul>
-				<li class="active">
-					<a href="#"><img src="src/home.svg"><span>Главная</span></a>
-				</li>
-				<li>
-					<a href="projects.html"><img src="src/apps.svg"><span>Проекты</span></a>
-				</li>
-				<li>
-					<a href="developers.html"><img src="src/contacts.svg"><span>Разработчики</span></a>
-				</li>
+			  <li><a href="index.html"><img src="src/home.svg"><span>Главная</span></a></li>
+				<li class="active"><a href="projects.html"><img src="src/apps.svg"><span>Проекты</span></a></li>
+				<li><a href="developers.html"><img src="src/contacts.svg"><span>Разработчики</span></a></li>
 			</ul>
 		</nav>
 	</header>
-
-	<main>
-		<div class="gallery">
-			<div></div>
-		</div>
-		<article>
-			<h1>Описание</h1>
-			<p>Неофициальный клиент сайта <a href="http://4pda.ru">4pda.ru</a></p>
-			<h2>Взможности</h2>
-			<ul>
-				<li>Просмотр новостй</li>
-				<li>Комментарии к новостям</li>
-				<li>Просмотр каталога DevDB</li>
-				<li>Просмотр и ответы на форуме</li>
-			</ul>
-		</article>
-	</main>
+	
+	<main></main>
 
 	<footer>
 		<p>Copyright 2016 forpda.github.io</p>
 	</footer>
-
+	
 	<!--
 	
 	*** Cообщение о работе на сайте ***
 	
 	-->
-
+	
 	<!--div class="dev_message">
 	<h1>Привет!
 	<br>Мы рады, что вы зашли к нам!</h1>
 	<div>Но... в данный момент сайт на стадии разработки, надеемся он вам понравится 8)</div>
 	</div-->
-
+	
 	<script type="text/javascript" src="js/scripts.js"></script>
-
+	
 </body>
-
-</html>
+</html>	

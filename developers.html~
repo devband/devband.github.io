@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -11,11 +9,10 @@
 	<link href="styles/styles.css" rel="stylesheet">
 	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>
-
 <body class="developers">
 	<script type="text/javascript" src="../../less-dev.js"></script>
 	<script type="text/javascript" src="../../dev/toolbar.js"></script>
-
+	
 	<header>
 		<div class="header_container">
 			<div class="logo">
@@ -23,21 +20,15 @@
 					<img src="src/db_logo.png" title="Лого DevBand">
 				</a>
 			</div>
-			<h1>DevBand <span>Android & Web Developers</span></h1>
+			<h1>DevBand <span>Android \ Web Developers</span></h1>
 			<!--a class="button" href="https://github.com/slartus/4pdaClient-plus/raw/master/ForPDA_3.3.5.apk"><img src="src/get_app.svg"></a-->
 		</div>
 
 		<nav>
 			<ul>
-				<li>
-					<a href="index.html"><img src="src/home.svg"><span>Главная</span></a>
-				</li>
-				<li>
-					<a href="projects.html"><img src="src/apps.svg"><span>Проекты</span></a>
-				</li>
-				<li class="active">
-					<a href="#"><img src="src/contacts.svg"><span>Разработчики</span></a>
-				</li>
+			  <li><a href="index.html"><img src="src/home.svg"><span>Главная</span></a></li>
+				<li><a href="projects.html"><img src="src/apps.svg"><span>Проекты</span></a></li>
+				<li class="active"><a href="#"><img src="src/contacts.svg"><span>Разработчики</span></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -93,8 +84,8 @@
 					<h2 class="name">Алексей Шолохов</h2>
 					<div class="scills">Web Developer</div>
 				</div>
-				<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
-				<ul class="menu contacts close">
+				<a class="button"onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
+				<ul  class="menu contacts close">
 					<li><a href="mailto:asolohov@gmail.com" title="asolohov@gmail.com">gmail</a></li>
 					<li><a href="http://vk.com/id4690372" title="vk.com/id4690372">vk</a></li>
 					<li><a href="http://4pda.ru/forum/index.php?showuser=96664" title="Морфий">4pda</a></li>
@@ -109,9 +100,8 @@
 	<footer>
 		<p>Copyright 2016 forpda.github.io</p>
 	</footer>
-
+	
 	<script type="text/javascript" src="js/scripts.js"></script>
-
+	
 </body>
-
-</html>
+</html>	
