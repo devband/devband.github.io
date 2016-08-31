@@ -45,7 +45,7 @@
 	<main>
 		<!--div class="gallery"><div></div></div-->
 		<article>
-			<h1 align="center">DevBand<h1>
+		  <h1 align="center">DevBand</h1>
 			<section align="center">
 				<div class="ava">
 					<a href="src/tainuk.jpg" title="tainuk.jpg">

@@ -35,7 +35,7 @@
 					<a href="projects.html"><img src="src/apps.svg"><span>Проекты</span></a>
 				</li>
 				<li>
-					<a href="developers.html"><img src="src/contacts.svg"><span>Разработчики</span></a>
+					<a href="developers.html"><img src="src/contacts.svg"><span>Контакты</span></a>
 				</li>
 			</ul>
 		</nav>
