@@ -30,16 +30,20 @@ function headerHidden() {
  *		Menu toggler
  */
 
-function hidden_menu(button) {
-//	alert();
+function hidden_menu(target) {
 	var button_menu = document.querySelectorAll('.menu.contacts');
-	var content = button.parentNode.querySelector('.menu.contacts');
-	for (var i = 0; i < button_menu.length; i++ ) {
-		if (!button_menu[i].classList.contains("close")) {
+	var clickedButton = target.parentNode.querySelector('.menu.contacts');
+	function closeAll() {
+		for (var i = 0; i < button_menu.length; i++) {
 			button_menu[i].classList.add("close");
 		}
 	}
-	content.classList.remove('close');
+	if (clickedButton.classList.contains("close")) {
+		closeAll();
+		clickedButton.classList.remove('close');
+	} else {
+		closeAll();
+	}
 }
 
 /*

@@ -103,17 +103,6 @@ header .header_container h1 span {
   font-size: 1rem;
   opacity: 0.7;
 }
-header .header_container h1:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 5rem;
-  height: 100%;
-  opacity: 0.5;
-  background: -webkit-linear-gradient(left, transparent 0%, #289ad8 50%);
-}
 header .header_container .button {
   position: absolute;
   top: 50%;
@@ -175,7 +164,7 @@ header nav ul li a span {
   color: #c0e1f4;
 }
 header nav ul li.active {
-  background: #289ad8;
+  background: #1b94d6;
 }
 header nav ul li.active a img {
   opacity: 1;

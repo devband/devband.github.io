@@ -45,7 +45,7 @@ header:before {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.10;
+  opacity: 0.125;
   padding: 0.25rem 0.5rem;
   box-sizing: border-box;
   text-align: justify;
@@ -93,9 +93,19 @@ header .header_container .logo a img {
 }
 header .header_container h1 {
   display: inline-block;
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
+  margin: 0 1rem;
+  font-size: 1.75rem;
   vertical-align: middle;
+}
+@media screen and (max-width: 40rem) {
+  header .header_container h1 {
+    margin: 0 0.75rem;
+  }
+}
+@media screen and (max-width: 20rem) {
+  header .header_container h1 {
+    margin: 0 0.5rem;
+  }
 }
 header .header_container h1 span {
   display: block;
@@ -164,7 +174,7 @@ header nav ul li a span {
   color: #c0e1f4;
 }
 header nav ul li.active {
-  background: #289ad8;
+  background: #1b94d6;
 }
 header nav ul li.active a img {
   opacity: 1;
@@ -333,7 +343,7 @@ main section {
 .developers article section .menu.contacts {
   display: block;
   position: absolute;
-  right: 0.25rem;
+  right: 1rem;
   top: 0;
   z-index: 999;
   -webkit-border-radius: 0.125rem;
