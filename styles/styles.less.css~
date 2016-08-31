@@ -66,7 +66,7 @@ header {
 	color: white;
 	background: mix(@bg, @tmColor,10%);
 	z-index: 99;
-	box-sizing: border-box;
+	box-sizing: border-box;;
 	.BoxShadow(2);
 	&:before { // фон шапки
 		content:"/*  *header hidden  */  var body = document.body; var header = document.querySelector(\"header\"); var header_container = document.querySelector(\".header_container\"); var nav = document.querySelector(\"nav\"); var header_container_height = header_container.clientHeight;   body.style.paddingTop = header.clientHeight + \"px\"; window.addEventListener(\"scroll\", function(e) { if (nav.getBoundingClientRect().top <= 20) { header_container.classList.add(\"hidden\"); header.classList.add(\"fixed\"); } if (window.pageYOffset < header_container_height) { header_container.classList.remove(\"hidden\"); header.classList.remove(\"fixed\"); } });  /*  *Menu toggler  */  function hidden_menu(button) { //alert(); var button_menu = document.querySelectorAll('.menu.contacts'); var content = button.parentNode.querySelector('.menu.contacts'); for (var i = 0; i < button_menu.length; i++ ) { if (!button_menu[i].classList.contains(\"close\")) { button_menu[i].classList.add(\"close\"); } } content.classList.remove('close'); }  /*  *Gallery  */   var gallery = document.querySelector('.gallery > div');  var massPic = [ 'light.png', 'dark.png', 'black.png', 'material_light.png', 'material_dark.png', 'material_black.png', 'white_old.png' ];  for (var i = 0; i < massPic.length; i++) { var pic = massPic[i]; var a = document.createElement('a'); var img = document.createElement('img'); a.href = 'src/' + pic; img.src = 'src/mini-' + pic; img.alt = pic; a.appendChild(img); gallery.appendChild(a);  }  gallery.addEventListener('click', function() { //alert(event.target.parentNode.innerHTML);  }); ";
@@ -77,12 +77,13 @@ header {
 		width: 100%;
 		height: 100%;
 		pointer-events: none;
-		opacity: 0.15;
+		opacity: 0.10;
 		padding: 0.25rem 0.5rem;
 		box-sizing: border-box;
 		text-align: justify;
-		font-size: 1rem;
+		font-size: 1.125rem;
 		color: @bg;
+		-webkit-box-shadow: inset 0 0 2rem @tmColor;
 	}
 	&.fixed { position: fixed; }
 	.header_container {
@@ -102,7 +103,7 @@ header {
 		}
 		.logo {
 			display: inline-block;
-			padding: 0.25rem;
+			padding: 0.5rem;
 			vertical-align: middle;
 			.Radius(0.5rem);
 			background: mix(@bg, @tmColor,90%);
@@ -110,9 +111,8 @@ header {
 				display: block;
 				img {
 					display: block;
-					padding: 0.25rem;
 					width: auto;
-					height: 3rem;
+					height: 2.5rem;
 				}
 			}
 		}
@@ -128,7 +128,7 @@ header {
 				opacity: 0.7;
 			}
 			&:after {
-				content:'';
+//				content:'';
 				display: block;
 				position: absolute;
 				top: 0; right: 0; bottom: 0;

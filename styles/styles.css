@@ -45,15 +45,13 @@ header:before {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.15;
+  opacity: 0.10;
   padding: 0.25rem 0.5rem;
   box-sizing: border-box;
-<<<<<<< HEAD
   text-align: justify;
-  font-size: 1rem;
-=======
->>>>>>> branch 'master' of https://github.com/devband/devband.github.io.git
+  font-size: 1.125rem;
   color: white;
+  -webkit-box-shadow: inset 0 0 2rem #0288d1;
 }
 header.fixed {
   position: fixed;
@@ -76,7 +74,7 @@ header .header_container.hidden {
 }
 header .header_container .logo {
   display: inline-block;
-  padding: 0.25rem;
+  padding: 0.5rem;
   vertical-align: middle;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
@@ -90,9 +88,8 @@ header .header_container .logo a {
 }
 header .header_container .logo a img {
   display: block;
-  padding: 0.25rem;
   width: auto;
-  height: 3rem;
+  height: 2.5rem;
 }
 header .header_container h1 {
   display: inline-block;
@@ -105,18 +102,6 @@ header .header_container h1 span {
   font-weight: normal;
   font-size: 1rem;
   opacity: 0.7;
-}
-header .header_container h1:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 5rem;
-  height: 100%;
-  opacity: 0.5;
-  background: -webkit-linear-gradient(left, transparent 0%, #289ad8 50%);
 }
 header .header_container .button {
   position: absolute;
