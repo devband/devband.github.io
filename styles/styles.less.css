@@ -375,6 +375,7 @@ main {
 				position: absolute;
 				right: 1rem;
 				top: 0;
+				max-width: 90%;
 				z-index: 999;
 				.Radius;
 //				clear: both;
