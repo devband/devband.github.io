@@ -8,6 +8,7 @@
 	<meta name="description" content="DevBand - cайт команды разаботчиков.">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
 	<title>DevBand | Контакты</title>
+	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
 	<link href="styles/styles.css" rel="stylesheet">
 	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>
@@ -72,7 +73,7 @@
 				</div>
 				<div class="inf">
 					<h2 class="name">Александр Тайнюк</h2>
-					<div class="scills">Android Developer</div>
+					<div class="scills">Java / Kotlin Android Developer</div>
 				</div>
 				<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
 				<ul class="menu contacts close">

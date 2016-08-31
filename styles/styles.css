@@ -48,8 +48,11 @@ header:before {
   opacity: 0.15;
   padding: 0.25rem 0.5rem;
   box-sizing: border-box;
+<<<<<<< HEAD
   text-align: justify;
   font-size: 1rem;
+=======
+>>>>>>> branch 'master' of https://github.com/devband/devband.github.io.git
   color: white;
 }
 header.fixed {
