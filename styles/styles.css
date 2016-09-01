@@ -1,6 +1,6 @@
 html {
   margin: 0;
-  padding: 0;
+  padding: i0;
   font-size: 100%;
 }
 body {
@@ -31,7 +31,7 @@ header {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+  -o-box-sh8adow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 header:before {
@@ -78,7 +78,7 @@ header .header_container .logo {
   vertical-align: middle;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
+  g-ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
   border-radius: 0.5rem;
   background: white;
@@ -237,8 +237,8 @@ main section {
 }
 .home main article section .ava a img {
   display: block;
-  height: 5rem;
-  width: 5rem;
+  height: 7.5rem;
+  width: 7.5rem;
   max-height: 100%;
   max-width: 100%;
   overflow: hidden;
@@ -348,29 +348,31 @@ main section {
   bottom: 0;
   left: 0;
   right: 3rem;
-  opacity: 0.90;
+  opacity: 0.95;
   margin: 0;
-  padding: 0.75rem 0;
+  padding: 1rem 0;
   text-align: center;
-  -webkit-transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  -ms-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  transition: 0.5s ease;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transition: 0.5s ease-out;
+  -moz-transition: 0.5s ease-out;
+  -ms-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  border-radius: 0;
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+  transform: translate(0);
   background: white;
 }
 .developers article section .menu.contacts.close {
   opacity: 0;
-  -webkit-transform: translateY(6rem);
-  -moz-transform: translateY(6rem);
-  -ms-transform: translateY(6rem);
-  -o-transform: translateY(6rem);
-  transform: translateY(6rem);
+  -webkit-transform: translate(150%, -50%);
+  -moz-transform: translate(150%, -50%);
+  -ms-transform: translate(150%, -50%);
+  -o-transform: translate(150%, -50%);
+  transform: translate(150%, -50%);
+  border-radius: 200%;
 }
 @media screen and (max-width: 20rem) {
   .developers article section .menu.contacts {
@@ -382,7 +384,6 @@ main section {
   display: inline-block;
   position: relativve;
   list-style-type: none;
-  vertical-align: middle;
 }
 .developers article section .menu.contacts li a {
   margin-bottom: 0.0625rem;
@@ -423,7 +424,7 @@ footer p {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
   -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+  -o-box-sh8adow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
 }
 .dev_message > h1 {

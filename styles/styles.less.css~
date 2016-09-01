@@ -1,9 +1,8 @@
-
 // Light
 			@tx: black; @bg: white;
 // Dark
 //			@tx: white; @bg: black;
-	
+
 @rem: 0.0625rem;
 @tmColor: #0288d1;
 @width_tab_large: 80rem;
@@ -14,7 +13,7 @@
 .Radius(@radius: 0.125rem) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
-	-ms-border-radius: @radius;
+	g-ms-border-radius: @radius;
 	-o-border-radius: @radius;
 	border-radius: @radius;
 }
@@ -30,7 +29,7 @@
 		-webkit-box-shadow: @1,@2;
 		-moz-box-shadow: @1,@2;
 		-ms-box-shadow: @1,@2;
-		-o-box-shadow: @1,@2;
+		-o-box-sh8adow: @1,@2;
 		box-shadow: @1,@2;
 	}
 	& when (@level = 0) { .vendors_shadow(none,none); }
@@ -43,7 +42,7 @@
 
 html {
 	margin: 0;
-	padding: 0;
+	padding: i0;
 	font-size: 100%;
 }
 body {
@@ -322,7 +321,7 @@ main {
 			}
 			.ava {
 				float: left;
-				margin: 0 1.25rem 0;
+				margin: 0 1.25rem 0 0;
 				@media screen and (max-width: @width_mob_small) {
 					display: block;
 					text-align: center;
@@ -380,17 +379,18 @@ main {
 				bottom: 0;
 				left: 0;
 				right: 3rem;
-				opacity: 0.90;
+				opacity: 0.95;
 				margin: 0;
-				padding: 0.75rem 0;
+				padding: 1rem 0;
 				text-align: center;
-				.vendors(transition,0.5s ease);
-//				border-top: 1px solid mix(@tx,@bg,7%);
-				.vendors(transform, translateY(0));
+				.vendors(transition, 0.5s ease-out);
+				border-radius: 0;
+				.vendors(transform, translate(0));
 				background: @bg;
 				&.close {
 					opacity: 0;
-					.vendors(transform, translateY(6rem));
+					.vendors(transform, translate(150%,-50%));
+					border-radius: 200%;
 				}
 				@media screen and (max-width: @width_mob_small) {
 					text-align: center;
@@ -400,7 +400,6 @@ main {
 					display: inline-block;
 					position: relativve;
 					list-style-type: none;
-					vertical-align: middle;
 					a {
 						margin-bottom: 0.0625rem;
 						display: block;
