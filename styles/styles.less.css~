@@ -1,5 +1,9 @@
-@tx: black;
-@bg: white;
+
+// Light
+			@tx: black; @bg: white;
+// Dark
+//			@tx: white; @bg: black;
+	
 @rem: 0.0625rem;
 @tmColor: #0288d1;
 @width_tab_large: 80rem;
@@ -8,11 +12,11 @@
 @width_mob_small: 20rem;
 
 .Radius(@radius: 0.125rem) {
-    -webkit-border-radius: @radius;
-    -moz-border-radius: @radius;
-    -ms-border-radius: @radius;
-    -o-border-radius: @radius;
-    border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
 }
 .vendors(@a,@b) {
 	-webkit-@{a}: @b;
@@ -77,12 +81,12 @@ header {
 		width: 100%;
 		height: 100%;
 		pointer-events: none;
-		opacity: 0.125;
+		opacity: 0.1;
 		padding: 0.25rem 0.5rem;
 		box-sizing: border-box;
 		text-align: justify;
 		font-size: 1.125rem;
-		color: @bg;
+		color: @tx;
 		-webkit-box-shadow: inset 0 0 2rem @tmColor;
 	}
 	&.fixed { position: fixed; }
@@ -106,7 +110,7 @@ header {
 			padding: 0.5rem;
 			vertical-align: middle;
 			.Radius(0.5rem);
-			background: mix(@bg, @tmColor,90%);
+			background: @bg;
 			a {
 				display: block;
 				img {
@@ -170,7 +174,7 @@ header {
 				display: inline-block;
 				margin: 0 -0.125rem;
 				list-style-type: none;
-				background-clip: padding-box;
+				opacity: 0.75;
 				@media screen {
 					@media (max-width: @width_mob_large) {
 						width: 100% / 3;
@@ -196,6 +200,7 @@ header {
 					}
 				}
 				&.active {
+					opacity: 1;
 					background: mix(@bg, @tmColor,10%);
 					a {
 						img { opacity: 1; }
@@ -317,7 +322,7 @@ main {
 			}
 			.ava {
 				float: left;
-				margin: 0 1.25rem 0 0;
+				margin: 0 1.25rem 0;
 				@media screen and (max-width: @width_mob_small) {
 					display: block;
 					text-align: center;
@@ -367,27 +372,25 @@ main {
 					width: 1.5rem;
 					height: 1.5rem;
 				}
-				&:hover + ul {
-				}
 			}
 			.menu.contacts {
 				display: block;
 				position: absolute;
-				right: 0.25rem;
 				top: 0;
-				z-index: 999;
-				.Radius;
-//				clear: both;
-//				margin: 1rem 0 0 0;
-				padding: 0.25rem 0;
-//				width: 10rem;
-				text-align: left;
-//				overflow-x: auto;
-//				white-space: nowrap;
-				background-color: white;
-				.BoxShadow(3);
+				bottom: 0;
+				left: 0;
+				right: 3rem;
+				opacity: 0.90;
+				margin: 0;
+				padding: 0.75rem 0;
+				text-align: center;
+				.vendors(transition,0.5s ease);
+//				border-top: 1px solid mix(@tx,@bg,7%);
+				.vendors(transform, translateY(0));
+				background: @bg;
 				&.close {
-					display: none;
+					opacity: 0;
+					.vendors(transform, translateY(6rem));
 				}
 				@media screen and (max-width: @width_mob_small) {
 					text-align: center;
@@ -396,20 +399,17 @@ main {
 				li {
 					display: inline-block;
 					position: relativve;
-//					margin: 0.25rem;
 					list-style-type: none;
-//					padding: 0.25rem 0.5rem;
-					border-radius: 1.5rem;
-//					background: #ccc;
+					vertical-align: middle;
 					a {
 						margin-bottom: 0.0625rem;
 						display: block;
-						padding: 0.5rem 1.5rem;
-//						font-weight: bold;
+						padding: 0.25rem 1rem;
+						font-weight: bold;
 						text-decoration: none;
-//						text-transform: uppercase;
-//						color: desaturate(mix(@tmColor, white, 50%),20%) !important;
-						color: Black;
+						text-transform: uppercase;
+						color: desaturate(mix(@tmColor, white, 100%),20%) !important;
+//						color: Black;
 					}
 				}
 			}
