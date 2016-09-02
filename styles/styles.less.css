@@ -236,12 +236,11 @@ main {
 	main {
 		display: block;
 		overflow: hidden;
+		max-width: @width_tab_large;
+		margin: 0.5rem auto;
+		padding: 0 1rem;
+		background: @bg;
 		article {
-			overflow: hidden;
-			max-width: @width_tab_large;
-			margin: 0.5rem auto;
-			padding: 0 1rem;
-			background: @bg;
 			> h1 {
 				font-size: 2rem;
 			}
@@ -292,6 +291,49 @@ main {
 					img {
 						display: block;
 						max-height: 15rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Projects Page */
+
+.projects {
+	main {
+		margin: auto;
+		padding: 0;
+		overflow: hidden;
+		max-width: @width_tab_large;
+		article {
+			margin: 0.5rem;
+			padding: 1rem;
+			background-color: white;
+			border: 1px solid mix(@tx,@bg,7%);
+			&:last-child {
+				border: none;
+			}
+			.picture {
+				margin: 0.5rem;
+			}
+			.members {
+				.ava {
+					display: inline-block;
+					margin: 0;
+					a {
+						display: inline-block;
+						margin-bottom: -0.2rem;
+						img {
+							display: block;
+							margin: auto;
+							height: 3rem;
+							width: 3rem;
+							max-height: 100%;
+							max-width: 100%;
+							overflow: hidden;
+							border-radius: 100%;
+						}
 					}
 				}
 			}
@@ -362,7 +404,7 @@ main {
 			.button {
 				position: absolute;
 				right: 0.5rem;
-				top: 0.25rem;
+				top: 0.5rem;
 				padding: 0.25rem;
 				cursor: pointer;
 				img[src*="menu.svg"] {
@@ -390,7 +432,7 @@ main {
 				&.close {
 					opacity: 0;
 					.vendors(transform, translate(150%,-50%));
-					border-radius: 200%;
+					border-radius: 100%;
 				}
 				@media screen and (max-width: @width_mob_small) {
 					text-align: center;

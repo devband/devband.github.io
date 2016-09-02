@@ -10,7 +10,6 @@ var header_container_height = header_container.clientHeight;
 
 function bodyPaddingTop() {
 	body.style.paddingTop = header.clientHeight + "px";
-//	alert(header_container.clientHeight);
 }
 bodyPaddingTop();
 
@@ -47,6 +46,14 @@ function hidden_menu(target) {
 }
 
 /*
+ *  Copy number purse     
+ */
+
+function copyPurseNumber(link) {
+	prompt("Вы можете скопировать номер кошелька:", link.title);
+}
+ 
+/*
  *		Gallery	
  */ 
 
@@ -73,7 +80,3 @@ for (var i = 0; i < massPic.length; i++) {
 	gallery.appendChild(a);
 
 }
-
-gallery.addEventListener('click', function() {
-//	alert(event.target.parentNode.innerHTML);
-						 });

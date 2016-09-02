@@ -204,6 +204,9 @@ main section {
 .home main {
   display: block;
   overflow: hidden;
+}
+.home main article {
+  overflow: hidden;
   max-width: 80rem;
   margin: 0.5rem auto;
   padding: 0 1rem;
@@ -256,42 +259,6 @@ main section {
 .home main .gallery > div a img {
   display: block;
   max-height: 15rem;
-}
-/* Projects Page */
-.projects main {
-  margin: auto;
-  padding: 0;
-  overflow: hidden;
-  max-width: 80rem;
-}
-.projects main article {
-  margin: 0.5rem auto;
-  background-color: white;
-  border: 1px solid #ededed;
-}
-.projects main article:last-child {
-  border: none;
-}
-.projects main article .picture {
-  margin: 0.5rem;
-}
-.projects main article .members .ava {
-  display: inline-block;
-  margin: 0;
-}
-.projects main article .members .ava a {
-  display: inline-block;
-  margin-bottom: -0.2rem;
-}
-.projects main article .members .ava a img {
-  display: block;
-  margin: auto;
-  height: 3rem;
-  width: 3rem;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 100%;
 }
 /* Developers Page */
 .developers article {
@@ -364,7 +331,7 @@ main section {
 .developers article section .button {
   position: absolute;
   right: 0.5rem;
-  top: 0.5rem;
+  top: 0.25rem;
   padding: 0.25rem;
   cursor: pointer;
 }
@@ -405,7 +372,7 @@ main section {
   -ms-transform: translate(150%, -50%);
   -o-transform: translate(150%, -50%);
   transform: translate(150%, -50%);
-  border-radius: 100%;
+  border-radius: 200%;
 }
 @media screen and (max-width: 20rem) {
   .developers article section .menu.contacts {
