@@ -74,14 +74,20 @@ header .header_container.hidden {
 }
 header .header_container .logo {
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.75rem;
   vertical-align: middle;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  g-ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
-  border-radius: 0.5rem;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  g-ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  border: 0.25rem ridge #38b9ff;
   background: white;
+  -webkit-box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
 }
 header .header_container .logo a {
   display: block;
@@ -265,8 +271,14 @@ main section {
   max-width: 80rem;
 }
 .projects main article {
+  position: relative;
+  overflow: hidden;
   margin: 0.5rem;
-  padding: 1rem;
+  -webkit-border-radius: 0.125rem;
+  -moz-border-radius: 0.125rem;
+  g-ms-border-radius: 0.125rem;
+  -o-border-radius: 0.125rem;
+  border-radius: 0.125rem;
   background-color: white;
   border: 1px solid #ededed;
 }
@@ -274,17 +286,60 @@ main section {
   border: none;
 }
 .projects main article .picture {
-  margin: 0.5rem;
+  float: left;
+  margin: 0 1rem 0 0;
+  text-align: center;
+  background: #bfbfbf;
 }
-.projects main article .members .ava {
+.projects main article .picture .container {
   display: inline-block;
-  margin: 0;
+  margin: 0 -0.3rem -0.3rem 0;
+  width: 10rem;
+  background: grey;
 }
-.projects main article .members .ava a {
+.projects main article .picture .container:last-child {
+  margin-right: 0;
+}
+.projects main article .picture .container img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+@media screen and (max-width: 40rem) {
+  .projects main article .picture {
+    float: none;
+    margin: 0;
+  }
+  .projects main article .picture .container {
+    margin: 0;
+  }
+}
+.projects main article .description {
+  margin: 0 1rem 5rem;
+  padding: 0;
+}
+.projects main article .description > h1 {
+  font-size: 1.25rem;
+}
+.projects main article .description > p {
+  max-height: 6rem;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+}
+.projects main article .description .members {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.projects main article .description .members .ava {
+  float: left;
+}
+.projects main article .description .members .ava a {
   display: inline-block;
-  margin-bottom: -0.2rem;
+  margin: 0 0 -0.3rem 0.5rem;
 }
-.projects main article .members .ava a img {
+.projects main article .description .members .ava a img {
   display: block;
   margin: auto;
   height: 3rem;

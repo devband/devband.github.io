@@ -106,10 +106,12 @@ header {
 		}
 		.logo {
 			display: inline-block;
-			padding: 0.5rem;
+			padding: 0.75rem;
 			vertical-align: middle;
-			.Radius(0.5rem);
+			.Radius(100%);
+			border: 0.25rem ridge saturate(@tmColor + 50%, 70%);
 			background: @bg;
+			.vendors(box-shadow,0.125rem 0.25rem 0.5rem rgba(0,0,0,0.15));
 			a {
 				display: block;
 				img {
@@ -307,32 +309,78 @@ main {
 		overflow: hidden;
 		max-width: @width_tab_large;
 		article {
+			position: relative;
+			overflow: hidden;
 			margin: 0.5rem;
-			padding: 1rem;
+			.Radius;
 			background-color: white;
 			border: 1px solid mix(@tx,@bg,7%);
+//			.BoxShadow;
 			&:last-child {
 				border: none;
 			}
 			.picture {
-				margin: 0.5rem;
-			}
-			.members {
-				.ava {
+				float: left;
+				margin: 0 1rem 0 0;
+				text-align: center;
+				background: mix(@bg,@tx,75%);
+				.container {
 					display: inline-block;
-					margin: 0;
-					a {
-						display: inline-block;
-						margin-bottom: -0.2rem;
-						img {
-							display: block;
-							margin: auto;
-							height: 3rem;
-							width: 3rem;
-							max-height: 100%;
-							max-width: 100%;
-							overflow: hidden;
-							border-radius: 100%;
+					margin: 0 -0.3rem -0.3rem 0;
+					width: 10rem;
+					background: grey;
+					&:last-child {
+						margin-right: 0;
+					}
+					img {
+						display: block;
+						margin: auto;
+						max-width: 100%;
+						max-height: 100%;
+					}
+				}
+			}
+			@media screen {
+				@media (max-width: @width_mob_large) {
+					.picture {
+						float: none;
+						margin: 0;
+						.container {
+							margin: 0;
+						}
+					}
+				}
+			}
+			.description {
+				margin: 0 1rem 5rem;
+				padding: 0;
+				> h1 {
+					font-size: 1.25rem;
+				}
+				> p {
+					max-height: 6rem;
+					overflow-y: auto;
+					text-overflow: ellipsis;
+				}
+				.members {
+					position: absolute;
+					bottom: 1rem;
+					right: 1rem;
+					.ava {
+						float: left;
+						a {
+							display: inline-block;
+							margin: 0 0 -0.3rem 0.5rem;
+							img {
+								display: block;
+								margin: auto;
+								height: 3rem;
+								width: 3rem;
+								max-height: 100%;
+								max-width: 100%;
+								overflow: hidden;
+								border-radius: 100%;
+							}
 						}
 					}
 				}
