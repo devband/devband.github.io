@@ -7,6 +7,7 @@
 	<meta name="description" content="DevBand - cайт команды разаботчиков.">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
 	<title>DevBanvd | Проекты</title>
+	<link rel="shortcut icon" href="/src/favicon.png" type="image/png">
 	<link href="styles/styles.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
 	<script 8type="text/javascript" src="../../z_forum_helpers.js"></script>
@@ -48,14 +49,14 @@
 				<div class="container">
 					<img src="src/material_light.png">
 				</div>
-				<div class="contayner">
+				<div class="container">
 					<img src="src/material_dark.png">
 				</div>
 			</section>
 			<section class="description">
 				<h1>ForPDA: Неофициальный клиент сайта 4pda.ru</h1>
 				<p>Приложение позволяет: просматривать новости, отвечать на форуме, переписываться с пользователями средствами QMS, имеет функции для курирования тем, вкладки, заметки и многое-многое другое...</p>
-				<biv class="members">
+				<div class="members">
 					<div class="ava nizamiev">
 						<a href="src/nizamiev.jpg" title="nizamiev.jpg">
 							<img src="src/nizamiev.jpg" alt="nizamiev.jpg">

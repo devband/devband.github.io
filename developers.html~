@@ -44,8 +44,8 @@
 	</header>
 
 	<main>
-		<h1>Наша команда</h1>
 		<article>
+		<h1>Наша команда</h1>
 			<section>
 				<div class="ava">
 					<a href="src/nizamiev.jpg" title="nizamiev.jpg">
