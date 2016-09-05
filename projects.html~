@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+
+<link rel="shortcut icon" href="src/favicon.png" type="image/png"><!DOCTYPE html>
 <html>
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <link rel="shortcut icon" href="src/favicon.png" type="image/png">	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="DevBand - cайт команды разаботчиков.">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
 	<title>DevBanvd | Проекты</title>
-	<link rel="shortcut icon" href="/src/favicon.png" type="image/png">
+	<link rel="shortcut icon" href="src/favicon.png" type="image/png">
 	<link href="styles/styles.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
 	<script 8type="text/javascript" src="../../z_forum_helpers.js"></script>
@@ -24,8 +26,10 @@
 					<img src="src/db_logo.png" title="Лого DevBand">
 				</a>
 			</div>
-		  <h1>DevBand <span>Android & Web Developers</span></h1>
-		  <a class="button" href="#" onclick="bodyPaddingTop()"><img src="src/more_menu.svg"></a>
+			<h1>DevBand <span>Android & Web Developers</span></h1>
+			<a class="button" href="#" onclick="bodyPaddingTop()">
+				<img src="src/more_menu.svg">
+			</a>
 		</div>
 
 		<nav>

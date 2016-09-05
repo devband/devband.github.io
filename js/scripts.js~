@@ -20,10 +20,6 @@ function headerHidden() {
 	}
 }
 
-/*
- *		Content Padding Top
- */
-
 function bodyPaddingTop() {
 	body.style.paddingTop = header.clientHeight + "px";
 }
