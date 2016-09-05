@@ -50,6 +50,7 @@ body {
 	padding: 0;
 	font-family: 'Roboto';
 	font-size: 1rem;
+	line-height: 1.25;
 	background-color: mix(@tx,@bg,5%);
 }
 
@@ -268,7 +269,7 @@ main {
 					display: inline-block;
 					margin: 0 1rem;
 					a {
-						display: inline-block;
+						dispaly: inline-block;
 						img {
 							display: block;
 							height: 7.5rem;
@@ -315,6 +316,7 @@ main {
 		article {
 			position: relative;
 			overflow: hidden;
+			min-height: 20rem;
 			margin: 0.5rem;
 			.Radius;
 			background-color: white;
@@ -324,18 +326,23 @@ main {
 				border: none;
 			}
 			.picture {
+				position: relative;
 				float: left;
+				width: 20rem;
+				height: 20rem;
+				overflow: hidden;
 				margin: 0 1rem 0 0;
 				text-align: center;
 				background: mix(@bg,@tx,75%);
+				&:before {
+					content:'';
+					display: inline-block;
+					height: 100%;
+					vertical-align: middle;
+				}
 				.container {
 					display: inline-block;
-					margin: 0 -0.3rem -0.3rem 0;
-					width: 10rem;
-					background: grey;
-					&:last-child {
-						margin-right: 0;
-					}
+					vertical-align: middle;
 					img {
 						display: block;
 						margin: auto;
@@ -343,14 +350,14 @@ main {
 						max-height: 100%;
 					}
 				}
-			}
-			@media screen {
-				@media (max-width: @width_mob_large) {
-					.picture {
+				@media screen {
+					@media (max-width: @width_mob_large) {
 						float: none;
 						margin: 0;
+						width: auto;
+						height: 15rem;
 						.container {
-							margin: 0;
+							
 						}
 					}
 				}
@@ -376,15 +383,30 @@ main {
 						background: -webkit-linear-gradient(left, transparent 0%, @bg 50%);
 					}
 				}
-				.members {
+				.footer {
 					display: block;
 					position: absolute;
-					bottom: 1rem;
-					right: 1rem;
-					.ava {
+					bottom: 0;
+					left: 20rem;
+					right: 0;
+					box-sizing: border-box;
+					padding: 0 1rem;
+					margin: 0 0 1rem;
+					.buttons {
 						float: left;
+						width: 3rem;
+						line-height: 3rem;
 						a {
 							display: inline-block;
+							padding: 0 0.5rem;
+							text-decoration: none;
+							text-transform: uppercase;
+							color: @tmColor;
+						}
+					}
+					.members {
+						.ava {
+							float: right;
 							margin: 0 0 0 0.5rem;
 							img {
 								display: block;
@@ -396,6 +418,17 @@ main {
 								overflow: hidden;
 								border-radius: 100%;
 							}
+						}
+					}
+				}
+				@media screen {
+					@media (max-width: @width_mob_large) {
+						margin-bottom: 0;
+						.footer {
+							position: relative;
+							left: 0;
+							overflow: hidden;
+							padding: 0;
 						}
 					}
 				}

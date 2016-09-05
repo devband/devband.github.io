@@ -211,11 +211,11 @@ main section {
 /* Home Page */
 .home main {
   display: block;
-  overflow: hidden;
   max-width: 80rem;
   margin: 0 auto;
 }
 .home main article {
+  overflow: hidden;
   margin: 0.5rem;
   padding: 0 1rem;
   -webkit-border-radius: 0.125rem;
@@ -333,9 +333,19 @@ main section {
   font-size: 1.25rem;
 }
 .projects main article .description > p {
-  max-height: 6rem;
-  overflow-y: auto;
-  text-overflow: ellipsis;
+  position: relative;
+  max-height: 6.25rem;
+  overflow: hidden;
+}
+.projects main article .description > p:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5rem;
+  height: 1rem;
+  background: -webkit-linear-gradient(left, transparent 0%, white 50%);
 }
 .projects main article .description .members {
   display: block;

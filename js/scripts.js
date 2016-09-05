@@ -59,7 +59,7 @@ function hidden_menu(target) {
 function copyPurseNumber(link) {
 	prompt("Вы можете скопировать номер кошелька:", link.title);
 }
- 
+
 /*
  *		Gallery	
  */ 

@@ -8,6 +8,7 @@ body {
   padding: 0;
   font-family: 'Roboto';
   font-size: 1rem;
+  line-height: 1.25;
   background-color: #f2f2f2;
 }
 /*
@@ -211,10 +212,18 @@ main section {
 /* Home Page */
 .home main {
   display: block;
-  overflow: hidden;
   max-width: 80rem;
-  margin: 0.5rem auto;
+  margin: 0 auto;
+}
+.home main article {
+  overflow: hidden;
+  margin: 0.5rem;
   padding: 0 1rem;
+  -webkit-border-radius: 0.125rem;
+  -moz-border-radius: 0.125rem;
+  -ms-border-radius: 0.125rem;
+  -o-border-radius: 0.125rem;
+  border-radius: 0.125rem;
   background: white;
 }
 .home main article > h1 {
@@ -238,7 +247,7 @@ main section {
   margin: 0 1rem;
 }
 .home main article section .ava a {
-  display: inline-block;
+  dispaly: inline-block;
 }
 .home main article section .ava a img {
   display: block;
@@ -288,33 +297,32 @@ main section {
   border: none;
 }
 .projects main article .picture {
+  position: relative;
   float: left;
+  width: 20rem;
+  height: 20rem;
+  line-height: 20rem;
+  overflow: hidden;
   margin: 0 1rem 0 0;
   text-align: center;
   background: #bfbfbf;
 }
 .projects main article .picture .container {
   display: inline-block;
-  margin: 0 -0.3rem -0.3rem 0;
-  width: 10rem;
-  background: grey;
-}
-.projects main article .picture .container:last-child {
-  margin-right: 0;
 }
 .projects main article .picture .container img {
   display: block;
   margin: auto;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
 }
 @media screen and (max-width: 40rem) {
   .projects main article .picture {
     float: none;
     margin: 0;
-  }
-  .projects main article .picture .container {
-    margin: 0;
+    width: auto;
+    height: 15rem;
+    line-height: 15rem;
   }
 }
 .projects main article .description {
@@ -325,24 +333,47 @@ main section {
   font-size: 1.25rem;
 }
 .projects main article .description > p {
-  max-height: 6rem;
-  overflow-y: auto;
-  text-overflow: ellipsis;
+  position: relative;
+  max-height: 6.25rem;
+  overflow: hidden;
 }
-.projects main article .description .members {
+.projects main article .description > p:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5rem;
+  height: 1rem;
+  background: -webkit-linear-gradient(left, transparent 0%, white 50%);
+}
+.projects main article .description .footer {
   display: block;
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 0;
+  left: 20rem;
+  right: 0;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin: 0 0 1rem;
 }
-.projects main article .description .members .ava {
+.projects main article .description .footer .buttons {
   float: left;
+  width: 3rem;
+  line-height: 3rem;
 }
-.projects main article .description .members .ava a {
+.projects main article .description .footer .buttons a {
   display: inline-block;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #0288d1;
+}
+.projects main article .description .footer .members .ava {
+  float: right;
   margin: 0 0 0 0.5rem;
 }
-.projects main article .description .members .ava a img {
+.projects main article .description .footer .members .ava img {
   display: block;
   margin: auto;
   height: 3rem;
@@ -351,6 +382,17 @@ main section {
   max-width: 100%;
   overflow: hidden;
   border-radius: 100%;
+}
+@media screen and (max-width: 40rem) {
+  .projects main article .description {
+    margin-bottom: 0;
+  }
+  .projects main article .description .footer {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+  }
 }
 /* Developers Page */
 .developers article {

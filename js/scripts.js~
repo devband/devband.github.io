@@ -20,6 +20,10 @@ function headerHidden() {
 	}
 }
 
+/*
+ *		Content Padding Top
+ */
+
 function bodyPaddingTop() {
 	body.style.paddingTop = header.clientHeight + "px";
 }
@@ -55,7 +59,19 @@ function hidden_menu(target) {
 function copyPurseNumber(link) {
 	prompt("Вы можете скопировать номер кошелька:", link.title);
 }
- 
+
+/*
+ *		Resize	
+ */
+
+window.addEventListener('resize',resizePictureContainer);
+function resizePictureContainer() {
+	var pictures = document.querySelectorAll('.picture');
+	for (var i = 0; i < pictures.length; i++) {
+		pictures[i].style.height = pictures[i].clientWidth + 'px';
+	}
+}
+
 /*
  *		Gallery	
  */ 
