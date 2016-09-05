@@ -9,7 +9,15 @@
 	<meta name="description" content="DevBand - cайт команды разаботчиков.">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
 	<title>DevBanvd | Проекты</title>
-	<link rel="shortcut icon" href="src/favicon.png" type="image/png">
+	<!--link rel="shortcut icon" href="src/favicon.png" type="image/png"-->
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 	<link href="styles/styles.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
 	<script 8type="text/javascript" src="../../z_forum_helpers.js"></script>
@@ -83,7 +91,7 @@
 			</section>
 			<section class="description">
 				<h1>Web Developers Browser: Браузер для Web-разработки на мобильных устройствах</h1>
-				<p>Андроид прилоение для отладки сайтов, основные достоинства, это: изменение ширины окна, размера шрифта и копирование в буфер обмена средствами JS, плюс внешний JS модуль - LESS компилятор.</p>
+				<p>Андроид прилоение для отладки сайтов, основные достоинства, это: изменение ширины окна, размера шрифта и копирование в буфер обмена средствами JS, плюс внешний JS модуль для работы с процессором LESS.</p>
 				<div class="footer">
 					<div class="buttons">
 						<a href="#">Подобнее</a>
