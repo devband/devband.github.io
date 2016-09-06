@@ -68,8 +68,10 @@ function copyPurseNumber(link) {
 // Переход по страницам 
 
 var pages = ['index.html','projects.html','developers.html'];
-
 function swipePage(index) {
+	if (location.pathname == "/" && index == +1) {
+		location.href = location.href + pages[1];
+	}
 	pages.forEach(function(item,i,arr) {
 		if (~location.href.indexOf(item)) {
 			if (pages[i + index] != undefined) location.href = pages[i + index];
