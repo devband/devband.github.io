@@ -89,7 +89,7 @@ document.addEventListener('touchstart', function(event) {
 }, false);
 /*Ловим движение пальцем*/
 document.addEventListener('touchmove', function(event) {
-	event.preventDefault();
+//	event.preventDefault();
 	event.stopPropagation();
 	var otk = {};
 	nowPoint = event.changedTouches[0];
