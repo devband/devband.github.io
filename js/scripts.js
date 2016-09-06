@@ -17,6 +17,7 @@ function headerHidden() {
 	if (window.pageYOffset < header_container_height) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
+		bodyPaddingTop();
 	}
 }
 
@@ -66,12 +67,13 @@ function copyPurseNumber(link) {
 
 // Переход по страницам 
 
-var pages = ['index.html','projects.html','contacts.html'];
-location.href.indexOf( 'index.html' );
+var pages = ['index.html','projects.html','developers.html'];
 
-function changePageSwipe() {
+function swipePage(index) {
 	pages.forEach(function(item,i,arr) {
-		
+		if (~location.href.indexOf(item)) {
+			if (pages[i + index] != undefined) location.href = pages[i + index];
+		}
 	});
 }
 
@@ -98,10 +100,10 @@ document.addEventListener('touchmove', function(event) {
 	/*Для примера*/
 	if (Math.abs(otk.x) > 200) {
 		if (otk.x < 0) { /*СВАЙП ВЛЕВО(ПРЕД.СТРАНИЦА)*/
-			
+			swipePage(+1);
 		}
 		if (otk.x > 0) { /*СВАЙП ВПРАВО(СЛЕД.СТРАНИЦА)*/
-			
+			swipePage(-1);
 		}
 		startPoint = {
 			x: nowPoint.pageX,
@@ -117,9 +119,17 @@ document.addEventListener('touchend', function(event) {
 	var yAbs = Math.abs(startPoint.y - nowPoint.pageY);
 	if ((xAbs > 20 || yAbs > 20) && (pdelay.getTime() - ldelay.getTime()) < 200) {
 		if (xAbs > yAbs) {
-			if (nowPoint.pageX < startPoint.x) { /*СВАЙП ВЛЕВО*/ } else { /*СВАЙП ВПРАВО*/ }
+			if (nowPoint.pageX < startPoint.x) { /*СВАЙП ВЛЕВО*/ 
+				swipePage(+1);
+			} else { /*СВАЙП ВПРАВО*/ 
+				swipePage(-1);
+			}
 		} else {
-			if (nowPoint.pageY < startPoint.y) { /*СВАЙП ВВЕРХ*/ } else { /*СВАЙП ВНИЗ*/ }
+			if (nowPoint.pageY < startPoint.y) { /*СВАЙП ВВЕРХ*/ 
+				
+			} else { /*СВАЙП ВНИЗ*/ 
+				
+			}
 		}
 	}
 }, false);
