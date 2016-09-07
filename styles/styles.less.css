@@ -424,6 +424,9 @@ main {
 				@media screen {
 					@media (max-width: @width_mob_large) {
 						margin-bottom: 0;
+						> p {
+							max-height: auto;
+						}
 						.footer {
 							position: relative;
 							left: 0;

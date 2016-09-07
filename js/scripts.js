@@ -1,7 +1,6 @@
 /*
  *		header hidden
- */ 
-
+ */
 var body = document.body;
 var header = document.querySelector("header");
 var header_container = document.querySelector(".header_container");
@@ -9,6 +8,7 @@ var nav = document.querySelector("nav");
 var header_container_height = header_container.clientHeight;
 
 window.addEventListener("scroll", headerHidden);
+
 function headerHidden() {
 	if (nav.getBoundingClientRect().top <= 20) {
 		header_container.classList.add("hidden");
@@ -29,9 +29,8 @@ function bodyPaddingTop() {
 	body.style.paddingTop = header.clientHeight + "px";
 }
 bodyPaddingTop();
-window.addEventListener("orientationchange", function() {
-	bodyPaddingTop();
-}, false);
+header.addEventListener('resize', bodyPaddingTop, false);
+// window.addEventListener("orientationchange", function() {bodyPaddingTop();});
 
 /*
  *		Menu toggler
@@ -40,6 +39,7 @@ window.addEventListener("orientationchange", function() {
 function hidden_menu(target) {
 	var button_menu = document.querySelectorAll('.menu.contacts');
 	var clickedButton = target.parentNode.querySelector('.menu.contacts');
+
 	function closeAll() {
 		for (var i = 0; i < button_menu.length; i++) {
 			button_menu[i].classList.add("close");
@@ -67,78 +67,48 @@ function copyPurseNumber(link) {
 
 // Переход по страницам 
 
-var pages = ['index.html','projects.html','developers.html'];
+var pages = ['index.html', 'projects.html', 'developers.html'];
+
 function swipePage(index) {
 	if (location.pathname == "/" && index == +1) {
 		location.href = location.href + pages[1];
 	}
-	pages.forEach(function(item,i,arr) {
+	pages.forEach(function(item, i, arr) {
 		if (~location.href.indexOf(item)) {
 			if (pages[i + index] != undefined) location.href = pages[i + index];
 		}
 	});
 }
 
-// -----
+// touch hendler
 
-var startPoint = {};
-var nowPoint;
-var ldelay;
-document.addEventListener('touchstart', function(event) {
-//	event.preventDefault();
-	event.stopPropagation();
-	startPoint.x = event.changedTouches[0].pageX;
-	startPoint.y = event.changedTouches[0].pageY;
-	ldelay = new Date();
-}, false);
-/*Ловим движение пальцем*/
-document.addEventListener('touchmove', function(event) {
-//	event.preventDefault();
-	event.stopPropagation();
-	var otk = {};
-	nowPoint = event.changedTouches[0];
-	otk.x = nowPoint.pageX - startPoint.x;
-	/*Обработайте данные*/
-	/*Для примера*/
-	if (Math.abs(otk.x) > 200) {
-		if (otk.x < 0) { /*СВАЙП ВЛЕВО(ПРЕД.СТРАНИЦА)*/
-			swipePage(+1);
+(function() {
+	var startX, startY, moveY, moveX, l = 100;
+
+	window.addEventListener('touchstart', function(e) {
+		startX = e.changedTouches[0].pageX;
+		startY = e.changedTouches[0].pageY;
+	}, false);
+	window.addEventListener('touchmove', function(e) {
+		moveX = e.changedTouches[0].pageX;
+		moveY = e.changedTouches[0].pageY;
+		if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+			e.preventDefault();
 		}
-		if (otk.x > 0) { /*СВАЙП ВПРАВО(СЛЕД.СТРАНИЦА)*/
+	});
+	window.addEventListener('touchend', function(e) {
+		if (moveX - startX >= l) {
 			swipePage(-1);
 		}
-		startPoint = {
-			x: nowPoint.pageX,
-			y: nowPoint.pageY
-		};
-	}
-}, false);
-/*Ловим отпускание пальца*/
-document.addEventListener('touchend', function(event) {
-	var pdelay = new Date();
-	nowPoint = event.changedTouches[0];
-	var xAbs = Math.abs(startPoint.x - nowPoint.pageX);
-	var yAbs = Math.abs(startPoint.y - nowPoint.pageY);
-	if ((xAbs > 20 || yAbs > 20) && (pdelay.getTime() - ldelay.getTime()) < 200) {
-		if (xAbs > yAbs) {
-			if (nowPoint.pageX < startPoint.x) { /*СВАЙП ВЛЕВО*/ 
-				swipePage(+1);
-			} else { /*СВАЙП ВПРАВО*/ 
-				swipePage(-1);
-			}
-		} else {
-			if (nowPoint.pageY < startPoint.y) { /*СВАЙП ВВЕРХ*/ 
-				
-			} else { /*СВАЙП ВНИЗ*/ 
-				
-			}
+		if (startX - moveX >= l) {
+			swipePage(+1);
 		}
-	}
-}, false);
+	});
+})();
 
 /*
  *		Gallery	
- */ 
+ */
 
 var gallery = document.querySelector('.gallery > div');
 

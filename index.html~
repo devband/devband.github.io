@@ -24,7 +24,8 @@
 	<link rel="manifest" href="favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
 	<link href="styles/styles.css" rel="stylesheet">
 	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>

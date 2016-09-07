@@ -316,7 +316,7 @@ main {
 		article {
 			position: relative;
 			overflow: hidden;
-			min-height: 2rem;
+			min-height: 20rem;
 			margin: 0.5rem;
 			.Radius;
 			background-color: white;
