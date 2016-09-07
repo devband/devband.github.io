@@ -83,11 +83,12 @@ function swipePage(index) {
 // touch hendler
 
 (function() {
-	var startX, startY, moveY, moveX, l = 100;
+	var startX, startY, moveY, moveX, start, swipelangth = 200;
 
 	window.addEventListener('touchstart', function(e) {
 		startX = e.changedTouches[0].pageX;
 		startY = e.changedTouches[0].pageY;
+		start = new Date;
 	}, false);
 	window.addEventListener('touchmove', function(e) {
 		moveX = e.changedTouches[0].pageX;
@@ -97,11 +98,13 @@ function swipePage(index) {
 		}
 	});
 	window.addEventListener('touchend', function(e) {
-		if (moveX - startX >= l) {
-			swipePage(-1);
-		}
-		if (startX - moveX >= l) {
-			swipePage(+1);
+		if (new Date - start < 500) { 
+			if (moveX - startX >= swipelangth) {
+				swipePage(-1);
+			}
+			if (startX - moveX >= swipelangth) {
+				swipePage(+1);
+			}
 		}
 	});
 })();

@@ -558,6 +558,16 @@ main {
 }
 
 /*
+ *		Full description
+ */
+
+.full_description {
+	navi {
+		text-align: left;
+	}
+}
+
+/*
  *
  *    FOOTER
  *
