@@ -7,6 +7,7 @@ var nav,
 
 document.addEventListener('DOMContentLoaded', domContentLoaded);
 
+
 function domContentLoaded() {
 
 	body = document.body;
@@ -43,21 +44,12 @@ function headerHidden() {
 		header_container.classList.add("hidden");
 		header.classList.add("fixed");
 	}
-	if (window.pageYOffset < header_container_height) {
+	if (window.pageYOffset < header_container_height + 20) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
 		bodyPaddingTop();
 	}
 }
-
-/*
- *		Content Padding Top
- */
-
-function bodyPaddingTop() {
-	body.style.paddingTop = header.clientHeight + "px";
-}
-header.addEventListener('resize', bodyPaddingTop, false);
 
 /*
  *		Menu toggler
@@ -110,7 +102,7 @@ function swipePage(index) {
 // touch hendler
 
 (function() {
-	var startX, startY, moveY, moveX, start, swipelangth = 200;
+	var startX, startY, moveY, moveX, start, swipelangth = 150;
 
 	window.addEventListener('touchstart', function(e) {
 		startX = e.changedTouches[0].pageX;
@@ -123,7 +115,7 @@ function swipePage(index) {
 		if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
 			e.preventDefault();
 		}
-	});
+	}, false);
 	window.addEventListener('touchend', function(e) {
 		if (new Date - start < 500) {
 			if (moveX - startX >= swipelangth) {
@@ -133,8 +125,18 @@ function swipePage(index) {
 				swipePage(+1);
 			}
 		}
-	});
+	}, false);
 })();
+
+
+/*
+ *		Content Padding Top
+ */
+
+function bodyPaddingTop() {
+	body.style.paddingTop = header.clientHeight + "px";
+}
+header.addEventListener('resize', bodyPaddingTop, false);
 
 /*
  *		Gallery	
