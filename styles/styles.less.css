@@ -69,7 +69,7 @@ header {
 	margin: 0;
 	color: white;
 	background: mix(@bg, @tmColor,10%);
-	z-index: 99;
+	z-index: 999;
 	box-sizing: border-box;
 	.BoxShadow(2);
 	&:before { // фон шапки
@@ -165,15 +165,15 @@ header {
 		margin: 0;
 		overflow-x: auto;
 		box-sizing: border-box;
-		text-align: center;
 		overflow-x: auto;
+		white-space: nowrap;
 		color: white;
 		background: desaturate(@tmColor,15%);
 		ul {
 			display: block;
 			padding: 0;
 			margin: 0;
-			white-space: nowrap;
+			text-align: center;
 			li {
 				display: inline-block;
 				margin: 0 -0.125rem;
@@ -212,6 +212,28 @@ header {
 					}
 				}
 			}
+		}
+		.button {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 0 -0.3rem;
+			background: inherit;
+			a {
+				display: inline-block;
+				padding: 1rem 1.25rem;
+				img {
+					display: block;
+					margin: 0 auto;
+					width: 1.5rem;
+					height: 1.5rem;
+				}
+			}
+		}
+		.title {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			font-weight: bold;
 		}
 	}
 }
@@ -582,6 +604,10 @@ footer {
 		padding: 0;
 		margin: 0;
 	}
+}
+
+.progress {
+	
 }
 
 /*

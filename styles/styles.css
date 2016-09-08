@@ -27,7 +27,7 @@ header {
   margin: 0;
   color: white;
   background: #1b94d6;
-  z-index: 99;
+  z-index: 999;
   box-sizing: border-box;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -141,8 +141,8 @@ header .header_container .button img {
 header nav {
   margin: 0;
   box-sizing: border-box;
-  text-align: center;
   overflow-x: auto;
+  white-space: nowrap;
   color: white;
   background: #1283c1;
 }
@@ -150,7 +150,7 @@ header nav ul {
   display: block;
   padding: 0;
   margin: 0;
-  white-space: nowrap;
+  text-align: center;
 }
 header nav ul li {
   display: inline-block;
@@ -191,6 +191,28 @@ header nav ul li.active a img {
 }
 header nav ul li.active a span {
   color: #ffffff;
+}
+header nav .button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 -0.3rem;
+  background: inherit;
+}
+header nav .button a {
+  display: inline-block;
+  padding: 1rem 1.25rem;
+}
+header nav .button a img {
+  display: block;
+  margin: 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+header nav .title {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-weight: bold;
 }
 /*
  *
@@ -284,6 +306,7 @@ main section {
 .projects main article {
   position: relative;
   overflow: hidden;
+  min-height: 20rem;
   margin: 0.5rem;
   -webkit-border-radius: 0.125rem;
   -moz-border-radius: 0.125rem;
@@ -391,6 +414,9 @@ main section {
 @media screen and (max-width: 40rem) {
   .projects main article .description {
     margin-bottom: 0;
+  }
+  .projects main article .description > p {
+    max-height: auto;
   }
   .projects main article .description .footer {
     position: relative;
@@ -532,6 +558,12 @@ main section {
   text-decoration: none;
   text-transform: uppercase;
   color: #1782bc !important;
+}
+/*
+ *		Full description
+ */
+.full_description navi {
+  text-align: left;
 }
 /*
  *

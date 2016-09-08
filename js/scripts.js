@@ -1,4 +1,17 @@
 /*
+ *		Progress bar
+ */
+ 
+var progressBar = document.createElement('div');
+progressBar.innerHTML = "<div><span>Loading...</span></div>";
+progressBar.className = "progressbar";
+progressBar.style.cssText = 'position:fixed ;top:0; left:0; right:0; bottom: 0; z-index: 99999; background: white;';
+document.body.appendChild(progressBar);
+window.addEventListener('load',function() {
+	document.body.removeChild(progressBar);
+});
+
+/*
  *		header hidden
  */
 var body = document.body;
