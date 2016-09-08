@@ -13,6 +13,35 @@ body {
 }
 /*
  *
+ *    PROGRESSBAR 
+ *
+*/
+body .progressbar {
+  display: none;
+  z-index: 99999;
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+body .progressbar span:before {
+  content: 'Loading...';
+  display: inline-block;
+  margin-top: -1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #808080;
+}
+body.load .progressbar {
+  display: block;
+}
+body.load header,
+body.load main,
+body.load footer {
+  display: none;
+}
+/*
+ *
  *    HEADER
  *
 */
@@ -212,30 +241,6 @@ header nav .title {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  font-weight: bold;
-}
-/*
- *
- *    PROGRESSBAR 
- *
-*/
-.progressbar {
-  display: none;
-  z-index: 998;
-  position: absolute;
-  width: 100%;
-  margin-top: 5rem;
-  text-align: center;
-}
-.progressbar.load {
-  display: block;
-}
-.progressbar.load + main,
-.progressbar.load main + footer {
-  display: none;
-}
-.progressbar span:before {
-  content: 'Loading...';
   font-weight: bold;
 }
 /*

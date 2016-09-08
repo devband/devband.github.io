@@ -17,19 +17,17 @@ body {
  *
 */
 body .progressbar {
-  display: none;
-  z-index: 99999;
-  position: fixed;
+  display: block;
+  z-index: 99999
+		position: fixed;
   top: 50%;
   width: 100%;
+  margin-top: -1rem;
   text-align: center;
 }
 body .progressbar span:before {
   content: 'Loading...';
-  display: inline-block;
-  margin-top: -0.75rem;
-  font-size: 1.5rem;
-  color: #808080;
+  font-weight: bold;
 }
 body.load .progressbar {
   display: block;
@@ -633,4 +631,3 @@ footer p {
   margin: 1.5rem;
   color: grey;
 }
-

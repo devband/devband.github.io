@@ -1,21 +1,40 @@
-/*
- *		Progress bar
- */
- 
-var progressBar = document.querySelector('.progressbar');
-progressBar.classList.add('load');
-window.addEventListener('load',function() {
-	progressBar.classList.remove('load');
-});
+var nav,
+	main,
+	header,
+	footer,
+	header_container,
+	header_container_height;
+
+document.addEventListener('DOMContentLoaded', domContentLoaded);
+
+function domContentLoaded() {
+
+	body = document.body;
+	header = document.querySelector("header");
+	header_container = document.querySelector(".header_container");
+	nav = document.querySelector("nav");
+	header_container_height = header_container.clientHeight;
+
+	/*
+	 *		Progress bar
+	 */
+
+	var progressBar = document.createElement('div');
+	progressBar.className = 'progressbar';
+	progressBar.innerHTML = '<span></span>';
+	document.body.insertBefore(progressBar, document.querySelector('header'));
+	document.body.classList.add('load');
+	window.addEventListener('load', windowLoad);
+
+	function windowLoad() {
+		document.body.classList.remove('load');
+		bodyPaddingTop();
+	}
+}
 
 /*
  *		header hidden
  */
-var body = document.body;
-var header = document.querySelector("header");
-var header_container = document.querySelector(".header_container");
-var nav = document.querySelector("nav");
-var header_container_height = header_container.clientHeight;
 
 window.addEventListener("scroll", headerHidden);
 
@@ -38,9 +57,7 @@ function headerHidden() {
 function bodyPaddingTop() {
 	body.style.paddingTop = header.clientHeight + "px";
 }
-bodyPaddingTop();
 header.addEventListener('resize', bodyPaddingTop, false);
-// window.addEventListener("orientationchange", function() {bodyPaddingTop();});
 
 /*
  *		Menu toggler
@@ -108,7 +125,7 @@ function swipePage(index) {
 		}
 	});
 	window.addEventListener('touchend', function(e) {
-		if (new Date - start < 500) { 
+		if (new Date - start < 500) {
 			if (moveX - startX >= swipelangth) {
 				swipePage(-1);
 			}

@@ -3,7 +3,6 @@
 
 <head>
 
-  <link rel="shortcut icon" href="src/favicon.png" type="image/png">	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="DevBand - cайт команды разаботчиков.">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
@@ -27,7 +26,8 @@
 	<meta name="theme-color" content="#ffffff">
 	<link href="styles/styles.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
-	<script 8type="text/javascript" src="../../z_forum_helpers.js"></script>
+	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body class="projects">
@@ -61,7 +61,7 @@
 			</ul>
 		</nav>
 	</header>
-
+	
 	<main>
 		<article>
 			<section class="picture">
@@ -74,7 +74,7 @@
 				<p>Приложение позволяет: просматривать новости, отвечать на форуме, переписываться с пользователями средствами QMS, имеет функции для курирования тем, вкладки, заметки и многое-многое другое...</p>
 				<div class="footer">
 					<div class="buttons">
-						<a href="projects/forpda.html">Подобнее</a>
+						<a href="forpda.html">Подобнее</a>
 					</div>
 					<div class="members">
 						<span class="ava nizamiev">
@@ -134,8 +134,6 @@
 	<br>Мы рады, что вы зашли к нам!</h1>
 	<div>Но... в данный момент сайт на стадии разработки, надеемся он вам понравится 8)</div>
 	</div-->
-
-	<script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 
