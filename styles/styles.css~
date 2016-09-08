@@ -27,7 +27,7 @@ header {
   margin: 0;
   color: white;
   background: #1b94d6;
-  z-index: 99;
+  z-index: 999;
   box-sizing: border-box;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -196,6 +196,7 @@ header nav .button {
   display: inline-block;
   vertical-align: middle;
   margin: 0 0 -0.3rem;
+  background: inherit;
 }
 header nav .button a {
   display: inline-block;
@@ -211,6 +212,30 @@ header nav .title {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
+  font-weight: bold;
+}
+/*
+ *
+ *    PROGRESSBAR 
+ *
+*/
+.progressbar {
+  display: none;
+  z-index: 998;
+  position: absolute;
+  width: 100%;
+  margin-top: 5rem;
+  text-align: center;
+}
+.progressbar.load {
+  display: block;
+}
+.progressbar.load + main,
+.progressbar.load main + footer {
+  display: none;
+}
+.progressbar span:before {
+  content: 'Loading...';
   font-weight: bold;
 }
 /*

@@ -216,6 +216,29 @@ header nav .title {
 }
 /*
  *
+ *    PROGRESSBAR 
+ *
+*/
+.progressbar {
+  display: none;
+  z-index: 998;
+  position: absolute;
+  width: 100%;
+  margin-top: 5rem;
+  text-align: center;
+}
+.progressbar.load {
+  display: block;
+}
+.progressbar.load + * {
+  display: none;
+}
+.progressbar span:before {
+  content: 'Loading...';
+  font-weight: bold;
+}
+/*
+ *
  *    MAIN (Content)
  *
 */

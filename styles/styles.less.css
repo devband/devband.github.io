@@ -240,6 +240,37 @@ header {
 
 /*
  *
+ *    PROGRESSBAR 
+ *
+*/
+
+.progressbar {
+	display: none;
+	z-index: 998;
+	position: absolute;
+	width: 100%;
+	margin-top: 5rem;
+	text-align: center;
+	&.load {
+		display: block;
+		+ * {
+			display: none;
+		}
+	}
+	span {
+//		padding: 4rem 2.5rem;
+//		.Radius(100%);
+//		.BoxShadow(3);
+//		background: @bg;
+		&:before {
+			content:'Loading...';
+			font-weight: bold;
+		}
+	}
+}
+
+/*
+ *
  *    MAIN (Content)
  *
 */
