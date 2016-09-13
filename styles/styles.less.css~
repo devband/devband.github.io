@@ -97,7 +97,7 @@ body {
  *
 */
 
-header {
+header.header {
 	position: absolute;
 	top: 0; right: 0; left: 0;
 	display: block;
@@ -671,4 +671,13 @@ footer {
 		margin: 1.5rem;
 		color: grey;
 	}
+}
+
+/*
+ *		Disqus comments
+ */
+
+#disqus_thread {
+	max-width: @width_tab_large;
+	margin: 0.5rem;
 }

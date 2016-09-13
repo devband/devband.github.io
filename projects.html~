@@ -30,7 +30,7 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
-<body class="projects">
+<body id="projects">
 	<script type="text/javascript" src="../../less-dev.js"></script>
 	<script type="text/javascript" src="../../dev/toolbar.js"></script>
 
@@ -74,7 +74,7 @@
 				<p>Приложение позволяет: просматривать новости, отвечать на форуме, переписываться с пользователями средствами QMS, имеет функции для курирования тем, вкладки, заметки и многое-многое другое...</p>
 				<div class="footer">
 					<div class="buttons">
-						<a href="forpda.html">Подобнее</a>
+						<a href="forpda.html">Подробнее</a>
 					</div>
 					<div class="members">
 						<span class="ava nizamiev">
@@ -101,7 +101,7 @@
 				<p>Андроид приложение для отладки сайтов, основные достоинства, это: изменение ширины окна, размера шрифта и копирование в буфер обмена средствами JS, плюс внешний JS модуль для работы с процессором LESS.</p>
 				<div class="footer">
 					<div class="buttons">
-						<a href="#">Подобнее</a>
+						<a href="#">Подробнее</a>
 					</div>
 					<div class="members">
 						<span class="ava nizamiev">
