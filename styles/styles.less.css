@@ -144,7 +144,6 @@ header {
 		}
 		.logo {
 			display: inline-block;
-			padding: 0.75rem;
 			vertical-align: middle;
 			.Radius(100%);
 			border: 0.25rem ridge saturate(@tmColor + 50%, 70%);
@@ -152,6 +151,7 @@ header {
 			.vendors(box-shadow,0.125rem 0.25rem 0.5rem rgba(0,0,0,0.15));
 			a {
 				display: block;
+				padding: 0.75rem;
 				img {
 					display: block;
 					width: auto;
@@ -202,7 +202,6 @@ header {
 		margin: 0;
 		overflow-x: auto;
 		box-sizing: border-box;
-		overflow-x: auto;
 		white-space: nowrap;
 		color: white;
 		background: desaturate(@tmColor,15%);
@@ -253,11 +252,13 @@ header {
 		.button {
 			display: inline-block;
 			vertical-align: middle;
-			margin: 0 0 -0.3rem;
+			margin: 0;
+			padding: 0;
 			background: inherit;
 			a {
 				display: inline-block;
 				padding: 1rem 1.25rem;
+				margin-bottom: -0.25rem;
 				img {
 					display: block;
 					margin: 0 auto;
@@ -286,7 +287,8 @@ main {
 	z-index: 98;
 	margin: 0;
 	article,
-	section {
+	section,
+	footer {
 		display: block;
 		font-size: 1rem;
 		margin: 0;
@@ -296,7 +298,7 @@ main {
 
 /* Home Page */
 
-.home {
+#home {
 	main {
 		display: block;
 		max-width: @width_tab_large;
@@ -366,7 +368,7 @@ main {
 
 /* Projects Page */
 
-.projects {
+#projects {
 	main {
 		margin: auto;
 		padding: 0;
@@ -501,7 +503,7 @@ main {
 
 /* Developers Page */
 
-.developers {
+#developers {
 	article {
 		margin: 0.5rem auto;
 		padding: 0;
@@ -620,9 +622,14 @@ main {
  *		Full description
  */
 
-.full_description {
+#full_description {
 	navi {
 		text-align: left;
+	}
+	main {
+		article {
+			&:extend(#projects main article all);
+		}
 	}
 }
 

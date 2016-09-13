@@ -31,7 +31,85 @@ function domContentLoaded() {
 		document.body.classList.remove('load');
 		bodyPaddingTop();
 	}
+
+	/*
+	 *		Gallery	
+	 */
+
+	var galleryAll = document.querySelectorAll('.gallery');
+	for (var j = 0; j < galleryAll.length; j++) {
+		var gallery = galleryAll[j];
+		for (var i = 0; i < 10; i++) {
+			var a = document.createElement('a');
+			var img = document.createElement('img');
+			a.href = 'src/' + pic;
+			img.src = 'src/mini-' + pic;
+			img.alt = pic;
+			a.appendChild(img);
+			gallery.appendChild(a);
+		}
+	}
 }
+
+
+/*
+ *		Swipe
+ */
+
+(function() {
+
+	// Переход по страницам 
+
+	var pages = ['index.html', 'projects.html', 'developers.html'];
+
+	function swipePage(index) {
+		if (location.pathname == "/" && index == +1) {
+			location.href = location.href + pages[1];
+		}
+		pages.forEach(function(item, i, arr) {
+			if (~location.href.indexOf(item)) {
+				if (pages[i + index] != undefined) location.href = pages[i + index];
+			}
+		});
+	}
+
+	// touch hendler
+
+	var startX, startY, moveY, moveX, start, swipelangth = 150;
+
+	window.addEventListener('touchstart', function(e) {
+		startX = e.changedTouches[0].pageX;
+		startY = e.changedTouches[0].pageY;
+		start = new Date;
+	}, false);
+	window.addEventListener('touchmove', function(e) {
+		moveX = e.changedTouches[0].pageX;
+		moveY = e.changedTouches[0].pageY;
+		if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+			e.preventDefault();
+		}
+	}, false);
+	window.addEventListener('touchend', function(e) {
+		if (new Date - start < 500) {
+			if (moveX - startX >= swipelangth) {
+				swipePage(-1);
+			}
+			if (startX - moveX >= swipelangth) {
+				swipePage(+1);
+			}
+		}
+	}, false);
+})();
+
+
+/*
+ *		Content Padding Top
+ */
+
+function bodyPaddingTop() {
+	body.style.paddingTop = header.clientHeight + "px";
+}
+window.addEventListener('resize', bodyPaddingTop, false);
 
 /*
  *		header hidden
@@ -78,90 +156,4 @@ function hidden_menu(target) {
 
 function copyPurseNumber(link) {
 	prompt("Вы можете скопировать номер кошелька:", link.title);
-}
-
-/*
- *		Swipe
- */
-
-// Переход по страницам 
-
-var pages = ['index.html', 'projects.html', 'developers.html'];
-
-function swipePage(index) {
-	if (location.pathname == "/" && index == +1) {
-		location.href = location.href + pages[1];
-	}
-	pages.forEach(function(item, i, arr) {
-		if (~location.href.indexOf(item)) {
-			if (pages[i + index] != undefined) location.href = pages[i + index];
-		}
-	});
-}
-
-// touch hendler
-
-(function() {
-	var startX, startY, moveY, moveX, start, swipelangth = 150;
-
-	window.addEventListener('touchstart', function(e) {
-		startX = e.changedTouches[0].pageX;
-		startY = e.changedTouches[0].pageY;
-		start = new Date;
-	}, false);
-	window.addEventListener('touchmove', function(e) {
-		moveX = e.changedTouches[0].pageX;
-		moveY = e.changedTouches[0].pageY;
-		if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
-			e.preventDefault();
-		}
-	}, false);
-	window.addEventListener('touchend', function(e) {
-		if (new Date - start < 500) {
-			if (moveX - startX >= swipelangth) {
-				swipePage(-1);
-			}
-			if (startX - moveX >= swipelangth) {
-				swipePage(+1);
-			}
-		}
-	}, false);
-})();
-
-
-/*
- *		Content Padding Top
- */
-
-function bodyPaddingTop() {
-	body.style.paddingTop = header.clientHeight + "px";
-}
-header.addEventListener('resize', bodyPaddingTop, false);
-
-/*
- *		Gallery	
- */
-
-var gallery = document.querySelector('.gallery > div');
-
-var massPic = [
-	'light.png',
-	'dark.png',
-	'black.png',
-	'material_light.png',
-	'material_dark.png',
-	'material_black.png',
-	'white_old.png'
-];
-
-for (var i = 0; i < massPic.length; i++) {
-	var pic = massPic[i];
-	var a = document.createElement('a');
-	var img = document.createElement('img');
-	a.href = 'src/' + pic;
-	img.src = 'src/mini-' + pic;
-	img.alt = pic;
-	a.appendChild(img);
-	gallery.appendChild(a);
-
 }

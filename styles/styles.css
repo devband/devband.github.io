@@ -103,7 +103,6 @@ header .header_container.hidden {
 }
 header .header_container .logo {
   display: inline-block;
-  padding: 0.75rem;
   vertical-align: middle;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -120,6 +119,7 @@ header .header_container .logo {
 }
 header .header_container .logo a {
   display: block;
+  padding: 0.75rem;
 }
 header .header_container .logo a img {
   display: block;
@@ -168,8 +168,8 @@ header .header_container .button img {
 }
 header nav {
   margin: 0;
-  box-sizing: border-box;
   overflow-x: auto;
+  box-sizing: border-box;
   white-space: nowrap;
   color: white;
   background: #1283c1;
@@ -223,12 +223,14 @@ header nav ul li.active a span {
 header nav .button {
   display: inline-block;
   vertical-align: middle;
-  margin: 0 0 -0.3rem;
+  margin: 0;
+  padding: 0;
   background: inherit;
 }
 header nav .button a {
   display: inline-block;
   padding: 1rem 1.25rem;
+  margin-bottom: -0.25rem;
 }
 header nav .button a img {
   display: block;
@@ -253,19 +255,20 @@ main {
   margin: 0;
 }
 main article,
-main section {
+main section,
+main footer {
   display: block;
   font-size: 1rem;
   margin: 0;
   padding: 0;
 }
 /* Home Page */
-.home main {
+#home main {
   display: block;
   max-width: 80rem;
   margin: 0 auto;
 }
-.home main article {
+#home main article {
   overflow: hidden;
   margin: 0.5rem;
   padding: 0 1rem;
@@ -276,30 +279,30 @@ main section {
   border-radius: 0.125rem;
   background: white;
 }
-.home main article > h1 {
+#home main article > h1 {
   font-size: 2rem;
 }
-.home main article > h2 {
+#home main article > h2 {
   font-size: 1.5rem;
 }
-.home main article section > h1 {
+#home main article section > h1 {
   font-size: 1.5rem;
 }
-.home main article section > h2 {
+#home main article section > h2 {
   font-size: 1.25rem;
 }
-.home main article section p {
+#home main article section p {
   font-size: 1rem;
   font-weight: normal;
 }
-.home main article section .ava {
+#home main article section .ava {
   display: inline-block;
   margin: 0 1rem;
 }
-.home main article section .ava a {
+#home main article section .ava a {
   dispaly: inline-block;
 }
-.home main article section .ava a img {
+#home main article section .ava a img {
   display: block;
   height: 7.5rem;
   width: 7.5rem;
@@ -308,30 +311,31 @@ main section {
   overflow: hidden;
   border-radius: 100%;
 }
-.home main .gallery {
+#home main .gallery {
   display: none;
   overflow-x: auto;
   text-align: center;
 }
-.home main .gallery > div {
+#home main .gallery > div {
   white-space: nowrap;
 }
-.home main .gallery > div a {
+#home main .gallery > div a {
   display: inline-block;
   margin: 0;
 }
-.home main .gallery > div a img {
+#home main .gallery > div a img {
   display: block;
   max-height: 15rem;
 }
 /* Projects Page */
-.projects main {
+#projects main {
   margin: auto;
   padding: 0;
   overflow: hidden;
   max-width: 80rem;
 }
-.projects main article {
+#projects main article,
+#full_description main article {
   position: relative;
   overflow: hidden;
   min-height: 20rem;
@@ -344,10 +348,12 @@ main section {
   background-color: white;
   border: 1px solid #ededed;
 }
-.projects main article:last-child {
+#projects main article:last-child,
+#full_description main article:last-child {
   border: none;
 }
-.projects main article .picture {
+#projects main article .picture,
+#full_description main article .picture {
   position: relative;
   float: left;
   width: 20rem;
@@ -357,43 +363,51 @@ main section {
   text-align: center;
   background: #bfbfbf;
 }
-.projects main article .picture:before {
+#projects main article .picture:before,
+#full_description main article .picture:before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
-.projects main article .picture .container {
+#projects main article .picture .container,
+#full_description main article .picture .container {
   display: inline-block;
   vertical-align: middle;
 }
-.projects main article .picture .container img {
+#projects main article .picture .container img,
+#full_description main article .picture .container img {
   display: block;
   margin: auto;
   max-width: 100%;
   max-height: 100%;
 }
 @media screen and (max-width: 40rem) {
-  .projects main article .picture {
+  #projects main article .picture,
+  #full_description main article .picture {
     float: none;
     margin: 0;
     width: auto;
     height: 15rem;
   }
 }
-.projects main article .description {
+#projects main article .description,
+#full_description main article .description {
   margin: 0 1rem 5rem;
   padding: 0;
 }
-.projects main article .description > h1 {
+#projects main article .description > h1,
+#full_description main article .description > h1 {
   font-size: 1.25rem;
 }
-.projects main article .description > p {
+#projects main article .description > p,
+#full_description main article .description > p {
   position: relative;
   max-height: 6.25rem;
   overflow: hidden;
 }
-.projects main article .description > p:after {
+#projects main article .description > p:after,
+#full_description main article .description > p:after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -403,7 +417,8 @@ main section {
   height: 1rem;
   background: -webkit-linear-gradient(left, transparent 0%, white 50%);
 }
-.projects main article .description .footer {
+#projects main article .description .footer,
+#full_description main article .description .footer {
   display: block;
   position: absolute;
   bottom: 0;
@@ -413,23 +428,27 @@ main section {
   padding: 0 1rem;
   margin: 0 0 1rem;
 }
-.projects main article .description .footer .buttons {
+#projects main article .description .footer .buttons,
+#full_description main article .description .footer .buttons {
   float: left;
   width: 3rem;
   line-height: 3rem;
 }
-.projects main article .description .footer .buttons a {
+#projects main article .description .footer .buttons a,
+#full_description main article .description .footer .buttons a {
   display: inline-block;
   padding: 0 0.5rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #0288d1;
 }
-.projects main article .description .footer .members .ava {
+#projects main article .description .footer .members .ava,
+#full_description main article .description .footer .members .ava {
   float: right;
   margin: 0 0 0 0.5rem;
 }
-.projects main article .description .footer .members .ava img {
+#projects main article .description .footer .members .ava img,
+#full_description main article .description .footer .members .ava img {
   display: block;
   margin: auto;
   height: 3rem;
@@ -440,13 +459,16 @@ main section {
   border-radius: 100%;
 }
 @media screen and (max-width: 40rem) {
-  .projects main article .description {
+  #projects main article .description,
+  #full_description main article .description {
     margin-bottom: 0;
   }
-  .projects main article .description > p {
+  #projects main article .description > p,
+  #full_description main article .description > p {
     max-height: auto;
   }
-  .projects main article .description .footer {
+  #projects main article .description .footer,
+  #full_description main article .description .footer {
     position: relative;
     left: 0;
     overflow: hidden;
@@ -454,16 +476,16 @@ main section {
   }
 }
 /* Developers Page */
-.developers article {
+#developers article {
   margin: 0.5rem auto;
   padding: 0;
   max-width: 80rem;
   background-color: white;
 }
-.developers article > h1 {
+#developers article > h1 {
   display: none;
 }
-.developers article section {
+#developers article section {
   display: block;
   position: relative;
   z-index: 90;
@@ -472,25 +494,25 @@ main section {
   padding: 1rem;
   border-bottom: 1px solid #ededed;
 }
-.developers article section:last-child {
+#developers article section:last-child {
   border: none;
 }
-.developers article section .ava {
+#developers article section .ava {
   float: left;
   margin: 0 1.25rem 0 0;
 }
 @media screen and (max-width: 20rem) {
-  .developers article section .ava {
+  #developers article section .ava {
     display: block;
     text-align: center;
     float: none;
     margin: 0 auto 0.075rem;
   }
 }
-.developers article section .ava a {
+#developers article section .ava a {
   display: inline-block;
 }
-.developers article section .ava a img {
+#developers article section .ava a img {
   display: block;
   height: 5rem;
   width: 5rem;
@@ -500,41 +522,41 @@ main section {
   border-radius: 100%;
 }
 @media screen and (max-width: 20rem) {
-  .developers article section .ava a img {
+  #developers article section .ava a img {
     height: 7.5rem;
     width: 7.5rem;
   }
 }
-.developers article section .inf {
+#developers article section .inf {
   text-align: left;
 }
 @media screen and (max-width: 20rem) {
-  .developers article section .inf {
+  #developers article section .inf {
     text-align: center;
   }
 }
-.developers article section .inf .name {
+#developers article section .inf .name {
   margin: 0.5rem 0;
   font-size: 1.125rem;
 }
-.developers article section .inf .scills {
+#developers article section .inf .scills {
   margin: 0.5rem 0;
   color: #8a8a8a;
 }
-.developers article section .button {
+#developers article section .button {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
   padding: 0.25rem;
   cursor: pointer;
 }
-.developers article section .button img[src*="menu.svg"] {
+#developers article section .button img[src*="menu.svg"] {
   display: block;
   margin: auto;
   width: 1.5rem;
   height: 1.5rem;
 }
-.developers article section .menu.contacts {
+#developers article section .menu.contacts {
   display: block;
   position: absolute;
   top: 0;
@@ -558,7 +580,7 @@ main section {
   transform: translate(0);
   background: white;
 }
-.developers article section .menu.contacts.close {
+#developers article section .menu.contacts.close {
   opacity: 0;
   -webkit-transform: translate(150%, -50%);
   -moz-transform: translate(150%, -50%);
@@ -568,17 +590,17 @@ main section {
   border-radius: 100%;
 }
 @media screen and (max-width: 20rem) {
-  .developers article section .menu.contacts {
+  #developers article section .menu.contacts {
     text-align: center;
     overflow-x: visible;
   }
 }
-.developers article section .menu.contacts li {
+#developers article section .menu.contacts li {
   display: inline-block;
   position: relativve;
   list-style-type: none;
 }
-.developers article section .menu.contacts li a {
+#developers article section .menu.contacts li a {
   margin-bottom: 0.0625rem;
   display: block;
   padding: 0.25rem 1rem;
@@ -590,7 +612,7 @@ main section {
 /*
  *		Full description
  */
-.full_description navi {
+#full_description navi {
   text-align: left;
 }
 /*
@@ -633,4 +655,3 @@ footer p {
   margin: 1.5rem;
   color: grey;
 }
-

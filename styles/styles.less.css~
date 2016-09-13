@@ -56,6 +56,43 @@ body {
 
 /*
  *
+ *    PROGRESSBAR 
+ *
+*/
+
+body { 
+	.progressbar {
+		display: none;
+		z-index: 99999;
+		position: fixed;
+		top: 50%;
+		width: 100%;
+		text-align: center;
+		span {
+			&:before {
+				content:'Loading...';
+				display: inline-block;
+				margin-top: -0.75rem;
+				font-size: 1.5rem;
+//				font-weight: bold;
+				color: mix(@bg,@tx,50%);
+			}
+		}
+	}
+	&.load {
+		.progressbar {
+			display: block;
+		}
+		header,
+		main,
+		footer {
+			display: none;
+		}
+	}
+}
+
+/*
+ *
  *    HEADER
  *
 */
@@ -69,7 +106,7 @@ header {
 	margin: 0;
 	color: white;
 	background: mix(@bg, @tmColor,10%);
-	z-index: 99;
+	z-index: 999;
 	box-sizing: border-box;
 	.BoxShadow(2);
 	&:before { // фон шапки
@@ -107,7 +144,6 @@ header {
 		}
 		.logo {
 			display: inline-block;
-			padding: 0.75rem;
 			vertical-align: middle;
 			.Radius(100%);
 			border: 0.25rem ridge saturate(@tmColor + 50%, 70%);
@@ -115,6 +151,7 @@ header {
 			.vendors(box-shadow,0.125rem 0.25rem 0.5rem rgba(0,0,0,0.15));
 			a {
 				display: block;
+				padding: 0.75rem;
 				img {
 					display: block;
 					width: auto;
@@ -165,15 +202,14 @@ header {
 		margin: 0;
 		overflow-x: auto;
 		box-sizing: border-box;
-		text-align: center;
-		overflow-x: auto;
+		white-space: nowrap;
 		color: white;
 		background: desaturate(@tmColor,15%);
 		ul {
 			display: block;
 			padding: 0;
 			margin: 0;
-			white-space: nowrap;
+			text-align: center;
 			li {
 				display: inline-block;
 				margin: 0 -0.125rem;
@@ -213,6 +249,30 @@ header {
 				}
 			}
 		}
+		.button {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			padding: 0;
+			background: inherit;
+			a {
+				display: inline-block;
+				padding: 1rem 1.25rem;
+				margin-bottom: -0.25rem;
+				img {
+					display: block;
+					margin: 0 auto;
+					width: 1.5rem;
+					height: 1.5rem;
+				}
+			}
+		}
+		.title {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			font-weight: bold;
+		}
 	}
 }
 
@@ -227,7 +287,8 @@ main {
 	z-index: 98;
 	margin: 0;
 	article,
-	section {
+	section,
+	footer {
 		display: block;
 		font-size: 1rem;
 		margin: 0;
@@ -237,7 +298,7 @@ main {
 
 /* Home Page */
 
-.home {
+#home {
 	main {
 		display: block;
 		max-width: @width_tab_large;
@@ -307,7 +368,7 @@ main {
 
 /* Projects Page */
 
-.projects {
+#projects {
 	main {
 		margin: auto;
 		padding: 0;
@@ -442,7 +503,7 @@ main {
 
 /* Developers Page */
 
-.developers {
+#developers {
 	article {
 		margin: 0.5rem auto;
 		padding: 0;
@@ -560,7 +621,17 @@ main {
 /*
  *		Full description
  */
- 
+
+#full_description {
+	navi {
+		text-align: left;
+	}
+	main {
+		article {
+			&:extend(.projects main article all);
+		}
+	}
+}
 
 /*
  *

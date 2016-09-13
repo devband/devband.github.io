@@ -17,17 +17,19 @@ body {
  *
 */
 body .progressbar {
-  display: block;
-  z-index: 99999
-		position: fixed;
+  display: none;
+  z-index: 99999;
+  position: fixed;
   top: 50%;
   width: 100%;
-  margin-top: -1rem;
   text-align: center;
 }
 body .progressbar span:before {
   content: 'Loading...';
-  font-weight: bold;
+  display: inline-block;
+  margin-top: -0.75rem;
+  font-size: 1.5rem;
+  color: #808080;
 }
 body.load .progressbar {
   display: block;
@@ -101,7 +103,6 @@ header .header_container.hidden {
 }
 header .header_container .logo {
   display: inline-block;
-  padding: 0.75rem;
   vertical-align: middle;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -118,6 +119,7 @@ header .header_container .logo {
 }
 header .header_container .logo a {
   display: block;
+  padding: 0.75rem;
 }
 header .header_container .logo a img {
   display: block;
@@ -166,8 +168,8 @@ header .header_container .button img {
 }
 header nav {
   margin: 0;
-  box-sizing: border-box;
   overflow-x: auto;
+  box-sizing: border-box;
   white-space: nowrap;
   color: white;
   background: #1283c1;
@@ -221,12 +223,14 @@ header nav ul li.active a span {
 header nav .button {
   display: inline-block;
   vertical-align: middle;
-  margin: 0 0 -0.3rem;
+  margin: 0;
+  padding: 0;
   background: inherit;
 }
 header nav .button a {
   display: inline-block;
   padding: 1rem 1.25rem;
+  margin-bottom: -0.25rem;
 }
 header nav .button a img {
   display: block;
@@ -251,7 +255,8 @@ main {
   margin: 0;
 }
 main article,
-main section {
+main section,
+main footer {
   display: block;
   font-size: 1rem;
   margin: 0;
@@ -329,7 +334,8 @@ main section {
   overflow: hidden;
   max-width: 80rem;
 }
-.projects main article {
+.projects main article,
+.full_description main article {
   position: relative;
   overflow: hidden;
   min-height: 20rem;

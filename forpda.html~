@@ -2,8 +2,8 @@
 <html>
 
 <head>
-
-  <link rel="shortcut icon" href="src/favicon.png" type="image/png">	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="src/favicon.png" type="image/png">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="ForPDA - неофициальный клиент сайта 4pda.ru">
 	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики, ForPDA, неофициальный клиент сайта 4pda.ru">
@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -27,17 +27,18 @@
 	<meta name="theme-color" content="#ffffff">
 	<link href="styles/styles.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
+	<script type="text/javascript" src="js/scripts.js"></script>
 	<script 8type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>
 
-<body class="one-project">
+<body id="full_description">
 	<script type="text/javascript" src="../../less-dev.js"></script>
 	<script type="text/javascript" src="../../dev/toolbar.js"></script>
 
 	<header>
 		<div class="header_container">
 			<div class="logo">
-				<a href="#">
+				<a href="index.html">
 					<img src="src/db_logo.png" title="Лого DevBand">
 				</a>
 			</div>
@@ -48,13 +49,14 @@
 		</div>
 
 		<nav>
-			<span>
+			<span class="button arrow">
 				<a href="projects.html">
 					<img src="src/arrow_back.svg">
 				</a>
 			</span>
-			<span>ForPDA - неофициальный клиент сайта 4pda.ru</span>
+			<span class="title">ForPDA</span>
 		</nav>
+
 	</header>
 
 	<main>
@@ -69,7 +71,7 @@
 				<p>Приложение позволяет: просматривать новости, отвечать на форуме, переписываться с пользователями средствами QMS, имеет функции для курирования тем, вкладки, заметки и многое-многое другое...</p>
 				<div class="footer">
 					<div class="buttons">
-						<a href="#">Подобнее</a>
+						<a href="forpda.html">Download</a>
 					</div>
 					<div class="members">
 						<span class="ava nizamiev">
@@ -86,33 +88,33 @@
 			</section>
 		</article>
 		<article>
-			<section class="picture">
-				<div class="container">
-					<img src="src/wdb_pic.png">
-				</div>
-			</section>
-			<section class="description">
-				<h1>Web Developers Browser: Браузер для Web-разработки на мобильных устройствах</h1>
-				<p>Андроид приложение для отладки сайтов, основные достоинства, это: изменение ширины окна, размера шрифта и копирование в буфер обмена средствами JS, плюс внешний JS модуль для работы с процессором LESS.</p>
-				<div class="footer">
-					<div class="buttons">
-						<a href="#">Подобнее</a>
-					</div>
-					<div class="members">
-						<span class="ava nizamiev">
-							<img src="src/nizamiev.jpg" alt="nizamiev.jpg">
-						</span>
-						<span class="ava tainuk">
-							<img src="src/tainuk.jpg" alt="tainuk.jpg">
-						</span>
-						<span class="ava sholohov">
-							<img src="src/sholohov.jpg" alt="sholohov.jpg">
-						</span>
-					</div>
-				</div>
+			<section class="gallery"></section>
+			<section class="content">
+
 			</section>
 		</article>
 	</main>
+
+	<div id="disqus_thread"></div>
+	<script>
+	
+	/**
+	 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+	/*
+	var disqus_config = function () {
+	    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+	    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	*/
+	(function() { // DON'T EDIT BELOW THIS LINE
+	    var d = document, s = d.createElement('script');
+	    s.src = '//devband.disqus.com/embed.js';
+	    s.setAttribute('data-timestamp', +new Date());
+	    (d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 	<footer>
 		<p>Copyright 2016 DevBand</p>
@@ -129,9 +131,6 @@
 	<br>Мы рады, что вы зашли к нам!</h1>
 	<div>Но... в данный момент сайт на стадии разработки, надеемся он вам понравится 8)</div>
 	</div-->
-
-	<script type="text/javascript" src="js/scripts.js"></script>
-
 </body>
 
 </html>
