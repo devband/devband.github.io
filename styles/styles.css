@@ -23,6 +23,7 @@ body .progressbar {
   top: 50%;
   width: 100%;
   text-align: center;
+  background: #f2f2f2;
 }
 body .progressbar span:before {
   content: 'Loading...';
@@ -661,4 +662,7 @@ footer p {
 #disqus_thread {
   max-width: 80rem;
   margin: 2rem 0.5rem;
+}
+#disqus_thread a {
+  color: #0288d1;
 }

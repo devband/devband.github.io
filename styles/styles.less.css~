@@ -68,6 +68,7 @@ body {
 		top: 50%;
 		width: 100%;
 		text-align: center;
+		background: mix(@tx,@bg,5%);
 		span {
 			&:before {
 				content:'Loading...';
@@ -679,5 +680,5 @@ footer {
 
 #disqus_thread {
 	max-width: @width_tab_large;
-	margin: 0.5rem;
+	margin: 2rem 0.5rem;
 }

@@ -1,0 +1,687 @@
+<html>
+
+<head>
+	<title>Комментарии Disqus</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<style>
+		.alert--warning {
+			border-radius: 3px;
+			padding: 10px 15px;
+			margin-bottom: 10px;
+			background-color: #FFE070;
+			color: #A47703;
+		}
+		
+		.alert--warning a,
+		.alert--warning a:hover,
+		.alert--warning strong {
+			color: #A47703;
+			font-weight: bold;
+		}
+		
+		.alert--error p,
+		.alert--warning p {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+	</style>
+
+	<style>
+		html {
+			overflow: hidden;
+		}
+		
+		#error {
+			display: none;
+		}
+		
+		.clearfix:after {
+			content: "";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://a.disquscdn.com/next/embed/styles/lounge.b0d3097b9af2aea963f18ecf4edbea4a.css">
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="remote/config" src="https://disqus.com/next/config.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="//a.disquscdn.com/next/embed/common.bundle.467038db7afd8d023eb9eb475911c812.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="translations" src="//a.disquscdn.com/next/current/embed/lang/ru.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="//a.disquscdn.com/next/embed/lounge.bundle.7e7732b58795a26ee30561c00a2570c0.js"></script>
+	<style id="css_1473788020989"></style>
+	<base target="_parent">
+	<link rel="stylesheet" href="https://a.disquscdn.com/next/embed/styles/discovery.ec9371c4ef39ecee074c2acf24d5e0e2.css">
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ga" src="https://ssl.google-analytics.com/ga.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="discovery/main" src="//a.disquscdn.com/next/embed/discovery.bundle.c9dea211df5631561bd7c323be732d0e.js"></script>
+	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript" src="../../less-dev.js"></script>
+	<script type="text/javascript" src="../../dev/toolbar.js"></script>
+
+	<div id="error" class="alert--error">
+		<p>У нас не получилось загрузить Disqus. Если вы модератор, пожалуйста посмотрите наше <a href="https://docs.disqus.com/help/83/">руководство по устранению неисправностей</a>.</p>
+	</div>
+
+
+	<script type="text/json" id="disqus-forumData">
+		{
+			"session": {
+				"canModerate": false,
+				"audienceSyncVerified": false,
+				"mustVerify": false,
+				"canReply": true,
+				"mustVerifyEmail": false
+			},
+			"features": {},
+			"forum": {
+				"category": null,
+				"description": null,
+				"founder": "200122974",
+				"twitterName": null,
+				"url": "https://devband.github.io",
+				"raw_description": null,
+				"guidelines": null,
+				"favicon": {
+					"permalink": "https://disqus.com/api/forums/favicons/devband.jpg",
+					"cache": "//a.disquscdn.com/1472168643/images/favicon-default.png"
+				},
+				"raw_guidelines": null,
+				"language": "ru",
+				"daysThreadAlive": 0,
+				"installCompleted": false,
+				"avatar": {
+					"small": {
+						"permalink": "https://disqus.com/api/forums/avatars/devband.jpg?size=32",
+						"cache": "//a.disquscdn.com/1472168643/images/noavatar32.png"
+					},
+					"large": {
+						"permalink": "https://disqus.com/api/forums/avatars/devband.jpg?size=92",
+						"cache": "//a.disquscdn.com/1472168643/images/noavatar92.png"
+					}
+				},
+				"channel": null,
+				"daysAlive": 0,
+				"pk": "4547403",
+				"signedUrl": "https://disq.us/?url=https%3A%2F%2Fdevband.github.io&key=_cZfFpk0MN4o-ZFynyzw4Q",
+				"settings": {
+					"supportLevel": 1,
+					"adsDRNativeEnabled": false,
+					"disable3rdPartyTrackers": false,
+					"moderatorText": "",
+					"adsProductVideoEnabled": false,
+					"adsPositionTopEnabled": false,
+					"ssoRequired": false,
+					"unapproveLinks": false,
+					"linkAffiliationEnabled": true,
+					"adsProductLinksThumbnailsEnabled": false,
+					"adsProductStoriesEnabled": false,
+					"organicDiscoveryEnabled": true,
+					"allowMedia": true,
+					"discoveryMax": false,
+					"discoveryLocked": false,
+					"adsVideoEnabled": false,
+					"adsEnabled": false,
+					"allowAnonPost": false,
+					"hasCustomAvatar": false,
+					"adultContent": false,
+					"promotedDiscoveryEnabled": false,
+					"allowAnonVotes": false,
+					"mustVerify": true,
+					"colorScheme": "auto",
+					"adsSettingsLocked": false,
+					"mustVerifyEmail": true,
+					"audienceSyncEnabled": false,
+					"typeface": "auto",
+					"adsPositionBottomEnabled": false,
+					"mediaembedEnabled": true,
+					"adsProductLinksEnabled": false,
+					"validateAllPosts": false,
+					"discoveryThumbnailsEnabled": false,
+					"isVIP": false,
+					"adsPositionInthreadEnabled": false
+				},
+				"id": "devband",
+				"createdAt": "2016-09-13T12:49:09.924240",
+				"name": "DevBand"
+			}
+		}
+	</script>
+
+
+	<script type="text/json" id="disqus-threadData">
+		{
+			"cursor": {
+				"hasPrev": false,
+				"prev": null,
+				"total": 1,
+				"hasNext": false,
+				"next": "1:0:0"
+			},
+			"code": 0,
+			"response": {
+				"lastModified": 1473786766,
+				"posts": [{
+					"dislikes": 0,
+					"numReports": 0,
+					"likes": 0,
+					"message": "\u003cp>\u041b\u0443\u0447\u0448\u0438\u0439 \u043a\u043b\u0438\u0435\u043d\u0442 \u0441\u0430\u0439\u0442\u0430 \u003ca href=\"http://4pda.ru\" rel=\"nofollow\">4pda.ru\u003c/a> :)\u003c/p>",
+					"id": "2891498881",
+					"isDeleted": false,
+					"author": {
+						"username": "disqus_nASrsPUS3U",
+						"about": "",
+						"name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0428\u043e\u043b\u043e\u0445\u043e\u0432",
+						"disable3rdPartyTrackers": false,
+						"isPowerContributor": false,
+						"isAnonymous": false,
+						"rep": 1.232862,
+						"profileUrl": "https://disqus.com/by/disqus_nASrsPUS3U/",
+						"url": "",
+						"reputation": 1.232862,
+						"location": "",
+						"isPrivate": false,
+						"signedUrl": "",
+						"isPrimary": true,
+						"joinedAt": "2016-03-12T07:01:35",
+						"id": "200122974",
+						"avatar": {
+							"small": {
+								"permalink": "https://disqus.com/api/users/avatars/disqus_nASrsPUS3U.jpg",
+								"cache": "//a.disquscdn.com/1472168643/images/noavatar32.png"
+							},
+							"isCustom": false,
+							"permalink": "https://disqus.com/api/users/avatars/disqus_nASrsPUS3U.jpg",
+							"cache": "//a.disquscdn.com/1472168643/images/noavatar92.png",
+							"large": {
+								"permalink": "https://disqus.com/api/users/avatars/disqus_nASrsPUS3U.jpg",
+								"cache": "//a.disquscdn.com/1472168643/images/noavatar92.png"
+							}
+						}
+					},
+					"media": [{
+						"forum": "devband",
+						"thumbnailUrl": "//a.disquscdn.com/get?url=http%3A%2F%2Fs.4pda.to%2Fwp-content%2Fuploads%2Fheadbands%2F125%2Fphband-125502.jpg&key=tTE2Bu5e37jGEHdCsNznJg",
+						"description": "4PDA",
+						"thread": "5141495329",
+						"title": "4PDA",
+						"url": "4pda.ru",
+						"htmlHeight": null,
+						"mediaType": "4",
+						"metadata": {
+							"create_method": "preview",
+							"thumbnail": "//a.disquscdn.com/get?url=http%3A%2F%2Fs.4pda.to%2Fwp-content%2Fuploads%2Fheadbands%2F125%2Fphband-125502.jpg&key=tTE2Bu5e37jGEHdCsNznJg"
+						},
+						"thumbnailWidth": 400,
+						"html": "",
+						"providerName": "4pda",
+						"type": "6",
+						"resolvedUrl": "http://4pda.ru/",
+						"thumbnailHeight": 300,
+						"post": "2891498881",
+						"thumbnailURL": "//a.disquscdn.com/get?url=http%3A%2F%2Fs.4pda.to%2Fwp-content%2Fuploads%2Fheadbands%2F125%2Fphband-125502.jpg&key=tTE2Bu5e37jGEHdCsNznJg",
+						"htmlWidth": null,
+						"id": 153362,
+						"location": ""
+					}],
+					"isSpam": false,
+					"isDeletedByAuthor": false,
+					"createdAt": "2016-09-13T17:12:46",
+					"parent": null,
+					"isApproved": true,
+					"isFlagged": false,
+					"raw_message": "\u041b\u0443\u0447\u0448\u0438\u0439 \u043a\u043b\u0438\u0435\u043d\u0442 \u0441\u0430\u0439\u0442\u0430 4pda.ru :)",
+					"isHighlighted": false,
+					"canVote": false,
+					"thread": "5141495329",
+					"forum": "devband",
+					"depth": 0,
+					"points": 0,
+					"isEdited": false
+				}],
+				"thread": {
+					"feed": "https://devband.disqus.com/forpda_4pdaru/latest.rss",
+					"identifiers": [],
+					"dislikes": 0,
+					"likes": 0,
+					"message": "",
+					"id": "5141495329",
+					"isDeleted": false,
+					"category": "5441692",
+					"author": "200122974",
+					"userScore": 0,
+					"userSubscription": false,
+					"isSpam": false,
+					"signedLink": "https://disq.us/?url=https%3A%2F%2Fdevband.github.io%2Fforpda.html&key=LaIevTixguGCovuzdpfDVw",
+					"createdAt": "2016-09-13T17:00:21",
+					"hasStreaming": false,
+					"raw_message": "",
+					"isClosed": false,
+					"link": "https://devband.github.io/forpda.html",
+					"slug": "forpda_4pdaru",
+					"forum": "devband",
+					"clean_title": "ForPDA: \u041d\u0435\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u043a\u043b\u0438\u0435\u043d\u0442 \u0441\u0430\u0439\u0442\u0430 4pda.ru",
+					"posts": 1,
+					"moderators": [200122974],
+					"title": "ForPDA: \u041d\u0435\u043e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u043a\u043b\u0438\u0435\u043d\u0442 \u0441\u0430\u0439\u0442\u0430 4pda.ru",
+					"highlightedPost": null
+				}
+			},
+			"order": "popular"
+		}
+	</script>
+
+
+
+	<div id="fixed-content"></div>
+
+
+
+
+	<script type="text/json" id="disqus-urls">
+		{
+			"root": "//disqus.com",
+			"next": "//a.disquscdn.com/next/current/embed"
+		}
+	</script>
+
+	<script src="//a.disquscdn.com/next/embed/lounge.load.ddfcd7938849c6b8951d70734b07fe26.js" id="bootstrap-script" data-app="lounge" async=""></script>
+
+
+
+	<iframe style="display: none;"></iframe>
+	<div id="layout" data-tracking-area="layout">
+
+		<div id="onboard" data-tracking-area="onboard"></div>
+
+		<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+		<div id="global-alert"></div>
+
+		<header id="main-nav" data-tracking-area="main-nav">
+			<nav class="nav nav-primary">
+				<ul>
+					<li class="nav-tab nav-tab--primary tab-conversation active" data-role="post-count">
+						<a class="publisher-nav-color">
+							<span class="comment-count">
+							1 комментарий
+							</span>
+
+							<span class="comment-count-placeholder">
+							Комментарии
+							</span>
+						</a>
+					</li>
+					<li class="nav-tab nav-tab--primary tab-community">
+						<a href="https://disqus.com/home/forums/devband/" class="publisher-nav-color" data-action="community-sidebar" data-forum="devband" id="community-tab">
+							<span class="community-name">
+								<strong>DevBand</strong>
+
+							</span>
+
+							<strong class="community-name-placeholder">Сообщество</strong>
+						</a>
+					</li>
+					<li class="nav-tab nav-tab--primary dropdown user-menu" data-role="logout">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="dropdown-toggle-wrapper">
+
+								<span class="avatar">
+								<img data-role="user-avatar" data-user="200122974" alt="Аватар">
+							</span>
+							<span class="username" data-role="username" data-username="disqus_nASrsPUS3U">
+							Алексей Шолохов
+							</span>
+
+							</span> <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="https://disqus.com/by/disqus_nASrsPUS3U/" data-role="user-profile-link" data-action="profile" data-username="disqus_nASrsPUS3U">
+								Мой профиль
+								</a>
+							</li>
+							<li>
+								<a href="#" class="media-toggle-on" data-action="toggle-media">Показать медиа</a>
+								<a href="#" class="media-toggle-off" data-action="toggle-media">Скрыть медиа</a>
+							</li>
+							<li>
+								<a href="https://disqus.com/home/settings/account/">Изменить настройки</a>
+							</li>
+
+							<li data-role="toggle-thread">
+								<a href="#" data-action="toggle-thread">
+								Закрыть диалог
+								</a>
+							</li>
+
+							<li>
+								<a href="https://docs.disqus.com/kb/2012/">Помощь</a>
+							</li>
+
+
+
+							<li>
+								<a href="#" data-action="logout">Выйти</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-tab nav-tab--primary notification-menu" data-role="notification-menu">
+						<a href="https://disqus.com/home/inbox/" class="notification-container" data-action="home" data-home-path="home/inbox/">
+							<span class="notification-icon icon-comment" aria-hidden=""></span>
+							<span class="notification-count" data-role="notification-count"></span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="conversation" data-role="main" data-tracking-area="main">
+			<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+				<ul>
+					<li id="recommend-button" class="nav-tab nav-tab--secondary recommend dropdown">
+						<div class="thread-likes">
+							<a href="#" data-action="recommend" title="Рекомендовать это обсуждение" class="dropdown-toggle ">
+								<span class="icon-heart"></span>
+								<span class="label label-default">Рекомендовать</span>
+								<span class="label label-recommended">Рекомендовано</span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu--coachmark">
+								<li>
+									<h2 class="coachmark__heading">Ваше первое рекомендованное обсуждение!</h2>
+									<p class="coachmark__description">Рекомендация означает, что обсуждение стоит того, чтобы им поделиться. Вы поделитесь им со своими подписчиками в лентах Disqus и добавите славы её создателю.</p>
+									<a href="https://disqus.com/home/?utm_source=disqus_embed&amp;utm_content=recommend_btn" class="btn btn-primary coachmark__button" target="_blank">
+									 Посмотреть свою ленту 
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li id="thread-share-menu" class="nav-tab nav-tab--secondary dropdown share-menu hidden-sm">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Поделиться">
+							<span class="icon-export"></span>
+							<span class="label">Поделиться</span>
+						</a>
+						<ul class="share-menu dropdown-menu">
+							<li>
+								<div class="share-menu__label">Поделиться обсуждением в </div>
+								<ul>
+									<li class="twitter">
+										<a data-action="share:twitter" href="#">Twitter</a>
+									</li>
+									<li class="facebook">
+										<a data-action="share:facebook" href="#">Facebook</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li data-role="post-sort" class="nav-tab nav-tab--secondary dropdown sorting pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Лучшее в начале
+
+
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li class="selected">
+								<a href="#" data-action="sort" data-sort="popular">Лучшие<i aria-hidden="true" class="icon-checkmark"></i></a>
+							</li>
+
+							<li>
+								<a href="#" data-action="sort" data-sort="desc">Новые<i aria-hidden="true" class="icon-checkmark"></i></a>
+							</li>
+
+							<li>
+								<a href="#" data-action="sort" data-sort="asc">Старые<i aria-hidden="true" class="icon-checkmark"></i></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div id="posts">
+				<div id="form" class="textarea-wrapper--top-level">
+					<form class="reply authenticated">
+						<div class="postbox">
+							<div role="alert"></div>
+							<div class="avatar">
+								<a href="https://disqus.com/by/disqus_nASrsPUS3U/" class="user" data-action="profile" data-username="disqus_nASrsPUS3U">
+									<img data-role="user-avatar" data-user="200122974" src="//a.disquscdn.com/1472168643/images/noavatar92.png" alt="Аватар">
+								</a>
+							</div>
+
+							<div class="textarea-wrapper" data-role="textarea" dir="auto">
+								<div><span class="placeholder">Присоединиться к обсуждению...</span>
+									<div class="textarea" tabindex="0" role="textbox" aria-multiline="true" contenteditable="PLAINTEXT-ONLY" data-role="editable" aria-label="Присоединиться к обсуждению..." style="overflow: auto; max-height: 350px;">
+										<p><br></p>
+									</div>
+									<div style="display: none;">
+										<ul class="user-mention__list">
+											<li class="header user-mention__header">
+												<h5>в этой беседе</h5>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+									<div class="drag-text">
+										? Перетащите сюда изображения, чтобы загрузить их.
+									</div>
+								</div>
+								<div class="media-preview empty" data-role="media-preview">
+									<ul data-role="media-legacy-list"></ul>
+									<ul data-role="media-progress-list"></ul>
+									<ul data-role="media-rich-list"></ul>
+									<div class="media-expanded empty" data-role="media-preview-expanded">
+										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-role="media-preview-expanded-image" alt="Место для медиафайла">
+									</div>
+								</div>
+								<div class="edit-alert" role="postbox-alert"></div>
+								<div class="post-actions">
+									<ul class="wysiwyg">
+										<li class="wysiwyg__item" data-role="media-uploader"><a href="#" tabindex="-1" data-action="attach" class="attach" title="Загрузить изображения"><span>Прикрепить</span></a>
+											<input type="file" data-role="media-upload" tabindex="-1" accept="image/*">
+										</li>
+									</ul>
+									<div class="logged-in">
+										<section>
+											<div class="temp-post" style="text-align: right">
+												<button class="btn post-action__button">
+												Опубликовать от имени <span data-username="disqus_nASrsPUS3U" data-role="username">Алексей Шолохов</span>
+												
+												</button>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+
+							<div data-role="login-form">
+								<div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<button class="alert alert--realtime" style="display: none" data-role="realtime-notification">
+				</button>
+
+				<div id="no-posts" style="display:none"></div>
+
+				<ul id="post-list" class="post-list">
+					<li class="post" id="post-2891498881">
+						<div role="alert"></div>
+						<div data-role="post-content" class="post-content  authored-by-session-user">
+							<ul class="post-menu dropdown" data-role="menu">
+								<li class="collapse">
+									<a href="#" data-action="collapse" title="Свернуть"><span>?</span></a>
+								</li>
+								<li class="expand">
+									<a href="#" data-action="collapse" title="Развернуть"><span>+</span></a>
+								</li>
+
+								<li class="moderator-menu-options" role="menu">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret moderator-menu-options"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#" data-action="spam">Пометить как спам</a></li>
+										<li><a href="#" data-action="delete">Удалить</a> </li>
+										<li><a href="#" data-action="blacklist">Блокировать пользователя</a> </li>
+										<li>
+											<a href="https://devband.disqus.com/admin/moderate/#/approved/search/id:2891498881" target="_blank">Модерировать</a>
+										</li>
+
+										<li class="highlight-toggle">
+											<a href="#" data-action="highlight">
+											Отметить комментарий как особый
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<div class="indicator"></div>
+
+							<div class="avatar hovercard">
+								<a href="https://disqus.com/by/disqus_nASrsPUS3U/" class="user" data-action="profile" data-username="disqus_nASrsPUS3U">
+									<img data-role="user-avatar" data-user="200122974" src="//a.disquscdn.com/1472168643/images/noavatar92.png" alt="Аватар">
+								</a>
+							</div>
+							<div class="post-body">
+								<header class="comment__header">
+									<span class="post-byline">
+									<span class="author publisher-anchor-color"><a href="https://disqus.com/by/disqus_nASrsPUS3U/" data-action="profile" data-username="disqus_nASrsPUS3U" data-role="username">Алексей Шолохов</a></span>
+									<span class="badge moderator">Модератор</span>
+
+									</span>
+
+									<span class="post-meta">
+									<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+									<a href="https://devband.github.io/forpda.html#comment-2891498881" data-role="relative-time" class="time-ago" title="вторник, 13 сентября 2016 г., 20:12">24 минуты назад</a>
+									</span>
+
+								</header>
+
+								<div class="post-body-inner">
+									<div class="post-message-container" data-role="message-container">
+										<div class="publisher-anchor-color" data-role="message-content">
+											<div class="post-message " data-role="message" dir="auto">
+												<p>Лучший клиент сайта <a href="http://4pda.ru" rel="nofollow">4pda.ru</a> :)</p>
+											</div>
+
+											<span class="post-media"><ul data-role="post-media-list"></ul></span>
+										</div>
+									</div>
+									<a class="see-more hidden" title="показать больше" data-action="see-more">показать больше</a>
+								</div>
+
+								<footer class="comment__footer">
+									<menu class="comment-footer__menu">
+										<li class="voting" data-role="voting">
+											<a href="#" class="vote-up  count-0" data-action="upvote" title="Голосовать ЗА">
+
+												<span class="updatable count" data-role="likes">0</span>
+												<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+											</a>
+											<span role="button" class="vote-down  count-0" data-action="downvote" title="Голосовать ПРОТИВ">
+
+											<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+											</span>
+										</li>
+										<li class="bullet" aria-hidden="true">•</li>
+
+										<li class="edit" data-role="edit-link">
+											<a href="#" data-action="edit">
+												<span class="text">Изменить</span></a>
+										</li>
+										<li class="bullet" aria-hidden="true">•</li>
+
+										<li class="reply" data-role="reply-link">
+											<a href="#" data-action="reply">
+												<span class="text">Ответить</span></a>
+										</li>
+										<li class="bullet" aria-hidden="true">•</li>
+
+
+										<li class="comment__share">
+											<a class="toggle"><span class="text">Поделиться ›</span></a>
+											<ul class="comment-share__buttons">
+												<li class="twitter">
+													<button class="share__button" data-action="share:twitter">Twitter</button>
+												</li>
+												<li class="facebook">
+													<button class="share__button" data-action="share:facebook">Facebook</button>
+												</li>
+												<li class="link">
+													<input class="share__button" value="http://disq.us/p/1btiutd" name="Ссылка" title="Click to copy post link" data-action="copy-link" readonly="">
+												</li>
+											</ul>
+										</li>
+
+										<li class="realtime" data-role="realtime-notification:2891498881">
+											<span style="display:none;" class="realtime-replies"></span>
+											<a style="display:none;" href="#" class="realtime-button"></a>
+										</li>
+
+									</menu>
+								</footer>
+							</div>
+
+							<div data-role="blacklist-form"></div>
+							<div class="reply-form-container" data-role="reply-form"></div>
+						</div>
+
+						<ul data-role="children" class="children"></ul>
+
+					</li>
+				</ul>
+
+				<div class="load-more" data-role="more" style="display:none">
+					<a href="#" data-action="more-posts" class="btn load-more__button">Загрузить ещё комментарии</a>
+				</div>
+			</div>
+
+		</section>
+
+		<div id="placement-bottom" data-tracking-area="discovery-south">
+			<div class="post-list" style="height: 0px; visibility: hidden;"></div>
+		</div>
+
+		<div id="footer" data-tracking-area="footer" class="disqus-footer__wrapper">
+			<ul class="disqus-footer">
+				<li class="disqus-footer__logo"><a href="https://disqus.com" rel="nofollow" title="Работает на Disqus" class="disqus-footer__link">Работает на Disqus</a></li>
+				<li id="thread-subscribe-button" class="email disqus-footer__item">
+					<div class="default">
+						<a href="#" rel="nofollow" data-action="subscribe" title="Подпишись и получай обновления этого обсуждения по электронной почте" class="disqus-footer__link"><i aria-hidden="true" class="icon icon-mail"></i><span class="clip">Подписаться</span> <i aria-hidden="true" class="icon icon-checkmark"></i></a>
+					</div>
+					<div class="form">
+						<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com" class="disqus-footer__input input--text"></div>
+					</div>
+				</li>
+				<li class="install disqus-footer__item">
+					<a href="https://publishers.disqus.com/engage?utm_source=devband&amp;utm_medium=Disqus-Footer" rel="nofollow" target="_blank" class="disqus-footer__link">
+						<i aria-hidden="true" class="icon icon-disqus"></i>
+						<span class="clip hidden-sm">Добавь Disqus на свой сайт</span>
+						<span class="clip visible-sm hidden-xs">Добавить Disqus</span>
+						<span class="clip visible-xs">Добавить</span>
+					</a>
+				</li>
+				<li class="privacy disqus-footer__item">
+					<a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&amp;utm_medium=embed-footer&amp;utm_content=privacy-btn" rel="nofollow" target="_blank" class="disqus-footer__link">
+						<i aria-hidden="true" class="icon icon-lock"></i>
+						<span class="clip">Конфиденциальность</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>
