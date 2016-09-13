@@ -672,3 +672,11 @@ footer {
 		color: grey;
 	}
 }
+
+/*
+ *		Disqus comments
+ */
+
+#disqus_thread {
+ margin: 1rem;
+}

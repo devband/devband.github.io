@@ -628,7 +628,7 @@ main {
 	}
 	main {
 		article {
-			&:extend(.projects main article all);
+			&:extend(#projects main article all);
 		}
 	}
 }

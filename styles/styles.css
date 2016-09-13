@@ -655,3 +655,9 @@ footer p {
   margin: 1.5rem;
   color: grey;
 }
+/*
+ *		Disqus comments
+ */
+#disqus_thread {
+  margin: 1rem;
+}
