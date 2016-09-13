@@ -30,7 +30,7 @@
 	<script type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>
 
-<body class="home">
+<body id="home">
 	<script type="text/javascript" src="../../less-dev.js"></script>
 	<script type="text/javascript" src="../../dev/toolbar.js"></script>
 
