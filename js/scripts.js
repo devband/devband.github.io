@@ -151,9 +151,24 @@ function hidden_menu(target) {
 }
 
 /*
- *		Copy number purse
- */
+*		Copy number purse
+*/
 
 function copyPurseNumber(link) {
 	prompt("Вы можете скопировать номер кошелька:", link.title);
+}
+
+/*
+*		Desqus comments
+*/
+
+function createDesque(el) {
+	var d = document, s = d.createElement('script');
+	s.src = 'https://devband.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	
+	var noscript = document.createElement('noscript');
+	noscript.innerHTML = 'Пожалуйста включите JavaScript что бы увидеть <a href="https://disqus.com/?ref_noscript">комментарии от Disqus.</a>';
+	el.parentNode.insertBefore(noscript,el.nextSibling);
 }

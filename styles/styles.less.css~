@@ -87,7 +87,7 @@ body {
 		header,
 		main,
 		footer {
-			display: none;
+			display: none !important;
 		}
 	}
 }
@@ -680,5 +680,9 @@ footer {
 
 #disqus_thread {
 	max-width: @width_tab_large;
-	margin: 2rem 0.5rem;
+	margin: 2rem 0;
+	padding: 1rem;
+	a {
+		color: @tmColor;
+	}
 }

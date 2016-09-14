@@ -662,5 +662,7 @@ footer p {
 #disqus_thread {
   max-width: 80rem;
   margin: 2rem 0.5rem;
-  
+}
+#disqus_thread a {
+  color: #0288d1;
 }

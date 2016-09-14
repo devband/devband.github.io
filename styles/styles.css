@@ -38,7 +38,7 @@ body.load .progressbar {
 body.load header,
 body.load main,
 body.load footer {
-  display: none;
+  display: none !important;
 }
 /*
  *
