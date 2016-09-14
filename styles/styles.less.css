@@ -86,7 +86,9 @@ body {
 		}
 		header,
 		main,
-		footer {
+		footer,
+		.comments,
+		#disqus_thread {
 			display: none !important;
 		}
 	}
@@ -628,15 +630,33 @@ main {
 		text-align: left;
 	}
 	main {
+		margin: auto;
+		padding: 0;
+		overflow: hidden;
+		max-width: @width_tab_large;
 		article {
 			&:extend(#projects main article all);
+			min-height: auto;
 		}
 	}
 }
 
 /*
+*
+*		Gallery
+*
+*/
+
+.gallery {
+	img {
+		width: 32.8vw;
+		max-height: 100vh;
+	}
+}
+
+/*
  *
- *    FOOTER
+ *		FOOTER
  *
 */
 
@@ -675,37 +695,44 @@ footer {
 }
 
 /*
- *		Disqus comments
+ *		Comments by Disqus
  */
 
-.comment_count {
-	margin: 1rem;
-	text-align: center;
-	font-weight: bold;
-	color: grey;
-	a {
-		text-decoration: none;
-		color: @tx;
+.comments {
+	display: block;
+	margin: auto;
+	max-width: @width_tab_large;
+	.title {
+		text-align: center;
+		color: grey;
+		h2 {
+			margin: 1rem;
+		}
+		a[href="#disqus_thread"] {
+			margin: 1rem;
+			text-decoration: none;
+			color: @tx;
+		}
+	}
+	#disqus_thread {
+		margin: 1rem 0.5rem;
+		padding: 1rem;
+		background: @bg;
+		a {
+			color: @tmColor;
+		}
+		.show_comment {
+			text-align: center;
+			&.hide {
+				display: none;
+			}
+			span {
+				text-transform: uppercase;
+				font-weight: bold;
+				color: @tmColor;
+			}
+		}
 	}
 }
 
-#disqus_thread {
-	max-width: @width_tab_large;
-	margin: 1rem 0.5rem;
-	padding: 1rem;
-	background: @bg;
-	a {
-		color: @tmColor;
-	}
-	.show_comment {
-		text-align: center;
-		&.hide {
-			display: none;
-		}
-		span {
-			text-transform: uppercase;
-//			font-weight: bold;
-			color: @tmColor;
-		}
-	}
-}
+

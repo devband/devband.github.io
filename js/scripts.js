@@ -35,16 +35,15 @@ function domContentLoaded() {
 	/*
 	 *		Gallery	
 	 */
-
 	var galleryAll = document.querySelectorAll('.gallery');
 	for (var j = 0; j < galleryAll.length; j++) {
 		var gallery = galleryAll[j];
-		for (var i = 0; i < 10; i++) {
+		for (i = 1; i < 15; i++) {
 			var a = document.createElement('a');
 			var img = document.createElement('img');
-			a.href = 'src/' + pic;
-			img.src = 'src/mini-' + pic;
-			img.alt = pic;
+			a.href = 'images/'+i+'.png';
+			img.src = 'images/'+i+'.png';
+			img.alt = i+'.png';
 			a.appendChild(img);
 			gallery.appendChild(a);
 		}
@@ -125,7 +124,6 @@ function headerHidden() {
 	if (window.pageYOffset < header_container_height + 20) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
-		bodyPaddingTop();
 	}
 }
 

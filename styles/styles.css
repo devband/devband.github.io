@@ -37,7 +37,9 @@ body.load .progressbar {
 }
 body.load header,
 body.load main,
-body.load footer {
+body.load footer,
+body.load .comments,
+body.load #disqus_thread {
   display: none !important;
 }
 /*
@@ -616,9 +618,27 @@ main footer {
 #full_description navi {
   text-align: left;
 }
+#full_description main {
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  max-width: 80rem;
+}
+#full_description main article {
+  min-height: auto;
+}
+/*
+*
+*		Gallery
+*
+*/
+.gallery img {
+  width: 32.8vw;
+  max-height: 100vh;
+}
 /*
  *
- *    FOOTER
+ *		FOOTER
  *
 */
 footer {
@@ -657,34 +677,41 @@ footer p {
   color: grey;
 }
 /*
- *		Disqus comments
+ *		Comments by Disqus
  */
-.comment_count {
-  margin: 1rem;
+.comments {
+  display: block;
+  margin: auto;
+  max-width: 80rem;
+}
+.comments .title {
   text-align: center;
-  font-weight: bold;
   color: grey;
 }
-.comment_count a {
+.comments .title h2 {
+  margin: 1rem;
+}
+.comments .title a[href="#disqus_thread"] {
+  margin: 1rem;
   text-decoration: none;
   color: black;
 }
-#disqus_thread {
-  max-width: 80rem;
+.comments #disqus_thread {
   margin: 1rem 0.5rem;
   padding: 1rem;
   background: white;
 }
-#disqus_thread a {
+.comments #disqus_thread a {
   color: #0288d1;
 }
-#disqus_thread .show_comment {
+.comments #disqus_thread .show_comment {
   text-align: center;
 }
-#disqus_thread .show_comment.hide {
+.comments #disqus_thread .show_comment.hide {
   display: none;
 }
-#disqus_thread .show_comment span {
+.comments #disqus_thread .show_comment span {
   text-transform: uppercase;
+  font-weight: bold;
   color: #0288d1;
 }

@@ -27,7 +27,8 @@
 	<meta name="theme-color" content="#ffffff">
 	<link href="styles/styles.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="/js/scripts.js"></script>
+	<script type="text/javascript" src="../../js/scripts.js"></script>
 	<script 8type="text/javascript" src="../../z_forum_helpers.js"></script>
 </head>
 
@@ -90,12 +91,12 @@
 		<article>
 			<section class="gallery"></section>
 			<section class="content">
-
+				
 			</section>
 		</article>
 	</main>
 
-	<div class="comment_count">Комментарии: <a href="#disqus_thread"></a></div>
+	<div class="comments"><span>Комментарии</span> <a href="#disqus_thread">No comments</a></div>
 	
 	<div id="disqus_thread">
 		<div class="show_comment" onclick="createDesque(this)">
