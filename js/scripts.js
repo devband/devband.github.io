@@ -171,4 +171,6 @@ function createDesque(el) {
 	var noscript = document.createElement('noscript');
 	noscript.innerHTML = 'Пожалуйста включите JavaScript что бы увидеть <a href="https://disqus.com/?ref_noscript">комментарии от Disqus.</a>';
 	el.parentNode.insertBefore(noscript,el.nextSibling);
+	
+	el.classList.add("hide");
 }

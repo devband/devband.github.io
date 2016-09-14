@@ -95,8 +95,12 @@
 		</article>
 	</main>
 
-	<div id="disqus_thread"></div>
-	<a href="#disqus_thread" onclick="createDesque(this)">Comments</a>
+	<div id="disqus_thread">
+		<div class="comment_count">Количество комментариев <a href="#disqus_thread"></a></div>
+		<div class="show_comment" onclick="createDesque(this)">
+			<span>Показать комментарии</span>
+		</div>
+	</div>
 
 	<footer>
 		<p>Copyright 2016 DevBand</p>

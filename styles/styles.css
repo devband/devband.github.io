@@ -659,10 +659,32 @@ footer p {
 /*
  *		Disqus comments
  */
+.comment_count {
+  margin: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: grey;
+}
+.comment_count a {
+  color: black;
+}
 #disqus_thread {
   max-width: 80rem;
-  margin: 2rem 0.5rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  background: white;
 }
 #disqus_thread a {
+  color: #0288d1;
+}
+#disqus_thread .show_comment {
+  text-align: center;
+}
+#disqus_thread .show_comment.hide {
+  display: none;
+}
+#disqus_thread .show_comment span {
+  text-transform: uppercase;
+  font-weigth: bold;
   color: #0288d1;
 }
