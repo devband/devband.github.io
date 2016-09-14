@@ -684,6 +684,7 @@ footer {
 	font-weight: bold;
 	color: grey;
 	a {
+		text-decoration: none;
 		color: @tx;
 	}
 }
@@ -703,7 +704,7 @@ footer {
 		}
 		span {
 			text-transform: uppercase;
-			font-weigth: bold;
+			font-weight: bold;
 			color: @tmColor;
 		}
 	}

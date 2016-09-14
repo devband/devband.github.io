@@ -666,6 +666,7 @@ footer p {
   color: grey;
 }
 .comment_count a {
+  text-decoration: none;
   color: black;
 }
 #disqus_thread {
@@ -685,6 +686,5 @@ footer p {
 }
 #disqus_thread .show_comment span {
   text-transform: uppercase;
-  font-weigth: bold;
   color: #0288d1;
 }
