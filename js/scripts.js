@@ -2,11 +2,11 @@ var nav,
 	main,
 	header,
 	footer,
+	galleryAll,
 	header_container,
 	header_container_height;
 
-document.addEventListener('DOMContentLoaded', domContentLoaded);
-
+document.addEventListener('DOMContentLoaded', domContentLoaded, false);
 
 function domContentLoaded() {
 
@@ -15,41 +15,76 @@ function domContentLoaded() {
 	header_container = document.querySelector(".header_container");
 	nav = document.querySelector("nav");
 	header_container_height = header_container.clientHeight;
+	galleryAll = document.querySelectorAll('.gallery');
 
-	/*
-	 *		Progress bar
-	 */
+	progressBar();
+	galleryBuilder();
+}
 
+window.addEventListener('load', windowLoad, false);
+
+function windowLoad() {
+	document.body.classList.remove('load');
+	bodyPaddingTop();
+}
+
+/*
+ *		Progress bar
+ */
+
+function progressBar() {
 	var progressBar = document.createElement('div');
 	progressBar.className = 'progressbar';
 	progressBar.innerHTML = '<span></span>';
 	document.body.insertBefore(progressBar, document.querySelector('header'));
 	document.body.classList.add('load');
-	window.addEventListener('load', windowLoad);
+}
 
-	function windowLoad() {
-		document.body.classList.remove('load');
-		bodyPaddingTop();
-	}
+/*
+ *		Gallery	
+ */
 
-	/*
-	 *		Gallery	
-	 */
-	var galleryAll = document.querySelectorAll('.gallery');
+function galleryBuilder() {
 	for (var j = 0; j < galleryAll.length; j++) {
 		var gallery = galleryAll[j];
 		for (i = 1; i < 15; i++) {
 			var a = document.createElement('a');
 			var img = document.createElement('img');
-			a.href = 'images/'+i+'.png';
-			img.src = 'images/'+i+'.png';
-			img.alt = i+'.png';
+			a.href = 'images/' + i + '.png';
+			img.src = 'images/' + i + '.png';
+			img.alt = i + '.png';
 			a.appendChild(img);
 			gallery.appendChild(a);
 		}
 	}
-}
+};
 
+/*
+ *		Content Padding Top
+ */
+
+function bodyPaddingTop() {
+	body.style.paddingTop = header.clientHeight + "px";
+}
+window.addEventListener('resize', bodyPaddingTop, false);
+
+/*
+ *		Header Hidden
+ */
+
+window.addEventListener("scroll", headerHidden);
+
+function headerHidden() {
+	if (nav.getBoundingClientRect().top <= 0) {
+		header_container.classList.add("hidden");
+		header.classList.add("fixed");
+	}
+	if (window.pageYOffset < header_container_height) {
+		header_container.classList.remove("hidden");
+		header.classList.remove("fixed");
+		bodyPaddingTop();
+	}
+}
 
 /*
  *		Swipe
@@ -100,35 +135,8 @@ function domContentLoaded() {
 	}, false);
 })();
 
-
 /*
- *		Content Padding Top
- */
-
-function bodyPaddingTop() {
-	body.style.paddingTop = header.clientHeight + "px";
-}
-window.addEventListener('resize', bodyPaddingTop, false);
-
-/*
- *		header hidden
- */
-
-window.addEventListener("scroll", headerHidden);
-
-function headerHidden() {
-	if (nav.getBoundingClientRect().top <= 20) {
-		header_container.classList.add("hidden");
-		header.classList.add("fixed");
-	}
-	if (window.pageYOffset < header_container_height + 20) {
-		header_container.classList.remove("hidden");
-		header.classList.remove("fixed");
-	}
-}
-
-/*
- *		Menu toggler
+ *		Menu Toggler
  */
 
 function hidden_menu(target) {
@@ -149,26 +157,27 @@ function hidden_menu(target) {
 }
 
 /*
-*		Copy number purse
-*/
+ *		Copy number purse
+ */
 
 function copyPurseNumber(link) {
 	prompt("Вы можете скопировать номер кошелька:", link.title);
 }
 
 /*
-*		Desqus comments
-*/
+ *		Desqus comments
+ */
 
 function createDesque(el) {
-	var d = document, s = d.createElement('script');
+	var d = document,
+		s = d.createElement('script');
 	s.src = 'https://devband.disqus.com/embed.js';
 	s.setAttribute('data-timestamp', +new Date());
 	(d.head || d.body).appendChild(s);
-	
+
 	var noscript = document.createElement('noscript');
 	noscript.innerHTML = 'Пожалуйста включите JavaScript что бы увидеть <a href="https://disqus.com/?ref_noscript">комментарии от Disqus.</a>';
-	el.parentNode.insertBefore(noscript,el.nextSibling);
-	
+	el.parentNode.insertBefore(noscript, el.nextSibling);
+
 	el.classList.add("hide");
 }
