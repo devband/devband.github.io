@@ -632,9 +632,18 @@ main footer {
 *		Gallery
 *
 */
-.gallery img {
-  width: 32.8vw;
-  max-height: 100vh;
+.gallery {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.gallery a {
+  display: inline-block;
+}
+.gallery a img {
+  display: block;
+  margin: auto;
+  max-width: 100vw;
 }
 /*
  *
