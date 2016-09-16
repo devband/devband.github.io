@@ -14,10 +14,9 @@ function domContentLoaded() {
 	header = document.querySelector("header");
 	nav = document.querySelector("nav");
 	header_container = document.querySelector(".header_container");
-	header_container_height = header_container.clientHeight;
+	header_container_height = document.querySelector(".header_container").clientHeight;
 	galleryAll = document.querySelectorAll('.gallery');
 	
-	bodyPaddingTop();
 	progressBar();
 	galleryBuilder();
 }
@@ -26,6 +25,7 @@ window.addEventListener('load', windowLoad, false);
 
 function windowLoad() {
 	document.body.classList.remove('load');
+	bodyPaddingTop();
 }
 
 /*
@@ -88,6 +88,7 @@ function headerHidden() {
 	if (window.pageYOffset < header_container_height) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
+		bodyPaddingTop();
 	}
 }
 
