@@ -35,7 +35,7 @@
 	<header class="header">
 		<div class="header_container">
 			<div class="logo">
-				<a href="index.html">
+				<a href="../../index.html">
 					<img src="../../src/db_logo.png" title="Лого DevBand">
 				</a>
 			</div>
@@ -47,7 +47,7 @@
 
 		<nav>
 			<span class="button arrow">
-				<a href="projects.html">
+				<a href="../../projects.html">
 					<img src="../../src/arrow_back.svg">
 				</a>
 			</span>
@@ -68,7 +68,7 @@
 				<p>Приложение позволяет: просматривать новости, отвечать на форуме, переписываться с пользователями средствами QMS, имеет функции для курирования тем, вкладки, заметки и многое-многое другое...</p>
 				<div class="footer">
 					<div class="buttons">
-						<a href="forpda.html">Download</a>
+						<a href="#">Download</a>
 					</div>
 					<div class="members">
 						<span class="ava nizamiev">

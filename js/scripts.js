@@ -45,19 +45,25 @@ function progressBar() {
  */
 
 function galleryBuilder() {
-	for (var j = 0; j < galleryAll.length; j++) {
-		var gallery = galleryAll[j];
-		for (i = 1; i < 15; i++) {
-			var a = document.createElement('a');
-			var img = document.createElement('img');
-			a.href = 'images/' + i + '.png';
-			img.src = 'images/' + i + '.png';
-			img.alt = i + '.png';
-			a.appendChild(img);
-			gallery.appendChild(a);
-		}
+	var gallery = document.querySelector('.gallery');
+	function add(item) {
+		var img = document.createElement('img');
+		img.src = 'images/' + item + '.png';
+		img.alt = item + '.png';
+		gallery.appendChild(img);
+		img.addEventListener('load',function(){
+			add(item+1);
+		});
+		img.addEventListener('error',function(){
+			img.parentNode.removeChild(img);
+		});
+		var a = document.createElement('a');
+		a.href = 'images/' + item + '.png';
+		a.appendChild(img);
+		gallery.appendChild(a);
 	}
-};
+	add(1);
+}
 
 /*
  *		Content Padding Top
@@ -82,7 +88,6 @@ function headerHidden() {
 	if (window.pageYOffset < header_container_height) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
-		bodyPaddingTop();
 	}
 }
 
@@ -90,26 +95,31 @@ function headerHidden() {
  *		Swipe
  */
 
-(function() {
-
 	// Переход по страницам 
 
+function swipePage(index) {
 	var pages = ['index.html', 'projects.html', 'developers.html'];
-
-	function swipePage(index) {
-		if (location.pathname == "/" && index == +1) {
-			location.href = location.href + pages[1];
-		}
-		pages.forEach(function(item, i, arr) {
-			if (~location.href.indexOf(item)) {
-				if (pages[i + index] != undefined) location.href = pages[i + index];
-			}
-		});
+	if (location.pathname == "/" && index == +1) {
+		location.href = location.href + pages[1];
 	}
+	
+	pages.forEach(function(item, i, arr) {
+		if (~location.href.indexOf('devband.github.io/' + item)) {
+			if (pages[i + index] != undefined) location.href = pages[i + index];
+		}
+	});
+	
+	alert(swipe.target);
+}
 
-	// touch hendler
-
-	var startX, startY, moveY, moveX, start, swipelangth = 150;
+function Swipe(swipeLangth, swipeTime) {
+	var startX,
+		startY,
+		moveY,
+		moveX,
+		start;
+		
+		this.target;
 
 	window.addEventListener('touchstart', function(e) {
 		startX = e.changedTouches[0].pageX;
@@ -124,16 +134,18 @@ function headerHidden() {
 		}
 	}, false);
 	window.addEventListener('touchend', function(e) {
-		if (new Date - start < 500) {
-			if (moveX - startX >= swipelangth) {
+		if (new Date - start < swipeTime) {
+			if (moveX - startX >= swipeLangth) {
 				swipePage(-1);
 			}
-			if (startX - moveX >= swipelangth) {
+			if (startX - moveX >= swipeLangth) {
 				swipePage(+1);
 			}
 		}
 	}, false);
-})();
+};
+
+var swipe = new Swipe(150,500);
 
 /*
  *		Menu Toggler

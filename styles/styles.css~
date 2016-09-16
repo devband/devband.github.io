@@ -680,20 +680,24 @@ footer p {
  *		Comments by Disqus
  */
 .comments {
-  margin: 1.5rem auto;
+  display: block;
+  margin: auto;
+  max-width: 80rem;
+}
+.comments .title {
+  text-align: center;
+  color: grey;
 }
 .comments .title h2 {
-  padding: 0;
-  margin: 0;
+  margin: 1rem;
 }
 .comments .title a[href="#disqus_thread"] {
-  vertical-align: middle;
+  margin: 1rem;
   text-decoration: none;
   color: black;
 }
 .comments #disqus_thread {
-  max-width: 80rem;
-  margin: 1rem;
+  margin: 1rem 0.5rem;
   padding: 1rem;
   background: white;
 }

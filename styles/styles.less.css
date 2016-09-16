@@ -648,9 +648,17 @@ main {
 */
 
 .gallery {
-	img {
-		width: 32.8vw;
-		max-height: 100vh;
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+	a {
+		display: inline-block;
+		img {
+			display: block;
+			margin: auto;
+			max-height: 100vh;
+			max-width: 100vw;
+		}
 	}
 }
 
