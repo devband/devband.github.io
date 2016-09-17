@@ -137,6 +137,7 @@ header.header {
 		margin: 0 auto;
 		padding: 2rem 1.5rem;
 		white-space: nowrap;
+		.vendors(transition, 0.3s ease-out);
 		@media screen {
 			@media (max-width: @width_mob_large) {
 				padding: 1rem;
@@ -588,8 +589,8 @@ main {
 				margin: 0;
 				padding: 1rem 0;
 				text-align: center;
-				.vendors(transition, 0.5s ease-out);
 				border-radius: 0;
+				.vendors(transition, 0.5s ease-out);
 				.vendors(transform, translate(0));
 				background: @bg;
 				&.close {

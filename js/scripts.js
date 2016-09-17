@@ -88,7 +88,6 @@ function headerHidden() {
 	if (window.pageYOffset < header_container_height) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
-		bodyPaddingTop();
 	}
 }
 
@@ -109,9 +108,10 @@ function swipePage(index) {
 			if (pages[i + index] != undefined) location.href = pages[i + index];
 		}
 	});
+//	alert('oo');
 }
 
-function Swipe(swipeLangth, swipeTime) {
+function Swipe(swipeLangth) {
 	var startX,
 		startY,
 		moveY,
@@ -133,7 +133,8 @@ function Swipe(swipeLangth, swipeTime) {
 		}
 	}, false);
 	window.addEventListener('touchend', function(e) {
-		if (new Date - start < swipeTime) {
+		var d = new Date;
+		if (d - start > 100 && d - start < 500) {
 			if (moveX - startX >= swipeLangth) {
 				swipePage(-1);
 			}
@@ -144,7 +145,7 @@ function Swipe(swipeLangth, swipeTime) {
 	}, false);
 };
 
-var swipe = new Swipe(150,500);
+var swipe = new Swipe(150);
 
 /*
  *		Menu Toggler

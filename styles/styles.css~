@@ -95,6 +95,16 @@ header.header .header_container {
   margin: 0 auto;
   padding: 2rem 1.5rem;
   white-space: nowrap;
+  -webkit-transition: 0.5s ease-out;
+  -moz-transition: 0.5s ease-out;
+  -ms-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+  transform: translate(0);
 }
 @media screen and (max-width: 40rem) {
   header.header .header_container {
@@ -102,7 +112,11 @@ header.header .header_container {
   }
 }
 header.header .header_container.hidden {
-  display: none;
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  transform: translate(0, -100%);
 }
 header.header .header_container .logo {
   display: inline-block;
@@ -570,12 +584,12 @@ main footer {
   margin: 0;
   padding: 1rem 0;
   text-align: center;
+  border-radius: 0;
   -webkit-transition: 0.5s ease-out;
   -moz-transition: 0.5s ease-out;
   -ms-transition: 0.5s ease-out;
   -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
-  border-radius: 0;
   -webkit-transform: translate(0);
   -moz-transform: translate(0);
   -ms-transform: translate(0);
