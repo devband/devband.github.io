@@ -2,6 +2,7 @@ var doc;
 
 function documentLoaded() {
 	temlate();
+	appendElem('head');
 	appendElem('header');
 	appendElem('footer');
 }
@@ -22,5 +23,5 @@ function temlate() {
 
 function appendElem(el) {
 	var elem = document.querySelector(el);
-	elem.innerHTML = doc.querySelector(el).innerHTML;
+	elem.insertAdjacentHTML("beforeEnd", doc.querySelector(el).innerHTML);
 }

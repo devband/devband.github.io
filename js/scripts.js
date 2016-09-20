@@ -6,22 +6,23 @@ var nav,
 	header_container,
 	header_container_height;
 
-document.addEventListener('DOMContentLoaded', domContentLoaded, false);
+document.addEventListener('DOMContentLoaded', domContentLoaded);
 
 function domContentLoaded() {
-
 	body = document.body;
 	header = document.querySelector("header");
 	nav = document.querySelector("nav");
 	header_container = document.querySelector(".header_container");
 	header_container_height = document.querySelector(".header_container").clientHeight;
 	galleryAll = document.querySelectorAll('.gallery');
-	
+
 	progressBar();
+	activeTab();
+	
 	galleryBuilder();
 }
 
-window.addEventListener('load', windowLoad, false);
+window.addEventListener('load', windowLoad);
 
 function windowLoad() {
 	document.body.classList.remove('load');
@@ -51,12 +52,12 @@ function galleryBuilder() {
 		img.src = 'images/' + item + '.png';
 		img.alt = item + '.png';
 		gallery.appendChild(img);
-		img.addEventListener('load',function(){
-			add(item+1);
-		});
-		img.addEventListener('error',function(){
-			img.parentNode.removeChild(img);
-		});
+		img.addEventListener('load', function() {
+								 add(item + 1);
+							 });
+		img.addEventListener('error', function() {
+								 img.parentNode.removeChild(img);
+							 });
 		var a = document.createElement('a');
 		a.href = 'images/' + item + '.png';
 		a.appendChild(img);
@@ -92,23 +93,51 @@ function headerHidden() {
 }
 
 /*
+ *
+ *		Active Tab Highlight
+ *
+ */
+
+function activeTab(e) {
+	/*e = event || window.event;
+	 var target = e.target || e.srcElement;
+
+	 function highlightTab(href){
+
+	 }
+
+	 while (target != this) {
+	 if (target.nodeName == "A") {
+	 highlightTab(target.href);
+	 return;
+	 }
+	 target = target.parentNode;
+	 }*/
+	var tabs = document.querySelectorAll('nav ul li a');
+	for (var i = 0; i < tabs.length; i++) {
+		if (tabs[i].classList.contains(document.body.id)) {
+			tabs[i].parentNode.classList.add('active');
+		}
+	}
+}
+
+/*
  *		Swipe
  */
 
-	// Переход по страницам 
+// Переход по страницам 
 
 function swipePage(index) {
 	var pages = ['index.html', 'projects.html', 'developers.html'];
 	if (location.pathname == "/" && index == +1) {
 		location.href = location.href + pages[1];
 	}
-	
+
 	pages.forEach(function(item, i, arr) {
-		if (~location.href.indexOf('devband.github.io/' + item)) {
-			if (pages[i + index] != undefined) location.href = pages[i + index];
-		}
-	});
-//	alert('oo');
+					  if (~location.href.indexOf('devband.github.io/' + item)) {
+						  if (pages[i + index] != undefined) location.href = pages[i + index];
+					  }
+				  });
 }
 
 function Swipe(swipeLangth) {
@@ -117,32 +146,32 @@ function Swipe(swipeLangth) {
 		moveY,
 		moveX,
 		start;
-		
-		this.target;
+
+	this.target;
 
 	window.addEventListener('touchstart', function(e) {
-		startX = e.changedTouches[0].pageX;
-		startY = e.changedTouches[0].pageY;
-		start = new Date;
-	}, false);
+								startX = e.changedTouches[0].pageX;
+								startY = e.changedTouches[0].pageY;
+								start = new Date;
+							}, false);
 	window.addEventListener('touchmove', function(e) {
-		moveX = e.changedTouches[0].pageX;
-		moveY = e.changedTouches[0].pageY;
-		if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
-			e.preventDefault();
-		}
-	}, false);
+								moveX = e.changedTouches[0].pageX;
+								moveY = e.changedTouches[0].pageY;
+								if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+									e.preventDefault();
+								}
+							}, false);
 	window.addEventListener('touchend', function(e) {
-		var d = new Date;
-		if (d - start > 100 && d - start < 500) {
-			if (moveX - startX >= swipeLangth) {
-				swipePage(-1);
-			}
-			if (startX - moveX >= swipeLangth) {
-				swipePage(+1);
-			}
-		}
-	}, false);
+								var d = new Date;
+								if (d - start > 100 && d - start < 500) {
+									if (moveX - startX >= swipeLangth) {
+										swipePage(-1);
+									}
+									if (startX - moveX >= swipeLangth) {
+										swipePage(+1);
+									}
+								}
+							}, false);
 };
 
 var swipe = new Swipe(150);
@@ -179,7 +208,7 @@ function copyPurseNumber(link) {
 /*
  *		Desqus comments
  */
-
+/*
 function createDesque(el) {
 	var d = document,
 		s = d.createElement('script');
@@ -193,3 +222,4 @@ function createDesque(el) {
 
 	el.classList.add("hide");
 }
+*/
