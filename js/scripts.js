@@ -109,6 +109,7 @@ function headerHidden() {
 	if (window.pageYOffset <= header_container_height + 10) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
+		bodyPaddingTop();
 	}
 }
 
