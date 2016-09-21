@@ -16,9 +16,10 @@ function domContentLoaded() {
 	header_container_height = document.querySelector(".header_container").clientHeight;
 	galleryAll = document.querySelectorAll('.gallery');
 
+	lessDevTools();
 	progressBar();
 	activeTab();
-	
+
 	galleryBuilder();
 }
 
@@ -27,6 +28,17 @@ window.addEventListener('load', windowLoad);
 function windowLoad() {
 	document.body.classList.remove('load');
 	bodyPaddingTop();
+}
+
+/*
+ *		Less Dev Tools
+ */
+
+function lessDevTools() {
+	var script = document.createElement('script');
+	script.src = "/js/less-dev.js";
+	script.type = "text/javascript";
+	body.insertBefore(script, body.firstChild);
 }
 
 /*
@@ -47,6 +59,7 @@ function progressBar() {
 
 function galleryBuilder() {
 	var gallery = document.querySelector('.gallery');
+	if (!gallery) return;
 	function add(item) {
 		var img = document.createElement('img');
 		img.src = 'images/' + item + '.png';
@@ -73,7 +86,14 @@ function galleryBuilder() {
 function bodyPaddingTop() {
 	document.body.style.paddingTop = header.clientHeight + "px";
 }
-window.addEventListener('resize', bodyPaddingTop, false);
+
+var mql = window.matchMedia("(orientation: portrait)");
+
+mql.addListener(function(m) {
+	bodyPaddingTop();
+    if(m.matches) { /* портретный режим */ }
+    else { /* горизонтальный режим */ }
+});
 
 /*
  *		Header Hidden
@@ -82,11 +102,11 @@ window.addEventListener('resize', bodyPaddingTop, false);
 window.addEventListener("scroll", headerHidden);
 
 function headerHidden() {
-	if (nav.getBoundingClientRect().top <= 0) {
+	if (nav.getBoundingClientRect().top <= 10) {
 		header_container.classList.add("hidden");
 		header.classList.add("fixed");
 	}
-	if (window.pageYOffset < header_container_height) {
+	if (window.pageYOffset <= header_container_height + 10) {
 		header_container.classList.remove("hidden");
 		header.classList.remove("fixed");
 	}
