@@ -229,7 +229,7 @@ function copyPurseNumber(link) {
 /*
  *		Desqus comments
  */
-/*
+
 function createDesque(el) {
 	var d = document,
 		s = d.createElement('script');
@@ -243,4 +243,4 @@ function createDesque(el) {
 
 	el.classList.add("hide");
 }
-*/
+
