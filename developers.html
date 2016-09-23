@@ -1,88 +1,108 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta name="description" content="DevBand - cайт команды разаботчиков.">
-	<meta name="keywords" content="DevBand, Developers Band, android разработчики, web разработчики">
-	<title>DevBand | Контакты</title>
-	<link rel="stylesheet" type="text/css" href="fonts/roboto/import.css">
-	<link href="styles/styles.css" rel="stylesheet">
-	<script type="text/javascript" src="js/server.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
-</head>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>DevBand | Контакты</title>
+		<link href="/styles/styles.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/fonts/roboto/import.css">
+		<script type="text/javascript" src="/js/scripts.js"></script>
+	</head>
 
-<body id="developers">
-
-	<header class="header"></header>
-	
-	<main>
-		<article>
-		<h1>Наша команда</h1>
-			<section>
-				<div class="ava">
-					<a href="src/nizamiev.jpg" title="nizamiev.jpg">
-						<img src="src/nizamiev.jpg" alt="nizamiev.jpg">
+	<body id="developers">
+		<script src="js/less-dev.js"></script>
+		<header class="header">
+			<div class="header_container">
+				<div class="logo">
+					<a href="index.html">
+						<img src="src/db_logo.png" title="Лого DevBand">
 					</a>
 				</div>
-				<div class="inf">
-					<h2 class="name">Евгений Низамиев</h2>
-					<div class="scills">Android / Web Developer</div>
-				</div>
-				<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
-				<ul class="menu contacts close">
-					<li><a href="mailto:radiationx@yandex.ru" titile="radiationx@yandex.ru">Я.mail</a></li>
-					<li><a href="http://vk.com/radiationx" title="vk/radiationx">vk</a></li>
-					<li><a href="http://4pda.ru/forum/index.php?showuser=2556269" title="radiation15">4pda</a></li>
-					<li><a href="http://radiationx.ru" title="radiationx.ru">site</a></li>
-					<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="410012865124764">Я.Деньги</a></li>
+				<h1>DevBand <span>Android & Web Developers</span></h1>
+				<a class="button" href="#"><img src="src/more_menu.svg"></a>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a class="home" href="/index.html"><img src="src/home.svg"><span>Главная</span></a>
+					</li>
+					<li>
+						<a class="projects" href="/projects.html"><img src="src/apps.svg"><span>Проекты</span></a>
+					</li>
+					<li>
+						<a class="developers" href="/developers.html"><img src="src/contacts.svg"><span>Контакты</span></a>
+					</li>
 				</ul>
-			</section>
-			<section>
-				<div class="ava">
-					<a href="src/tainuk.jpg" title="tainuk.jpg">
-						<img src="src/tainuk.jpg" alt="tainuk.jpg">
-					</a>
-				</div>
-				<div class="inf">
-					<h2 class="name">Александр Тайнюк</h2>
-					<div class="scills">Java / Kotlin Android Developer</div>
-				</div>
-				<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
-				<ul class="menu contacts close">
-					<li><a href="mailto:AleksandrTainyuk@gmail.com" title="AleksandrTainyuk@gmail.com">gmail</a></li>
-					<!--li><a href="http://vk.com/isanechek" title="vk.com/isanechek">vk</a></li-->
-					<li><a href="http://4pda.ru/forum/index.php?showuser=1726458" title="iSanechek">4pda</a></li>
-					<li><a href="http://GitHub.com/isanechek" title="isanechek">GitHub</a></li>
-				  	<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="41001844689131">Я.Деньги</a></li>
-				</ul>
-			</section>
-			<section>
-				<div class="ava">
-					<a href="src/sholohov.jpg" title="sholohov.jpg">
-						<img src="src/sholohov.jpg" alt="sholohov.jpg">
-					</a>
-				</div>
-				<div class="inf">
-					<h2 class="name">Алексей Шолохов</h2>
-					<div class="scills">Web Developer</div>
-				</div>
-				<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
-				<ul class="menu contacts close">
-					<li><a href="mailto:asolohov@gmail.com" title="asolohov@gmail.com">gmail</a></li>
-					<li><a href="http://vk.com/id4690372" title="vk.com/id4690372">vk</a></li>
-					<li><a href="http://4pda.ru/forum/index.php?showuser=96664" title="Морфий">4pda</a></li>
-					<li><a href="http://alexsholohov.github.io">site</a></li>
-					<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="R343791846131">WebMoney-R</a></li>
-					<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="Z349073483817">WebMoney-Z</a></li>
-				</ul>
-			</section>
-		</article>
-	</main>
-
-	<footer></footer>
-
-</body>
+			</nav>
+		</header>
+		
+		<main>
+			<article>
+				<h1>Наша команда</h1>
+				<section>
+					<div class="ava">
+						<a href="src/nizamiev.jpg" title="nizamiev.jpg">
+							<img src="src/nizamiev.jpg" alt="nizamiev.jpg">
+						</a>
+					</div>
+					<div class="inf">
+						<h2 class="name">Евгений Низамиев</h2>
+						<div class="scills">Android / Web Developer</div>
+					</div>
+					<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
+					<ul class="menu contacts close">
+						<li><a href="mailto:radiationx@yandex.ru" titile="radiationx@yandex.ru">Я.mail</a></li>
+						<li><a href="http://vk.com/radiationx" title="vk/radiationx">vk</a></li>
+						<li><a href="http://4pda.ru/forum/index.php?showuser=2556269" title="radiation15">4pda</a></li>
+						<li><a href="http://radiationx.ru" title="radiationx.ru">site</a></li>
+						<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="410012865124764">Я.Деньги</a></li>
+					</ul>
+				</section>
+				<section>
+					<div class="ava">
+						<a href="src/tainuk.jpg" title="tainuk.jpg">
+							<img src="src/tainuk.jpg" alt="tainuk.jpg">
+						</a>
+					</div>
+					<div class="inf">
+						<h2 class="name">Александр Тайнюк</h2>
+						<div class="scills">Java / Kotlin Android Developer</div>
+					</div>
+					<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
+					<ul class="menu contacts close">
+						<li><a href="mailto:AleksandrTainyuk@gmail.com" title="AleksandrTainyuk@gmail.com">gmail</a></li>
+						<!--li><a href="http://vk.com/isanechek" title="vk.com/isanechek">vk</a></li-->
+						<li><a href="http://4pda.ru/forum/index.php?showuser=1726458" title="iSanechek">4pda</a></li>
+						<li><a href="http://GitHub.com/isanechek" title="isanechek">GitHub</a></li>
+						<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="41001844689131">Я.Деньги</a></li>
+					</ul>
+				</section>
+				<section>
+					<div class="ava">
+						<a href="src/sholohov.jpg" title="sholohov.jpg">
+							<img src="src/sholohov.jpg" alt="sholohov.jpg">
+						</a>
+					</div>
+					<div class="inf">
+						<h2 class="name">Алексей Шолохов</h2>
+						<div class="scills">Web Developer</div>
+					</div>
+					<a class="button" onclick="hidden_menu(this)"><img src="src/reply.svg"></a>
+					<ul class="menu contacts close">
+						<li><a href="mailto:asolohov@gmail.com" title="asolohov@gmail.com">gmail</a></li>
+						<li><a href="http://vk.com/id4690372" title="vk.com/id4690372">vk</a></li>
+						<li><a href="http://4pda.ru/forum/index.php?showuser=96664" title="Морфий">4pda</a></li>
+						<li><a href="http://alexsholohov.github.io">site</a></li>
+						<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="R343791846131">WebMoney-R</a></li>
+						<li><a class="purse-number" onclick="copyPurseNumber(this)" href="#" title="Z349073483817">WebMoney-Z</a></li>
+					</ul>
+				</section>
+			</article>
+		</main>
+		<footer>
+			<p>Copyright Alexey Sholohov</p>
+		</footer>
+	</body>
 
 </html>
