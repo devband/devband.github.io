@@ -192,6 +192,9 @@ header {
 			line-height: 3rem;
 			width: 3rem;
 			text-align: center;
+			@media (max-width: @width_mob_large) {
+				text-align: right;
+			}
 			img {
 				display: block;
 				margin: auto;

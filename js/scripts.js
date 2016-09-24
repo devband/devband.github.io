@@ -16,7 +16,7 @@ function domContentLoaded() {
 	header_container_height = document.querySelector(".header_container").clientHeight;
 	galleryAll = document.querySelectorAll('.gallery');
 
-	lessDevTools();
+//	lessDevTools();
 	progressBar();
 	activeTab();
 	galleryBuilder();
@@ -164,7 +164,7 @@ function swipePage(index) {
 		location.href = location.href + pages[1];
 	}
 	pages.forEach(function(item, i, arr) {
-					  if (~location.href.indexOf( '99/' + item || 'io/' + item)) {
+					  if (~location.href.indexOf('99/' + item) || ~location.href.indexOf('io/' + item)) {
 						  if (pages[i + index] != undefined) location.href = pages[i + index];
 					  }
 				  });
@@ -185,8 +185,8 @@ function Swipe(swipeLangth) {
 	window.addEventListener('touchmove', function(e) {
 								moveX = e.changedTouches[0].pageX;
 								moveY = e.changedTouches[0].pageY;
-								if (~location.href.indexOf( '/project/' )) return;
 								if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+									if (~location.href.indexOf( '/projects/' )) return;
 									e.preventDefault();
 								}
 							}, false);
