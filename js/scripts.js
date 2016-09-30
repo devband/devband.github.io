@@ -34,10 +34,13 @@ function windowLoad() {
  */
 
 function lessDevTools() {
-	var script = document.createElement('script');
-	script.src = "/js/less-dev.js";
-	script.type = "text/javascript";
-	body.insertBefore(script, body.firstChild);
+	if (document.querySelector('script[src*="less-dev.js"]')) return;
+	else {
+		var script = document.createElement('script');
+		script.src = "/js/less-dev.js";
+		script.type = "text/javascript";
+		body.insertBefore(script, body.firstChild);
+	}
 }
 
 /*
@@ -87,10 +90,23 @@ function galleryBuilder() {
 		e = event || window.event;
 		var target = e.target || e.srcElement;
 
-		function targetImg(t) {
-			//temlate();
-			//appendElem('#fullview');
-			e.preventDefault();
+		function targetImg() {
+			var fullViewElem = document.querySelector('.full-view');
+			if (fullViewElem) {
+				fullViewElem.classList.remove('close');
+				fullViewElem.querySelector('.view img').src = target.href;
+				e.preventDefault();
+			} else {
+				gallery.insertAdjacentHTML("afterEnd", '\n<div class="full-view">\n\
+					<div class="prev"></div>\n\
+					<div class="view"><img src="' + target.href + '"></div>\n\
+					<div class="next"></div>\n\
+					<div class="buttons">\n\
+						<div class="btn close" onclick="closeFullView()"><img src="/src/close.svg"></div>\n\
+					</div>\n\
+				</div>');
+				e.preventDefault();
+			}
 		}
 
 		while (target != this) {
@@ -100,6 +116,13 @@ function galleryBuilder() {
 			}
 			target = target.parentNode;
 		}
+	}
+}
+
+function closeFullView() {
+	var fullViewElem = document.querySelector('.full-view');
+	if (!fullViewElem.classList.contains('close')) {
+		fullViewElem.classList.add('close');
 	}
 }
 
@@ -186,7 +209,7 @@ function Swipe(swipeLangth) {
 								moveX = e.changedTouches[0].pageX;
 								moveY = e.changedTouches[0].pageY;
 								if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
-									if (~location.href.indexOf( '/projects/' )) return;
+									if (~location.href.indexOf('/projects/')) return;
 									e.preventDefault();
 								}
 							}, false);
@@ -245,9 +268,12 @@ function createDesque(el) {
 	s.setAttribute('data-timestamp', +new Date());
 	(d.head || d.body).appendChild(s);
 
-	var noscript = document.createElement('noscript');
-	noscript.innerHTML = 'Пожалуйста включите JavaScript что бы увидеть <a href="https://disqus.com/?ref_noscript">комментарии от Disqus.</a>';
-	el.parentNode.insertBefore(noscript, el.nextSibling);
+	var s2 = d.createElement('script');
+	s2.src = 'https://devband.disqus.com/count.js';
+	s2.setAttribute("id", "dsq-count-scr");
+	(d.body).appendChild(s);
 
-	el.classList.add("hide");
+	var noscript = d.createElement('noscript');
+	noscript.insertAdjacentHTML("beforeEnd", '<div>Пожалуйста включите JavaScript что бы увидеть <a href="https://disqus.com/?ref_noscript">комментарии от Disqus.</a></div>');
+	d.body.appendChild(noscript);
 }

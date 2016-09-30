@@ -3,7 +3,7 @@
  *    ==============
  */
 
-/*var htmlHref = location.href;
+var htmlHref = location.href;
 requestSync('/fragments/head.html', 'head'); 
 
 document.addEventListener('DOMContentLoaded', DCL());
@@ -16,7 +16,7 @@ function DCL() {
 		requestAsync('fragments/nav_1.html', 'nav');
 	}
 	requestAsync('fragments/footer.html', 'footer');
-}*/
+}
 
 /*    ==================
  *    Async http request

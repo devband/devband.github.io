@@ -4,12 +4,19 @@ html {
   font-size: 100%;
 }
 body {
+  display: block;
   margin: 0;
   padding: 0;
+  padding-top: 11rem ;
   font-family: 'Roboto';
   font-size: 1rem;
   line-height: 1.25;
   background-color: #f2f2f2;
+}
+@media screen and (max-width: 40rem) {
+  body {
+    padding-top: 9rem ;
+  }
 }
 /*
  *
@@ -47,7 +54,7 @@ body.load #disqus_thread {
  *    HEADER
  *
 */
-header.header {
+header {
   position: absolute;
   top: 0;
   right: 0;
@@ -58,7 +65,7 @@ header.header {
   margin: 0;
   color: white;
   background: #1b94d6;
-  z-index: 999;
+  z-index: 998;
   box-sizing: border-box;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -66,9 +73,9 @@ header.header {
   -o-box-sh8adow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-header.header:before {
+header:before {
   content: "/*  *header hidden  */  var body = document.body; var header = document.querySelector(\"header\"); var header_container = document.querySelector(\".header_container\"); var nav = document.querySelector(\"nav\"); var header_container_height = header_container.clientHeight;   body.style.paddingTop = header.clientHeight + \"px\"; window.addEventListener(\"scroll\", function(e) { if (nav.getBoundingClientRect().top <= 20) { header_container.classList.add(\"hidden\"); header.classList.add(\"fixed\"); } if (window.pageYOffset < header_container_height) { header_container.classList.remove(\"hidden\"); header.classList.remove(\"fixed\"); } });  /*  *Menu toggler  */  function hidden_menu(button) { //alert(); var button_menu = document.querySelectorAll('.menu.contacts'); var content = button.parentNode.querySelector('.menu.contacts'); for (var i = 0; i < button_menu.length; i++ ) { if (!button_menu[i].classList.contains(\"close\")) { button_menu[i].classList.add(\"close\"); } } content.classList.remove('close'); }  /*  *Gallery  */   var gallery = document.querySelector('.gallery > div');  var massPic = [ 'light.png', 'dark.png', 'black.png', 'material_light.png', 'material_dark.png', 'material_black.png', 'white_old.png' ];  for (var i = 0; i < massPic.length; i++) { var pic = massPic[i]; var a = document.createElement('a'); var img = document.createElement('img'); a.href = 'src/' + pic; img.src = 'src/mini-' + pic; img.alt = pic; a.appendChild(img); gallery.appendChild(a);  }  gallery.addEventListener('click', function() { //alert(event.target.parentNode.innerHTML);  }); ";
-  font-family: monospace;
+  font-family: 'roboto mono';
   display: block;
   position: absolute;
   top: 0;
@@ -81,30 +88,35 @@ header.header:before {
   padding: 0.25rem 0.5rem;
   box-sizing: border-box;
   text-align: justify;
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: black;
   -webkit-box-shadow: inset 0 0 2rem #0288d1;
 }
-header.header.fixed {
+header.fixed {
   position: fixed;
 }
-header.header .header_container {
+header .header_container {
   position: relative;
   max-width: 80rem;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   white-space: nowrap;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -ms-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 @media screen and (max-width: 40rem) {
-  header.header .header_container {
+  header .header_container {
     padding: 1rem;
   }
 }
-header.header .header_container.hidden {
+header .header_container.hidden {
   display: none;
 }
-header.header .header_container .logo {
+header .header_container .logo {
   display: inline-block;
   vertical-align: middle;
   -webkit-border-radius: 100%;
@@ -120,38 +132,38 @@ header.header .header_container .logo {
   -o-box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
 }
-header.header .header_container .logo a {
+header .header_container .logo a {
   display: block;
   padding: 0.75rem;
 }
-header.header .header_container .logo a img {
+header .header_container .logo a img {
   display: block;
   width: auto;
   height: 2.5rem;
 }
-header.header .header_container h1 {
+header .header_container h1 {
   display: inline-block;
   margin: 0 1rem;
   font-size: 1.75rem;
   vertical-align: middle;
 }
 @media screen and (max-width: 40rem) {
-  header.header .header_container h1 {
+  header .header_container h1 {
     margin: 0 0.75rem;
   }
 }
 @media screen and (max-width: 20rem) {
-  header.header .header_container h1 {
+  header .header_container h1 {
     margin: 0 0.5rem;
   }
 }
-header.header .header_container h1 span {
+header .header_container h1 span {
   display: block;
   font-weight: normal;
   font-size: 1rem;
   opacity: 0.7;
 }
-header.header .header_container .button {
+header .header_container .button {
   position: absolute;
   top: 50%;
   right: 0.5rem;
@@ -161,7 +173,12 @@ header.header .header_container .button {
   width: 3rem;
   text-align: center;
 }
-header.header .header_container .button img {
+@media (max-width: 40rem) {
+  header .header_container .button {
+    text-align: right;
+  }
+}
+header .header_container .button img {
   display: block;
   margin: auto;
   position: relative;
@@ -169,7 +186,7 @@ header.header .header_container .button img {
   height: 1.5rem;
   bottom: -0.6875rem;
 }
-header.header nav {
+header nav {
   margin: 0;
   overflow-x: auto;
   box-sizing: border-box;
@@ -177,71 +194,71 @@ header.header nav {
   color: white;
   background: #1283c1;
 }
-header.header nav ul {
+header nav ul {
   display: block;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-header.header nav ul li {
+header nav ul li {
   display: inline-block;
   margin: 0 -0.125rem;
   list-style-type: none;
   opacity: 0.75;
 }
 @media screen and (max-width: 40rem) {
-  header.header nav ul li {
+  header nav ul li {
     width: 33.33333333%;
   }
-  header.header nav ul li a span {
+  header nav ul li a span {
     display: none;
   }
 }
-header.header nav ul li a {
+header nav ul li a {
   display: block;
   padding: 0.5rem 1.75rem;
   text-decoration: none;
   text-transform: uppercase;
 }
-header.header nav ul li a img {
+header nav ul li a img {
   margin: 0 0.5rem;
   width: 1.5rem;
   height: 1.5rem;
   vertical-align: middle;
 }
-header.header nav ul li a span {
+header nav ul li a span {
   vertical-align: middle;
   color: #c0e1f4;
 }
-header.header nav ul li.active {
+header nav ul li.active {
   opacity: 1;
   background: #1b94d6;
 }
-header.header nav ul li.active a img {
+header nav ul li.active a img {
   opacity: 1;
 }
-header.header nav ul li.active a span {
+header nav ul li.active a span {
   color: #ffffff;
 }
-header.header nav .button {
+header nav .button {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
   padding: 0;
   background: inherit;
 }
-header.header nav .button a {
+header nav .button a {
   display: inline-block;
   padding: 1rem 1.25rem;
   margin-bottom: -0.25rem;
 }
-header.header nav .button a img {
+header nav .button a img {
   display: block;
   margin: 0 auto;
   width: 1.5rem;
   height: 1.5rem;
 }
-header.header nav .title {
+header nav .title {
   display: inline-block;
   vertical-align: middle;
   margin: 0;
@@ -491,7 +508,6 @@ main footer {
 #developers article section {
   display: block;
   position: relative;
-  z-index: 90;
   overflow: hidden;
   margin: 0 0.5rem;
   padding: 1rem;
@@ -570,12 +586,12 @@ main footer {
   margin: 0;
   padding: 1rem 0;
   text-align: center;
+  border-radius: 0;
   -webkit-transition: 0.5s ease-out;
   -moz-transition: 0.5s ease-out;
   -ms-transition: 0.5s ease-out;
   -o-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
-  border-radius: 0;
   -webkit-transform: translate(0);
   -moz-transform: translate(0);
   -ms-transform: translate(0);
@@ -615,8 +631,12 @@ main footer {
 /*
  *		Full description
  */
-#full_description navi {
+#full_description nav {
   text-align: left;
+}
+#full_description nav > div {
+  margin: auto;
+  max-width: 80rem;
 }
 #full_description main {
   margin: auto;
@@ -643,8 +663,55 @@ main footer {
 .gallery a img {
   display: block;
   margin: auto;
-  max-height: 100vh;
+  max-height: 20rem;
   max-width: 100vw;
+}
+.full-view {
+  z-index: 999;
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.full-view.close {
+  display: none;
+}
+.full-view .view {
+  display: block;
+  margin: auto;
+}
+.full-view .view img {
+  display: block;
+  margin: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+.full-view .buttons {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.full-view .buttons .btn {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  padding: 0.25rem;
+}
+.full-view .buttons .btn img {
+  display: block;
+  margin: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.full-view .buttons .btn.close {
+  float: left;
 }
 /*
  *

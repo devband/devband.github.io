@@ -46,12 +46,19 @@ html {
 	font-size: 100%;
 }
 body {
+	display: block;
 	margin: 0;
 	padding: 0;
+	padding-top: 11rem ; //!important;
 	font-family: 'Roboto';
 	font-size: 1rem;
 	line-height: 1.25;
 	background-color: mix(@tx,@bg,5%);
+	@media screen {
+		@media (max-width: @width_mob_large) {
+			padding-top: 9rem ; //!important;
+		}
+	}
 }
 
 /*
@@ -60,7 +67,7 @@ body {
  *
 */
 
-body { 
+body {
 	.progressbar {
 		display: none;
 		z-index: 99999;
@@ -109,7 +116,7 @@ header {
 	margin: 0;
 	color: white;
 	background: mix(@bg, @tmColor,10%);
-	z-index: 999;
+	z-index: 998;
 	box-sizing: border-box;
 	.BoxShadow(2);
 	&:before { // фон шапки
@@ -520,7 +527,7 @@ main {
 		section {
 			display: block;
 			position: relative;
-			z-index: 90;
+//			z-index: 90;
 			overflow: hidden;
 			margin: 0 0.5rem;
 			padding: 1rem;
@@ -630,8 +637,12 @@ main {
  */
 
 #full_description {
-	navi {
+	nav {
 		text-align: left;
+		> div {
+			margin: auto;
+			max-width: @width_tab_large;
+		}
 	}
 	main {
 		margin: auto;
@@ -662,6 +673,51 @@ main {
 			margin: auto;
 			max-height: 20rem;
 			max-width: 100vw;
+		}
+	}
+}
+.full-view {
+	z-index: 999;
+	position: fixed;
+	display: block;
+	left: 0; top: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.75);
+	&.close {
+		display: none;
+	}
+	.view {
+		display: block;
+		margin: auto;
+		img {
+			display: block;
+			margin: auto;
+			max-width: 100vw;
+			max-height: 100vh;
+		}
+	}
+	.buttons {
+		display: block;
+		position: absolute;
+		left: 0; bottom: 0;
+		width: 100%;
+		height: 2rem;
+		background-color: rgba(0,0,0,0.25);
+		.btn {
+			display: block;
+			width: 100%;
+			height: 2rem;
+			padding: 0.25rem;
+			img {
+				display: block;
+				margin: auto;
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+			&.close {
+				float: left;
+			}
 		}
 	}
 }
