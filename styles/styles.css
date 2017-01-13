@@ -689,6 +689,19 @@ main footer {
   max-width: 100vw;
   max-height: 100vh;
 }
+.full-view .next,
+.full-view .prev {
+  display: inline-block;
+  position: absolute;
+  width: 15rem;
+  max-width: 30%;
+  top: 0;
+  bottom: 2rem;
+  background: rgba(255, 0, 0, 0.1);
+}
+.full-view .next {
+  right: 0;
+}
 .full-view .buttons {
   display: block;
   position: absolute;

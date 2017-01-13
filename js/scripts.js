@@ -7,7 +7,6 @@ var nav,
 	header_container_height;
 
 document.addEventListener('DOMContentLoaded', domContentLoaded);
-
 function domContentLoaded() {
 	body = document.body;
 	header = document.querySelector("header");
@@ -15,24 +14,13 @@ function domContentLoaded() {
 	header_container = document.querySelector(".header_container");
 	header_container_height = document.querySelector(".header_container").clientHeight;
 	galleryAll = document.querySelectorAll('.gallery');
-
-//	lessDevTools();
-	progressBar();
-	activeTab();
-	galleryBuilder();
-}
-
-window.addEventListener('load', windowLoad);
-
-function windowLoad() {
-	document.body.classList.remove('load');
-	bodyPaddingTop();
 }
 
 /*
  *		Less Dev Tools
  */
 
+// document.addEventListener("DOMContentLoaded",lessDevTools);
 function lessDevTools() {
 	if (document.querySelector('script[src*="less-dev.js"]')) return;
 	else {
@@ -47,37 +35,56 @@ function lessDevTools() {
  *		Progress bar
  */
 
+document.addEventListener("DOMContentLoaded",progressBar);
 function progressBar() {
-	var progressBar = document.createElement('div');
-	progressBar.className = 'progressbar';
-	progressBar.innerHTML = '<span></span>';
-	document.body.insertBefore(progressBar, document.querySelector('header'));
+	document.querySelector('header').insertAdjacentHTML("beforeBegin",'<div class="progressbar"><span></span></div>');
 	document.body.classList.add('load');
+}
+
+window.addEventListener('load', function() {
+	document.body.classList.remove('load');
+});
+
+/*
+ *		Active Tab Highlight
+ */
+
+document.addEventListener("DOMContentLoaded",activeTab);
+function activeTab(e) {
+	var tabs = document.querySelectorAll('nav ul li a');
+	for (var i = 0; i < tabs.length; i++) {
+		if (tabs[i].classList.contains(document.body.id)) {
+			tabs[i].parentNode.classList.add('active');
+		}
+	}
 }
 
 /*
  *		Gallery	
  */
 
+document.addEventListener("DOMContentLoaded",galleryBuilder);
 function galleryBuilder() {
 	var gallery = document.querySelector('.gallery');
 
 	// image list
 
 	if (!gallery) return;
+
 	function add(item) {
 		var img = document.createElement('img');
 		img.src = 'images/' + item + '.png';
 		img.alt = item + '.png';
 		gallery.appendChild(img);
 		img.addEventListener('load', function() {
-								 add(item + 1);
-							 });
+			add(item + 1);
+		});
 		img.addEventListener('error', function() {
-								 img.parentNode.removeChild(img);
-							 });
+			img.parentNode.removeChild(img);
+		});
 		var a = document.createElement('a');
 		a.href = 'images/' + item + '.png';
+		a.dataset.index = item;
 		a.appendChild(img);
 		gallery.appendChild(a);
 	}
@@ -91,21 +98,20 @@ function galleryBuilder() {
 		var target = e.target || e.srcElement;
 
 		function targetImg() {
+			e.preventDefault();
 			var fullViewElem = document.querySelector('.full-view');
 			if (fullViewElem) {
 				fullViewElem.classList.remove('close');
 				fullViewElem.querySelector('.view img').src = target.href;
-				e.preventDefault();
 			} else {
 				gallery.insertAdjacentHTML("afterEnd", '\n<div class="full-view">\n\
-					<div class="prev"></div>\n\
 					<div class="view"><img src="' + target.href + '"></div>\n\
-					<div class="next"></div>\n\
+					<div class="prev" onclick="nextPrevImg(this)"></div>\n\
+					<div class="next" onclick="nextPrevImg(this)"></div>\n\
 					<div class="buttons">\n\
 						<div class="btn close" onclick="closeFullView()"><img src="/src/close.svg"></div>\n\
 					</div>\n\
 				</div>');
-				e.preventDefault();
 			}
 		}
 
@@ -119,6 +125,10 @@ function galleryBuilder() {
 	}
 }
 
+function nextPrevImg(th) {
+	alert(th.parentNode.querySelector('.view img').src);
+}
+
 function closeFullView() {
 	var fullViewElem = document.querySelector('.full-view');
 	if (!fullViewElem.classList.contains('close')) {
@@ -130,24 +140,22 @@ function closeFullView() {
  *		Content Padding Top
  */
 
+window.addEventListener('load', bodyPaddingTop);
 function bodyPaddingTop() {
 	document.body.style.paddingTop = header.clientHeight + "px";
 }
 
 var mql = window.matchMedia("(orientation: portrait)");
-
 mql.addListener(function(m) {
-					bodyPaddingTop();
-					if (m.matches) { /* портретный режим */
-					} else { /* горизонтальный режим */ }
-				});
+	bodyPaddingTop();
+	if (m.matches) { /* портретный режим */ } else { /* горизонтальный режим */ }
+});
 
 /*
  *		Header Hidden
  */
 
 window.addEventListener("scroll", headerHidden);
-
 function headerHidden() {
 	if (nav.getBoundingClientRect().top <= 10) {
 		header_container.classList.add("hidden");
@@ -161,25 +169,10 @@ function headerHidden() {
 }
 
 /*
- *
- *		Active Tab Highlight
- *
- */
-
-function activeTab(e) {
-	var tabs = document.querySelectorAll('nav ul li a');
-	for (var i = 0; i < tabs.length; i++) {
-		if (tabs[i].classList.contains(document.body.id)) {
-			tabs[i].parentNode.classList.add('active');
-		}
-	}
-}
-
-/*
  *		Swipe
  */
 
-// Переход по страницам 
+// Переход по страницам свайпом
 
 function swipePage(index) {
 	var pages = ['index.html', 'projects.html', 'developers.html'];
@@ -187,10 +180,10 @@ function swipePage(index) {
 		location.href = location.href + pages[1];
 	}
 	pages.forEach(function(item, i, arr) {
-					  if (~location.href.indexOf('99/' + item) || ~location.href.indexOf('io/' + item)) {
-						  if (pages[i + index] != undefined) location.href = pages[i + index];
-					  }
-				  });
+		if (~location.href.indexOf('99/' + item) || ~location.href.indexOf('io/' + item)) {
+			if (pages[i + index] != undefined) location.href = pages[i + index];
+		}
+	});
 }
 
 function Swipe(swipeLangth) {
@@ -201,29 +194,29 @@ function Swipe(swipeLangth) {
 		start;
 
 	window.addEventListener('touchstart', function(e) {
-								startX = e.changedTouches[0].pageX;
-								startY = e.changedTouches[0].pageY;
-								start = new Date;
-							}, false);
+		startX = e.changedTouches[0].pageX;
+		startY = e.changedTouches[0].pageY;
+		start = new Date;
+	}, false);
 	window.addEventListener('touchmove', function(e) {
-								moveX = e.changedTouches[0].pageX;
-								moveY = e.changedTouches[0].pageY;
-								if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
-									if (~location.href.indexOf('/projects/')) return;
-									e.preventDefault();
-								}
-							}, false);
+		moveX = e.changedTouches[0].pageX;
+		moveY = e.changedTouches[0].pageY;
+		if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+			if (~location.href.indexOf('/projects/')) return;
+			e.preventDefault();
+		}
+	}, false);
 	window.addEventListener('touchend', function(e) {
-								var d = new Date;
-								if (d - start > 100 && d - start < 500) {
-									if (moveX - startX >= swipeLangth) {
-										swipePage(-1);
-									}
-									if (startX - moveX >= swipeLangth) {
-										swipePage(+1);
-									}
-								}
-							}, false);
+		var d = new Date;
+		if (d - start > 100 && d - start < 500) {
+			if (moveX - startX >= swipeLangth) {
+				swipePage(-1);
+			}
+			if (startX - moveX >= swipeLangth) {
+				swipePage(+1);
+			}
+		}
+	}, false);
 };
 
 var swipe = new Swipe(150);

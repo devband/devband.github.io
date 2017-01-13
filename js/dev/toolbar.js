@@ -12,14 +12,15 @@ devToolBarStyle.innerHTML = 'body {\
 }\
 #dev_toolbar {\
 	border-top: 1px solid white;\
-	background-color: #202020;\
+	opacity: 1;\
+	background-color: rgb(10,10,10);\
 }\
 #dev_toolbar .button {\
 	display: inline-block;\
 	color: white;\
-	font-size: 1rem;\
-	line-height: 1.4em;\
-	padding: 0.25rem 0.5rem;\
+	font-size: 16px;\
+	line-height: 1.4;\
+	padding: 4px 8px;\
 	vertical-align: middle;\
 	border-right: 1px solid white;\
 }\
@@ -62,15 +63,16 @@ function toolBarHide() {
 		toolBarHideButton.style.cssText = "position:fixed;\
 		right:0;\
 		bottom:0;\
-		width: 2rem;\
-		height: 2rem;\
-		font-size: 1rem;\
-		line-height:2rem;\
+		width: 32px;\
+		height: 32px;\
+		font-size: 16px;\
+		line-height: 32px;\
 		font-weight: bold;\
 		text-align: center;\
 		outline: 1px solid white;\
 		color: white;\
-		background:#222222;\
+		opacity: 0.5;\
+		background:rgb(128,128,128);\
 		z-index:999;";
 		body.appendChild(toolBarHideButton);
 		
@@ -117,17 +119,15 @@ showOutlineElements();
 // LINK OFF
 //
 
-body.onclick = function(event) {
+/*body.onclick = function(event) {
 		event = event || window.event;
 		var target = event.target || event.srcElement;
 		while (target != this) {
-				if (target.nodeName == 'A') {
-//					alert(target.href);
-//					return false;
-				}
+				if (target.nodeName == 'A') return false;
 				target = target.parentNode;
 		}
 };
+*/
 
 //
 // SWITCH FOR IMAGES
